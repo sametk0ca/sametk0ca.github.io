@@ -6,7 +6,10 @@ summary: "About me - Hakkımda"
 ShowReadingTime: false
 ShowWordCount: false
 ShowShareButtons: false
+ShowPostNavLinks: false
+ShowBreadCrumbs: false
 hidemeta: true
+disableShare: true
 ---
 
 ## 🇹🇷 Türkçe
