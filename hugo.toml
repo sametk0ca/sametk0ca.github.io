@@ -17,26 +17,10 @@ theme = 'papermod'
   [params.profileMode]
     enabled = true
     title = "Samet Koca"
-    subtitle = "Cyber Security Analyst | CTF Player | Blogger"
-    imageUrl = "https://github.com/sametk0ca.png"
-    imageWidth = 120
-    imageHeight = 120
-
-  [[params.profileMode.buttons]]
-    name = "Github"
-    url = "https://github.com/sametk0ca"
-
-  [[params.profileMode.buttons]]
-    name = "LinkedIn"
-    url = "https://linkedin.com/in/sametk0ca"
-
-  [[params.profileMode.buttons]]
-    name = "Twitter"
-    url = "https://twitter.com/sametk0ca"
-
-  [[params.profileMode.buttons]]
-    name = "Email"
-    url = "mailto:sametkoca@gmail.com"
+    subtitle = "Cyber Security Enthusiast"
+    imageUrl = "/avatar.jpg"
+    imageWidth = 180
+    imageHeight = 180
 
   [[params.socialIcons]]
     name = "Github"
@@ -44,15 +28,11 @@ theme = 'papermod'
 
   [[params.socialIcons]]
     name = "Linkedin"
-    url = "https://linkedin.com/in/sametk0ca"
-
-  [[params.socialIcons]]
-    name = "Twitter"
-    url = "https://twitter.com/sametk0ca"
+    url = "https://www.linkedin.com/in/samet-koca-7b3033188/"
 
   [[params.socialIcons]]
     name = "Email"
-    url = "mailto:sametkoca@gmail.com"
+    url = "mailto:samet.kocats@gmail.com"
 
 [menu]
   [[menu.main]]
