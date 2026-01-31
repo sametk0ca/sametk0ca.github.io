@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "2ed15cf8dd51e6c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bd63353417e355e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a9a847e00065e91d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "be6098c1b0780d46",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab489d154e744462",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "00b2f0bb0e44df5d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTimeReverse",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "39cc616f55ca13b7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "575558ecf3a7f5a2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 393.5
+  },
+  "right": {
+    "id": "d3ce961b8ff8897f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e58cf68ffbecd9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "55483dfde5e66c2f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "TryHackMe SOC Path SAL/SOC Role in Blue Team.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SOC Role in Blue Team"
+            }
+          },
+          {
+            "id": "6519362bf9953861",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Logging for SOC.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Windows Logging for SOC"
+            }
+          },
+          {
+            "id": "3d5408ca53ed1c89",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "93facca5a97e74fe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Logging for SOC.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Windows Logging for SOC"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "a9a847e00065e91d",
+  "lastOpenFiles": [
+    "TryHackMe SOC Path SAL/Network Security Monitoring/MITM Detection.md",
+    "To-Do/spor.md",
+    "To-Do/Plan.md",
+    "To-Do/drafts/Gölge Yapay Zeka.md",
+    "To-Do/drafts/YZ Komut Enjeksiyonu.md",
+    "To-Do/Certs.md",
+    "To-Do/drafts/2026 for Security.md",
+    "To-Do/List.md",
+    "To-Do/drafts/Passkey.md",
+    "img/Pasted image 20260107172727.png",
+    "To-Do/drafts/SYN Flood Attack.md",
+    "To-Do/drafts/Fuzzy Hashing.md",
+    "To-Do/drafts/Zero-Click Exploit.md",
+    "To-Do/drafts/DHCP.md",
+    "To-Do/drafts/DEP & ASLR.md",
+    "To-Do/drafts/Honeypot.md",
+    "To-Do/drafts/Zero-Trust.md",
+    "To-Do/drafts/Steganografi.md",
+    "img/Pasted image 20260104171836.png",
+    "To-Do/drafts",
+    "TryHackMe SOC Path SAL/Network Traffic Analysis/SIEM Triage for SOC/Log Analysis with SIEM.md",
+    "results/Raporlar/AllinOne.pdf",
+    "results/Raporlar/Linux Güvenlik Tehditleri ve SOC Analizi_ Bir Brifing Notu-1 - Kopya.pdf",
+    "results/Raporlar/Kötü Amaçlı Yazılım Analizi ve Tespiti Üzerine Brifing Notu - Kopya.pdf",
+    "results/Raporlar/Güvenlik Operasyon Merkezi (SOC) Teknolojileri_ Kapsamlı Bir Bakış - Kopya.pdf",
+    "results/Raporlar/Ağ Trafik Analizi ve Araçları_ Kapsamlı Bilgilendirme Notu - Kopya.pdf",
+    "results/Raporlar/Ağ Güvenliği ve Tehdit Tespiti Üzerine Bilgilendirme Notu - Kopya.pdf",
+    "results/Raporlar/Oltalama Saldırıları_ Analiz, Temeller ve Önleme Stratejileri - Kopya.pdf",
+    "results/Raporlar/SOC-MiniÖzet.pdf",
+    "results/Raporlar/Web Güvenliği Saldırıları ve Savunma Mekanizmaları_ Kapsamlı Bir Değerlendirme.pdf",
+    "TryHackMe SOC Path SAL/SIEM Triage for SOC/Alert Triage with Splunk.md",
+    "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Threat Detection III.md",
+    "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Threat Detection I.md",
+    "TryHackMe SOC Path SAL/Core SOC Solutions/Splunk.md",
+    "TryHackMe SOC Path SAL/Threat Analysis Tools/IP and Domain Threat Intel.md",
+    "TryHackMe SOC Path SAL/Threat Analysis Tools/File and Hash Threat Intel.md",
+    "TryHackMe SOC Path SAL/Threat Analysis Tools/Intro to Cyber Threat Intel.md",
+    "TryHackMe SOC Path SAL/Malware Concepts for SOC/Intro to Malware Analysis.md",
+    "img/Pasted image 20251225155103.png",
+    "img/Pasted image 20251225144409.png",
+    "img/Pasted image 20251225142153.png",
+    "img/Pasted image 20251223165015.png",
+    "img/Pasted image 20251223164917.png",
+    "img/Pasted image 20251223164250.png",
+    "img/Pasted image 20251223163634.png",
+    "img/Pasted image 20251223163415.png",
+    "Untitled 1.canvas",
+    "Untitled.canvas"
+  ]
+}

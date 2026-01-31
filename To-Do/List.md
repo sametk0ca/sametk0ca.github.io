@@ -1,0 +1,4 @@
+- [x] Sertifikaları detaylı araştır, notla
+- [ ] tryhackme soc analyst bitir
+- [ ] hackthebox soc analyst notlarını geçir
+- [x] ibm technologyde izlenecek videoları liste[[IBM technology videolar]] yap
