@@ -4,6 +4,7 @@ title = 'Samet Koca Blog'
 theme = 'papermod'
 
 [params]
+  ShowToc = true
   defaultTheme = "dark"
   description = "Cyber Security Blog & Writeups"
   author = "Samet Koca"
@@ -13,7 +14,6 @@ theme = 'papermod'
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
-  ShowToc = true
 
   [params.profileMode]
     enabled = true

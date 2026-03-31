@@ -1,5 +1,5 @@
 ---
-showToc: true
+ShowToc: true
 title: "Shadow AI: Gölge Yapay Zeka ve Riskleri | The Hidden Risks of Shadow AI"
 date: 2026-03-31
 draft: false
@@ -20,7 +20,7 @@ cover:
 Bugüne kadar yapay zekayı daha çok akıllı sohbet robotları (chatbot) olarak tanıdık. Sorularımıza yanıt veren, metinler yazan dijital asistanlar... Ancak yapay zeka artık bu rolün çok ötesine geçti. Artık sadece sohbet etmiyor; randevularınızı alıyor, kayıtları güncelliyor, düğmelere tıklıyor ve sistemler arası API'leri tetikliyor. Kısacası, bir "sohbetçiden" bir "eylemciye" (agentic AI) dönüşüyor. Bu yeni güç, iş yapış şekillerimizi kökten değiştirme potansiyeli taşırken, beraberinde "gölge yapay zeka" (shadow AI) gibi görünmeyen ama ciddi riskler de getiriyor.
 
 ---
-showToc: true-----------------------------------------------------------------------------
+ShowToc: true-----------------------------------------------------------------------------
 
 ## **1. Asıl Tehlike Gördüğünüz Değil, Görmediğiniz "Gölge Yapay Zeka"**
 
@@ -63,7 +63,7 @@ Benzer şekilde, bir vatandaş kamu hizmeti almak için karmaşık formlar ve fa
 *"Hastaya göre, sistem nihayet aradan çekilmiş ve böylece insani bakım öne çıkabilmişti."*
 
 ---
-showToc: true-----------------------------------------------------------------------------
+ShowToc: true-----------------------------------------------------------------------------
 
 ### **Sonuç: Kontrolü Elimizde Tutmak**
 
@@ -71,7 +71,7 @@ Yapay zeka, sohbet eden bir araç olmaktan çıkıp bizim adımıza eyleme geçe
 
 
 ---
-showToc: true
+ShowToc: true
 
 ---
 
@@ -85,7 +85,7 @@ showToc: true
 Until today, we have known AI mostly as smart chatbots—digital assistants that answer our questions and write texts. However, AI has now moved far beyond this role. It no longer just chats; it books your appointments, updates records, clicks buttons, and triggers APIs across systems. In short, it is transforming from a "chatter" into a "doer" (agentic AI). While this new power has the potential to radically change the way we work, it also brings hidden but serious risks like "shadow AI."
 
 ---
-showToc: true
+ShowToc: true
 
 ## **1. The Real Danger is Not What You See, but the "Shadow AI" You Don't**
 
