@@ -314,3 +314,118 @@ body:not(.list) main.main {
 footer.footer {
     display: none !important;
 }
+
+/* ============================================= */
+/* Cyber Security & Technical Improvements      */
+/* ============================================= */
+
+/* Post Meta Flags Styling */
+.lang-flags {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+/* Table of Contents (TOC) Customization */
+.toc {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px !important;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.toc summary {
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.toc ul {
+    list-style: none !important;
+    padding-left: 15px !important;
+}
+
+.toc li {
+    margin-bottom: 5px;
+}
+
+.toc a {
+    color: var(--secondary);
+    text-decoration: none !important;
+}
+
+.toc a:hover {
+    color: var(--primary);
+}
+
+/* Sticky TOC for Desktop */
+@media screen and (min-width: 1280px) {
+    .toc {
+        position: fixed;
+        left: calc(50% + 470px);
+        top: 100px;
+        width: 250px;
+        max-height: 80vh;
+        overflow-y: auto;
+        background: transparent;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        padding: 0 0 0 20px !important;
+    }
+    
+    .toc summary {
+        display: none;
+    }
+    
+    .toc details {
+        display: block !important;
+    }
+    
+    .toc details[open] summary {
+        margin-bottom: 10px;
+    }
+}
+
+/* Code Block Enhancements */
+code {
+    background: rgba(0, 242, 254, 0.1);
+    color: #00f2fe;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+}
+
+pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+.post-content pre {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Blockquote - Security Alert Style */
+.post-content blockquote {
+    border-left: 4px solid #4facfe;
+    background: rgba(79, 172, 254, 0.05);
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--secondary);
+}
+
+/* Headings with subtle accent */
+.post-content h2 {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 5px;
+}

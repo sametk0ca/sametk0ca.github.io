@@ -13,7 +13,8 @@ theme = 'papermod'
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
-  
+  ShowToc = true
+
   [params.profileMode]
     enabled = true
     title = "Samet Koca"
@@ -21,6 +22,11 @@ theme = 'papermod'
     imageUrl = "/avatar.jpg"
     imageWidth = 180
     imageHeight = 180
+
+  [params.toc]
+    enable = true
+    autoCollapse = false
+    ordered = false
 
   [[params.socialIcons]]
     name = "Github"
