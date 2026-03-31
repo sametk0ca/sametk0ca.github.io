@@ -1,5 +1,5 @@
 ---
-ShowToc: true
+showToc: true
 title: "2026 for Security: Geleceğe Bir Bakış | Future of Cybersecurity"
 date: 2026-03-31
 draft: false
@@ -10,7 +10,7 @@ cover:
     alt: "Cybersecurity 2026"
     relative: false
 ---
-ShowToc: true
+
 
 ### Giriş: Geleceğe Bir Bakış
 

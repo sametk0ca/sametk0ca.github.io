@@ -1,5 +1,5 @@
 ---
-ShowToc: true
+showToc: true
 title: "Passkey: Parolaların Sonu mu Geldi? | Is This the End of Passwords?"
 date: 2026-03-31
 draft: false
@@ -10,7 +10,7 @@ cover:
     alt: "Passkeys"
     relative: false
 ---
-ShowToc: true
+
 
 # Parolaların Sonu mu Geldi? 
 
@@ -65,7 +65,7 @@ Passkey'ler, oltalama gibi uzun süredir devam eden birçok sorunu çözen, paro
 Peki, tüm dijital kimliğimizi tek bir cihazı kaybetmenin bizi dışarıda bırakabileceği bir sisteme emanet etmeye hazır mıyız, yoksa eski ve kusurlu parolalarımız daha uzun yıllar boyunca güvenlik ağımız olmaya devam mı edecek?
 
 ---
-ShowToc: true
+showToc: true
 
 # Is This the End of Passwords?
 
