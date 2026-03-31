@@ -73,3 +73,6 @@ theme = 'papermod'
   tabWidth = 4
   lineNos = true
   guessSyntax = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
