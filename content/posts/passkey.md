@@ -1,4 +1,5 @@
 ---
+ShowToc: true
 title: "Passkey: Parolaların Sonu mu Geldi? | Is This the End of Passwords?"
 date: 2026-03-31
 draft: false
@@ -9,6 +10,7 @@ cover:
     alt: "Passkeys"
     relative: false
 ---
+ShowToc: true
 
 # Parolaların Sonu mu Geldi? 
 
@@ -22,7 +24,7 @@ Bu konsepti basitçe şöyle özetleyebiliriz: Cihazınızda gizli tutulan bir *
 
 "bir web sitesine parolanızı yazmak yerine, size bir token gönderirler, siz onu özel anahtarınızla imzalarsınız, onlar da bunu açık anahtarınızla doğrulayarak içeri girmenize izin verirler"
 
-![[Pasted image 20260107172727.png]]
+![](/Pasted%20image%2020260107172727.png)
 
 **2. Neredeyse Tamamen Oltalama (Phishing) Saldırılarına Karşı Korumalıdır**
 
@@ -63,6 +65,7 @@ Passkey'ler, oltalama gibi uzun süredir devam eden birçok sorunu çözen, paro
 Peki, tüm dijital kimliğimizi tek bir cihazı kaybetmenin bizi dışarıda bırakabileceği bir sisteme emanet etmeye hazır mıyız, yoksa eski ve kusurlu parolalarımız daha uzun yıllar boyunca güvenlik ağımız olmaya devam mı edecek?
 
 ---
+ShowToc: true
 
 # Is This the End of Passwords?
 
@@ -77,7 +80,7 @@ We can simplify this concept as follows: You have two keys—a **private key** k
 > "Instead of typing your password into a website, they send you a token, you sign it with your private key, and they allow you in by verifying it with your public key."
 
 
-![[Pasted image 20260107172727.png]]
+![](/Pasted%20image%2020260107172727.png)
 
 ### 2. Almost Entirely Immune to Phishing Attacks
 
