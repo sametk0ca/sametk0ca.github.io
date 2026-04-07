@@ -2,12 +2,17 @@
 title: "MFA Fatigue: What Is It and How to Prevent It? | MFA Yorgunluğu Nedir?"
 date: 2026-03-31
 draft: false
-tags: ["MFA", "Social Engineering", "Cybersecurity", "Identity"]
-categories: ["Security Awareness"]
+tags:
+  - MFA
+  - Social Engineering
+  - Cybersecurity
+  - Identity
+categories:
+  - Security Awareness
 cover:
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070&auto=format&fit=crop"
-    alt: "MFA Fatigue Attack"
-    relative: false
+  image: https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070&auto=format&fit=crop
+  alt: MFA Fatigue Attack
+  relative: false
 ---
 
 # [TR] MFA Fatigue (Push Bombing) Nedir?

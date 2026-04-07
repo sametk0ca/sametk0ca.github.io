@@ -429,3 +429,37 @@ pre code {
     border-bottom: 1px solid var(--border);
     padding-bottom: 5px;
 }
+
+/* ============================================= */
+/* Search Bar Styles                           */
+/* ============================================= */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    border-radius: 4px;
+    padding: 4px 12px;
+    width: 140px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+    border-color: var(--secondary);
+    width: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    .search-form input {
+        width: 100px;
+    }
+    .search-form input:focus {
+        width: 130px;
+    }
+}
