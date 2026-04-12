@@ -1,13 +1,13 @@
 baseURL = 'https://sametk0ca.github.io/'
 defaultContentLanguage = 'en'
-title = 'Samet Koca | Cyber Security'
+title = 'Samet Koca'
 theme = 'papermod'
 
 [languages]
   [languages.en]
     languageCode = "en-us"
     languageName = "English"
-    contentDir = "content" # Unified content directory
+    contentDir = "content"
     weight = 1
     [languages.en.menu]
       [[languages.en.menu.main]]
@@ -26,10 +26,11 @@ theme = 'papermod'
         url = "/about/"
         weight = 30
 
+  # Kept TR only for in-post translation linking, but hidden from header
   [languages.tr]
     languageCode = "tr-tr"
     languageName = "Türkçe"
-    contentDir = "content" # Same content directory
+    contentDir = "content"
     weight = 2
 
 [params]
@@ -38,7 +39,7 @@ theme = 'papermod'
   description = "Cyber Security Blog & Technical Research"
   author = "Samet Koca"
   ShowReadingTime = true
-  ShowShareButtons = true
+  ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -54,6 +55,14 @@ theme = 'papermod'
     imageUrl = "/avatar.jpg"
     imageWidth = 120
     imageHeight = 120
+
+  [[params.socialIcons]]
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/samet-koca-7b3033188/"
+
+  [[params.socialIcons]]
+    name = "Email"
+    url = "mailto:samet.kocats@gmail.com"
 
   [params.toc]
     enable = true
