@@ -1,6 +1,6 @@
 ---
-title: "Search"
-layout: "search"
-summary: "search"
-placeholder: "Arama yapmak için yazın..."
+title: Search
+layout: search
+summary: search
+placeholder: Search
 ---

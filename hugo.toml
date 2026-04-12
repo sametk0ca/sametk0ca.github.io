@@ -1,27 +1,68 @@
 baseURL = 'https://sametk0ca.github.io/'
-languageCode = 'en-us'
-title = 'Samet Koca Blog'
+defaultContentLanguage = 'en'
+title = 'Samet Koca | Cyber Security'
 theme = 'papermod'
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 1
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Posts"
+        url = "posts/"
+        weight = 10
+      [[languages.en.menu.main]]
+        name = "Knowledge Base"
+        url = "kb/"
+        weight = 20
+      [[languages.en.menu.main]]
+        name = "Tags"
+        url = "tags/"
+        weight = 30
+
+  [languages.tr]
+    languageName = "Türkçe"
+    contentDir = "content/tr"
+    weight = 2
+    [languages.tr.menu]
+      [[languages.tr.menu.main]]
+        name = "Yazılar"
+        url = "posts/"
+        weight = 10
+      [[languages.tr.menu.main]]
+        name = "Bilgi Bankası"
+        url = "kb/"
+        weight = 20
+      [[languages.tr.menu.main]]
+        name = "Etiketler"
+        url = "tags/"
+        weight = 30
 
 [params]
   ShowToc = true
   defaultTheme = "dark"
-  description = "Cyber Security Blog & Writeups"
+  description = "Cyber Security Blog, Wiki & Technical Research"
   author = "Samet Koca"
   ShowReadingTime = true
-  ShowShareButtons = false
+  ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
+  
+  # Technical Rendering
+  math = true # Enable KaTeX
+  mermaid = true # Enable Mermaid.js
 
   [params.profileMode]
     enabled = true
     title = "Samet Koca"
-    subtitle = "Cyber Security Enthusiast"
+    subtitle = "Security Researcher | CyBOK Wiki Architect"
     imageUrl = "/avatar.jpg"
-    imageWidth = 180
-    imageHeight = 180
+    imageWidth = 120
+    imageHeight = 120
 
   [params.toc]
     enable = true
