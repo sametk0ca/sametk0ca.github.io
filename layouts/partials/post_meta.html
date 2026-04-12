@@ -1,7 +1,6 @@
 {{- $scratch := newScratch }}
 
 {{/* Add language flags at the beginning */}}
-{{- $scratch.Add "meta" (slice "<span class='lang-flags'>🇹🇷 🇬🇧</span>") }}
 
 {{- if not .Date.IsZero -}}
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
