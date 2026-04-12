@@ -26,20 +26,12 @@ theme = 'papermod'
         url = "/about/"
         weight = 30
 
-  # Kept TR only for in-post translation linking, but hidden from header
-  [languages.tr]
-    languageCode = "tr-tr"
-    languageName = "Türkçe"
-    contentDir = "content"
-    weight = 2
-
 [params]
   ShowToc = true
   defaultTheme = "dark"
-  description = "Cyber Security Blog & Technical Research"
   author = "Samet Koca"
   ShowReadingTime = true
-  ShowShareButtons = false
+  ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
@@ -51,7 +43,6 @@ theme = 'papermod'
   [params.profileMode]
     enabled = true
     title = "Samet Koca"
-    subtitle = "Cyber Security Researcher"
     imageUrl = "/avatar.jpg"
     imageWidth = 120
     imageHeight = 120
