@@ -5,8 +5,8 @@ theme = 'papermod'
 
 [languages]
   [languages.en]
+    languageCode = "en-us"
     languageName = "English"
-    contentDir = "content/en"
     weight = 1
     [languages.en.menu]
       [[languages.en.menu.main]]
@@ -14,31 +14,19 @@ theme = 'papermod'
         url = "posts/"
         weight = 10
       [[languages.en.menu.main]]
-        name = "Knowledge Base"
+        name = "KB"
         url = "kb/"
         weight = 20
-      [[languages.en.menu.main]]
-        name = "Tags"
-        url = "tags/"
-        weight = 30
 
   [languages.tr]
+    languageCode = "tr-tr"
     languageName = "Türkçe"
-    contentDir = "content/tr"
     weight = 2
     [languages.tr.menu]
       [[languages.tr.menu.main]]
         name = "Yazılar"
         url = "posts/"
         weight = 10
-      [[languages.tr.menu.main]]
-        name = "Bilgi Bankası"
-        url = "kb/"
-        weight = 20
-      [[languages.tr.menu.main]]
-        name = "Etiketler"
-        url = "tags/"
-        weight = 30
 
 [params]
   ShowToc = true
