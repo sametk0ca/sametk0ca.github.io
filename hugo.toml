@@ -7,31 +7,35 @@ theme = 'papermod'
   [languages.en]
     languageCode = "en-us"
     languageName = "English"
+    contentDir = "content" # Unified content directory
     weight = 1
     [languages.en.menu]
       [[languages.en.menu.main]]
+        identifier = "posts"
         name = "Posts"
-        url = "posts/"
+        url = "/posts/"
         weight = 10
       [[languages.en.menu.main]]
-        name = "KB"
-        url = "kb/"
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
         weight = 20
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "Whoami"
+        url = "/about/"
+        weight = 30
 
   [languages.tr]
     languageCode = "tr-tr"
     languageName = "Türkçe"
+    contentDir = "content" # Same content directory
     weight = 2
-    [languages.tr.menu]
-      [[languages.tr.menu.main]]
-        name = "Yazılar"
-        url = "posts/"
-        weight = 10
 
 [params]
   ShowToc = true
   defaultTheme = "dark"
-  description = "Cyber Security Blog, Wiki & Technical Research"
+  description = "Cyber Security Blog & Technical Research"
   author = "Samet Koca"
   ShowReadingTime = true
   ShowShareButtons = true
@@ -40,14 +44,13 @@ theme = 'papermod'
   ShowCodeCopyButtons = true
   ShowWordCount = true
   
-  # Technical Rendering
-  math = true # Enable KaTeX
-  mermaid = true # Enable Mermaid.js
+  # Hide the language switcher in the header
+  disableLanguageAltLinks = true
 
   [params.profileMode]
     enabled = true
     title = "Samet Koca"
-    subtitle = "Security Researcher | CyBOK Wiki Architect"
+    subtitle = "Cyber Security Researcher"
     imageUrl = "/avatar.jpg"
     imageWidth = 120
     imageHeight = 120
@@ -56,35 +59,6 @@ theme = 'papermod'
     enable = true
     autoCollapse = false
     ordered = false
-
-  [[params.socialIcons]]
-    name = "Github"
-    url = "https://github.com/sametk0ca"
-
-  [[params.socialIcons]]
-    name = "Linkedin"
-    url = "https://www.linkedin.com/in/samet-koca-7b3033188/"
-
-  [[params.socialIcons]]
-    name = "Email"
-    url = "mailto:samet.kocats@gmail.com"
-
-[menu]
-  [[menu.main]]
-    identifier = "writeups"
-    name = "Writeups"
-    url = "/posts/"
-    weight = 10
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 30
-  [[menu.main]]
-    identifier = "about"
-    name = "Whoami"
-    url = "/about/"
-    weight = 50
 
 [markup.highlight]
   noClasses = false
