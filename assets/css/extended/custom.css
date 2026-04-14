@@ -463,3 +463,76 @@ pre code {
         width: 130px;
     }
 }
+
+/* ============================================= */
+/* Search Page Centering & Layout Improvements  */
+/* ============================================= */
+
+/* Ensure searchbox spans full width in the grid */
+.list #searchbox {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 2rem 0 3rem 0 !important;
+}
+
+/* Style and center the search input */
+#searchInput {
+    width: 100% !important;
+    max-width: 600px !important;
+    padding: 15px 25px !important;
+    font-size: 1.5rem !important;
+    border-radius: 50px !important;
+    border: 2px solid var(--border) !important;
+    background: var(--entry) !important;
+    color: var(--primary) !important;
+    text-align: center !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    outline: none !important;
+}
+
+#searchInput:focus {
+    border-color: #4facfe !important;
+    box-shadow: 0 4px 20px rgba(79, 172, 254, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+/* Center search results */
+#searchResults {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-top: 2rem !important;
+    padding: 0 !important;
+}
+
+#searchResults li {
+    background: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    transition: all 0.2s ease !important;
+}
+
+#searchResults li:hover {
+    transform: translateY(-2px);
+    border-color: #4facfe !important;
+}
+
+/* Center the search page header */
+.list .page-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    grid-column: 1 / -1 !important;
+    margin-bottom: 0 !important;
+}
+
+.list .page-header h1 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    justify-content: center !important;
+}

@@ -12,39 +12,23 @@ hidemeta: true
 disableShare: true
 ---
 
-## 🇹🇷 Türkçe
+## Türkçe
 
 Merhaba, ben **Samet**.
 
-Yazılım mühendisliği mezunuyum ve siber güvenlik alanında kendimi geliştirmeye çalışıyorum. Özellikle **SOC Analyst**, **blue team** ve saldırıların nasıl gerçekleştiğini gerçekten anlayabilme konuları ilgimi çekiyor.
-
-### Bu sitede neler var?
-
-- 🚩 Çözdüğüm **CTF'ler**
-- 📝 **Lab notlarım**
-- 💡 Zaman zaman da *"bunu ben de ilk başta anlamamıştım"* dediğim teknik konular
-
-Öğrendiklerimi hem Türkçe hem İngilizce paylaşmamın sebebi de hem kendime referans olması hem de benim gibi bu yola yeni girenlere faydalı olabilmesi.
+Yazılım mühendisi olarak siber güvenlik alanında, özellikle **SOC**, **Blue Team** ve saldırı analizleri üzerine çalışıyorum. Bu platformda çözdüğüm **CTF**'leri, **lab notlarımı** ve teknik incelemelerimi hem Türkçe hem de İngilizce olarak paylaşıyorum. Amacım hem kendime bir referans oluşturmak hem de topluluğa fayda sağlamak.
 
 ---
 
-## 🇬🇧 English
+## English
 
 Hello, I'm **Samet**.
 
-I'm a software engineering graduate and I'm working on improving myself in the field of cybersecurity. I'm particularly interested in **SOC Analyst** roles, **blue team** operations, and truly understanding how attacks work.
-
-### What's on this site?
-
-- 🚩 **CTFs** I've solved
-- 📝 My **lab notes**
-- 💡 Technical topics that I once thought *"I didn't understand this at first either"*
-
-The reason I share what I learn in both Turkish and English is to serve as a reference for myself and to be helpful to others who are just starting out on this path like me.
+I'm a software engineer specializing in cybersecurity, with a focus on **SOC**, **Blue Team**, and attack analysis. I share my **CTF** writeups, **lab notes**, and technical research in both Turkish and English. My goal is to create a personal reference and contribute to the community.
 
 ---
 
-## 📫 Contact
+## Contact
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/samet-koca-7b3033188/)
-- ✉️ [samet.kocats@gmail.com](mailto:samet.kocats@gmail.com)
+- LinkedIn: [Samet Koca](https://www.linkedin.com/in/samet-koca-7b3033188/)
+- Email: [samet.kocats@gmail.com](mailto:samet.kocats@gmail.com)
