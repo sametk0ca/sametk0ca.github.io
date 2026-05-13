@@ -1,11 +1,10 @@
 ---
-title: "Everything About DHCP"
+title: "DHCP"
 date: 2026-01-04
 draft: false
 tags: ["Networking", "Protocols"]
 categories: ["Writeups"]
 ---
-DHCP Hakkında Her Şey | Everything About DHCP
 
 **DHCP (Dynamic Host Configuration Protocol)**, bir cihazın ağa bağlandığında otomatik olarak IP adresi ve diğer ağ ayarlarını almasını sağlayan bir protokoldür. Bu sayede manuel IP ataması yapmaya gerek kalmaz ve ağ yönetimi kolaylaşır. DHCP’nin bir cihaza IP adresi atama süreci, dört temel adımdan oluşur: **_Discover_**, **_Offer_**, **_Request_** ve **_Acknowledge_**.
 

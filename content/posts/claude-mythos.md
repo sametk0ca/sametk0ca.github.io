@@ -1,5 +1,5 @@
 ---
-title: "Claude Mythos: The 2026 Cyber-Frontier Inflection Point"
+title: "Claude Mythos"
 date: 2026-04-12
 description: "Anthropic'in Mythos sınıfı modelini ve 'Vulnpocalypse' döneminin başlangıcını analiz ediyoruz. / Analyzing Anthropic's Mythos-class model and the dawn of the Vulnpocalypse."
 tags: ["AI Security", "Vulnerability Discovery", "Claude Mythos", "Cyber-Frontier", "Vulnpocalypse"]

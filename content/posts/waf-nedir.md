@@ -1,5 +1,5 @@
 ---
-title: "WAF (Web Application Firewall) 101: What is it and Why do you need it? | WAF Nedir?"
+title: "WAF"
 date: 2026-04-04
 draft: false
 tags: ["WAF", "Web Security", "Cybersecurity", "Firewall", "Application Security"]

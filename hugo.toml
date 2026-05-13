@@ -2,6 +2,7 @@ baseURL = 'https://sametk0ca.github.io/'
 defaultContentLanguage = 'en'
 title = 'Samet Koca'
 theme = 'papermod'
+paginate = 12
 
 [languages]
   [languages.en]

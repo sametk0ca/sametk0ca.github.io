@@ -1,6 +1,6 @@
 ---
 ShowToc: true
-title: "Passkey: Parolaların Sonu mu Geldi? | Is This the End of Passwords?"
+title: "Passkey"
 date: 2026-03-31
 draft: false
 tags: ["Passkey", "Authentication", "Security", "Phishing"]

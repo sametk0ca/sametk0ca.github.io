@@ -1,6 +1,6 @@
 ---
 ShowToc: true
-title: "YZ Komut Enjeksiyonu: AI Prompt Injection | The Threat of Indirect Prompt Injection"
+title: "Prompt Injection"
 date: 2026-03-31
 draft: false
 tags: ["AI Security", "Prompt Injection", "Large Language Models", "Cybersecurity"]

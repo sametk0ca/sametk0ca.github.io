@@ -1,5 +1,5 @@
 ---
-title: "Zero Trust Maturity Model: The CISA 2.0 Roadmap | Zero Trust Olgunluk Modeli"
+title: "Zero Trust Model"
 date: 2026-04-15
 description: "Exploring the CISA Zero Trust Maturity Model (ZTMM) 2.0 and the path to optimal security. / CISA Zero Trust Olgunluk Modeli (ZTMM) 2.0 ve optimal güvenliğe giden yolu inceliyoruz."
 tags: ["Zero Trust", "CISA", "Security Architecture", "Cyber-Frontier", "Governance"]

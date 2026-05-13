@@ -1,5 +1,5 @@
 ---
-title: "MFA Fatigue: What Is It and How to Prevent It? | MFA Yorgunluğu Nedir?"
+title: "MFA Fatigue"
 date: 2026-03-31
 draft: false
 tags:

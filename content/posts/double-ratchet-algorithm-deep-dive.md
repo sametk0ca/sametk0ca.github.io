@@ -1,5 +1,5 @@
 ---
-title: "The Double Ratchet Algorithm: How Signal and WhatsApp Secure Your Conversations | Double Ratchet Algoritması"
+title: "Double Ratchet"
 date: 2026-04-15
 description: "A deep dive into the Double Ratchet algorithm, the backbone of modern end-to-end encryption. / Modern uçtan uca şifrelemenin bel kemiği olan Double Ratchet algoritmasını derinlemesine inceliyoruz."
 tags: ["Cryptography", "Signal Protocol", "Privacy", "Cyber-Frontier", "Secure Messaging"]

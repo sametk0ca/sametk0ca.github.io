@@ -1,6 +1,6 @@
 ---
 ShowToc: true
-title: "Shadow AI: Gölge Yapay Zeka ve Riskleri | The Hidden Risks of Shadow AI"
+title: "Shadow AI"
 date: 2026-03-31
 draft: false
 tags: ["AI", "Shadow AI", "Security", "Risk Management"]

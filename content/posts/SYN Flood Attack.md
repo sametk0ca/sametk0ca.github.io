@@ -1,5 +1,5 @@
 ---
-title: "SYN Flood Attack"
+title: "SYN Flood"
 date: 2026-01-04
 draft: false
 tags: ["DDoS", "Network Security", "Red Team"]

@@ -1,5 +1,5 @@
 ---
-title: "DEP & ASLR: What Are They?"
+title: "DEP & ASLR"
 date: 2026-01-04
 draft: false
 tags: ["Exploit Mitigation", "Memory Safety", "Red Team"]

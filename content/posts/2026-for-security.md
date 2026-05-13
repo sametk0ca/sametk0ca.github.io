@@ -1,6 +1,6 @@
 ---
 ShowToc: true
-title: "2026 for Security: Geleceğe Bir Bakış | Future of Cybersecurity"
+title: "2026 Security"
 date: 2026-03-31
 draft: false
 tags: ["Cybersecurity", "Trends", "AI", "2026"]
