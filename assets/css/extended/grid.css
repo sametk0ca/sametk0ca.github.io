@@ -1,97 +1,158 @@
 /* Post Grid Layout */
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin: 20px 0;
+    /* Use auto-fill with minmax to prevent cards from becoming too thin */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px auto;
+    width: 100%;
+}
+
+/* Force the main container to be much wider to accommodate the grid */
+.main {
+    max-width: 1300px !important; /* Increased width */
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+}
+
+/* Ensure PaperMod's list layout doesn't restrict width */
+.list #top, .list .main {
+    display: block !important;
 }
 
 .post-entry {
     margin: 0 !important;
     background: var(--entry);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 16px; /* Slightly rounder */
+    padding: 0; /* Padding handled by internal elements */
     position: relative;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     flex-direction: column;
+    min-height: 420px; /* Standardized height */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .post-entry:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Image/Cover Styling */
+.post-entry .entry-cover {
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-entry .entry-cover img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    transition: transform 0.5s ease;
+}
+
+.post-entry:hover .entry-cover img {
+    transform: scale(1.05);
+}
+
+/* Content Padding */
+.post-entry .entry-header, 
+.post-entry .entry-content, 
+.post-entry .entry-footer {
+    padding: 0 20px;
 }
 
 .post-entry .entry-header h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 15px 0 10px 0;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .post-entry .entry-content {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--secondary);
     flex-grow: 1;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
-/* Pagination Styling */
+.post-entry .entry-footer {
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+/* Link overlay */
+.entry-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Pagination Fix */
 .pagination {
+    grid-column: 1 / -1; /* Stretch across all columns if needed */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-top: 40px;
-    padding: 20px 0;
+    gap: 20px;
+    margin: 50px 0;
+    padding: 20px;
 }
 
 .pagination a {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background: var(--entry);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--primary);
-    transition: background 0.2s;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s;
 }
 
 .pagination a:hover {
-    background: var(--tertiary);
+    background: var(--primary);
+    color: var(--theme);
+    border-color: var(--primary);
 }
 
 .page-selector select {
     background: var(--entry);
     color: var(--primary);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 12px;
-    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 15px;
     font-size: 1rem;
-    outline: none;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.page-selector select:hover {
-    background: var(--tertiary);
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 1200px) {
-    .post-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .post-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* Mobile Adjustments */
 @media screen and (max-width: 600px) {
     .post-grid {
         grid-template-columns: 1fr;
+        padding: 0 10px;
     }
-    .pagination {
-        flex-direction: column;
-        gap: 10px;
+    .post-entry {
+        min-height: auto;
+    }
+    .main {
+        padding: 0 15px !important;
     }
 }
