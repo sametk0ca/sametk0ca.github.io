@@ -5,7 +5,7 @@
 /* Posts listesi grid */
 main.main {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: var(--gap) !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -207,13 +207,13 @@ body:not(.list) main.main {
 
 @media (max-width: 900px) {
     main.main {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
 @media (max-width: 600px) {
     main.main {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
         gap: 12px !important;
     }
 
