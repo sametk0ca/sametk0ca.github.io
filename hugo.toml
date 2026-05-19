@@ -37,38 +37,6 @@ paginate = 12
         url = "/archives/"
         weight = 40
 
-  [languages.tr]
-    languageCode = "tr"
-    languageName = "Türkçe"
-    contentDir = "content"
-    weight = 2
-    [languages.tr.menu]
-      [[languages.tr.menu.main]]
-        identifier = "info-bank"
-        name = "Bilgi Bankası"
-        url = "/bilgi-bankasi/"
-        weight = 5
-      [[languages.tr.menu.main]]
-        identifier = "posts"
-        name = "Yazılar"
-        url = "/posts/"
-        weight = 10
-      [[languages.tr.menu.main]]
-        identifier = "search"
-        name = "Ara"
-        url = "/search/"
-        weight = 20
-      [[languages.tr.menu.main]]
-        identifier = "about"
-        name = "Hakkımda"
-        url = "/about/"
-        weight = 30
-      [[languages.tr.menu.main]]
-        identifier = "archives"
-        name = "Arşiv"
-        url = "/archives/"
-        weight = 40
-
 [related]
   threshold = 80
   includeNewer = true
@@ -96,8 +64,8 @@ paginate = 12
   ShowCodeCopyButtons = true
   ShowWordCount = true
   
-  # Show the language switcher in the header
-  disableLanguageAltLinks = false
+  # Hide the language switcher in the header
+  disableLanguageAltLinks = true
 
   [params.profileMode]
     enabled = true
