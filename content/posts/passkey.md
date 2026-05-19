@@ -20,7 +20,6 @@ Bu konsepti basitçe şöyle özetleyebiliriz: Cihazınızda gizli tutulan bir *
 
 "bir web sitesine parolanızı yazmak yerine, size bir token gönderirler, siz onu özel anahtarınızla imzalarsınız, onlar da bunu açık anahtarınızla doğrulayarak içeri girmenize izin verirler"
 
-![](/Pasted%20image%2020260107172727.png)
 
 **2. Neredeyse Tamamen Oltalama (Phishing) Saldırılarına Karşı Korumalıdır**
 
@@ -76,7 +75,6 @@ We can simplify this concept as follows: You have two keys—a **private key** k
 > "Instead of typing your password into a website, they send you a token, you sign it with your private key, and they allow you in by verifying it with your public key."
 
 
-![](/Pasted%20image%2020260107172727.png)
 
 ### 2. Almost Entirely Immune to Phishing Attacks
 
