@@ -1,6 +1,6 @@
 ---
 title: "Post-Kuantum Kriptografi: Kuantum Tehdidine Karşı Yeni Standartlar"
-date: 2026-04-11
+date: 2026-05-19
 draft: false
 tags: ["Cryptography", "Quantum Computing", "NIST", "CyBOK"]
 categories: ["Security Future"]

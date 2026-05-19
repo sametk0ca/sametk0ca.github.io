@@ -1,6 +1,6 @@
 ---
 title: "Yan Kanal Saldırıları ve Maskeleme: Donanım Düzeyinde Güvenlik"
-date: 2026-04-11
+date: 2026-05-19
 draft: false
 tags: ["Hardware Security", "Cryptography", "Side-Channel", "CyBOK"]
 categories: ["Advanced Security"]

@@ -1,6 +1,6 @@
 ---
 title: "Cyber Kill Chain: Gelişmiş Tehdit Modelleme ve Savunma Stratejileri"
-date: 2026-04-11
+date: 2026-05-19
 draft: false
 tags: ["Cyber Security", "Blue Team", "Threat Intel", "CyBOK"]
 categories: ["Knowledge Base"]

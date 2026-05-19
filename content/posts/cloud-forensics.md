@@ -1,6 +1,6 @@
 ---
 title: "Cloud Forensics: Bulut Bilişimde Adli Bilişim ve Zorluklar"
-date: 2026-04-11
+date: 2026-05-19
 draft: false
 tags: ["Cloud Security", "Forensics", "DFIR", "CyBOK"]
 categories: ["Digital Forensics"]

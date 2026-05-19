@@ -1,6 +1,6 @@
 ---
 title: "Formal Metotlar: Yazılım ve Donanım Güvenliğinde Matematiksel Kesinlik"
-date: 2026-04-11
+date: 2026-05-19
 draft: false
 tags: ["Formal Methods", "Verification", "Software Security", "CyBOK"]
 categories: ["Advanced Security"]
