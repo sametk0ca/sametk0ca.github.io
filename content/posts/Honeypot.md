@@ -7,11 +7,13 @@ categories: ["Writeups"]
 ---
 
 
+
 Siber güvenlik dünyasında saldırganları analiz etmek ve güvenlik açıklarını tespit etmek için kullanılan etkili yöntemlerden biri **honeypot** sistemleridir. Honeypot, kötü niyetli aktörleri kendine çekerek, saldırı yöntemlerini anlamaya ve savunma mekanizmalarını geliştirmeye yardımcı olan bir tuzak sistemidir. Bu makalede, honeypotların nasıl çalıştığını, türlerini ve neden önemli olduklarını ele alacağız.
 
 ## Honeypot Nedir?
 
 Honeypot, gerçek bir sistem gibi davranan ancak aslında saldırganları kandırmak ve takip etmek amacıyla oluşturulmuş bir tuzak sistemidir. Bu sistemler, saldırganların davranışlarını analiz etmeye, kötü amaçlı yazılımları yakalamaya ve güvenlik açıklarını belirlemeye yardımcı olur.
+
 
 
 
@@ -49,6 +51,7 @@ In the world of cybersecurity, one of the most effective methods for analyzing a
 ## What is a Honeypot?
 
 A honeypot is a system that mimics a real network or server but is actually designed to deceive and monitor attackers. These systems help analyze cybercriminal behavior, capture malware, and identify security weaknesses.
+
 
 
 

@@ -7,6 +7,7 @@ categories: ["Advanced Security"]
 ---
 
 
+
 Kriptografik algoritmaların matematiksel güvenliği, bu algoritmaların fiziksel donanımlar üzerindeki uygulamalarının güvenliğini her zaman garanti etmez. **Yan Kanal Saldırıları (Side-Channel Attacks - SCA)**, bir cihazın şifreleme işlemi sırasında sızdırdığı fiziksel bilgileri (güç tüketimi, elektromanyetik radyasyon, zamanlama) analiz ederek gizli anahtarları ele geçirmeyi amaçlar. Bu saldırılar, algoritmanın kendisini değil, fiziksel gerçeklemesini hedef alır.
 
 ### Teknik Analiz ve Saldırı Vektörleri

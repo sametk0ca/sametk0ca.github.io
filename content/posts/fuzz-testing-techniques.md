@@ -7,6 +7,7 @@ categories: ["Security Testing"]
 ---
 
 
+
 Fuzzing veya Fuzz Testi, yazılım sistemlerindeki beklenmedik davranışları ve güvenlik açıklarını tespit etmek için kullanılan dinamik bir analiz tekniğidir. Bu yöntem, bir hedef programa büyük hacimli, rastgele veya yarı-yapılandırılmış veriler göndererek sistemin çökmesine (crash) veya anormal bir duruma geçmesine neden olan girdilerin belirlenmesine dayanır. Modern güvenlik ekosisteminde fuzzing, özellikle sıfırıncı gün (zero-day) açıklarının keşfinde kritik bir rol oynar.
 
 ### Teknik Taksonomi ve Metodolojiler
@@ -38,4 +39,5 @@ Fuzzing techniques are classified according to the level of access to the softwa
 ### Standards and Technical Challenges
 
 The ISO/IEC 29119-4 standard provides a methodological basis for the use of dynamic analysis techniques such as fuzzing in software testing. However, due to the complexity of modern systems, technical challenges such as "Path Explosion" and "Semantic Gap" persist. Integration with tools like AddressSanitizer (ASan) is vital for detecting memory safety vulnerabilities (buffer overflow, use-after-free).
+
 

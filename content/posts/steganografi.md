@@ -27,6 +27,7 @@ Steganografi farklı medya türleri aracılığıyla yapılabilir:
 
 
 
+
 ## Steganografinin Kullanım Alanları
 
 1. **Güvenli İletişim:** Özellikle gizli servisler veya hassas verileri iletmek isteyen bireyler, steganografi sayesinde mesajların görünürlüğünü azaltarak iletişim kurabilirler. Bilgi, gözle algılanamayacak bir şekilde saklanarak yalnızca ilgili alıcı tarafından çözülebilir.
@@ -48,6 +49,7 @@ Bir örnekle açıklayalım:
 - Eğer biz bu bileşende en sağdaki biti `0` yerine `1` olarak değiştirirsek, yeni değer `11101111` olur.
 
 Bu küçük değişiklik, pikselin rengini neredeyse fark edilmeyecek kadar az değiştirir. Bu sayede LSB yöntemiyle çok sayıda bit gizlenebilir. Steganografi işlemi boyunca, her pikselin LSB’si değiştirilerek, büyük bir mesajı küçük değişikliklerle saklamak mümkün olur.
+
 
 
 
@@ -81,6 +83,7 @@ Steganography can be applied to various media types:
 
 
 
+
 ## Applications of Steganography
 
 1. **Secure Communication:** Steganography allows secure communication by reducing the visibility of messages. Information can be concealed and decrypted only by the intended receiver, making it useful for sensitive communications.
@@ -102,6 +105,7 @@ Here’s a quick example:
 - If we change the LSB from `0` to `1`, the new value becomes `11101111`.
 
 This small change slightly alters the pixel’s color, but it’s hardly noticeable. By modifying the LSB of many pixels, a significant amount of data can be hidden within the image.
+
 
 
 

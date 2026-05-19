@@ -7,6 +7,7 @@ categories: ["Knowledge Base"]
 ---
 
 
+
 Siber tehdit istihbaratı (CTI) dünyasında, bir saldırıyı anlamak sadece kullanılan zararlı yazılımı bilmekten ibaret değildir. **Adversary Characterization (Saldırgan Karakterizasyonu)**, saldırganın motivasyonunu, kapasitesini, niyetini ve kullandığı metodolojileri (TTPs - Tactics, Techniques, and Procedures) sistematik bir şekilde tanımlama sürecidir. Bu süreç, savunma stratejilerinin "reaktif" bir yapıdan "proaktif" bir yapıya geçmesini sağlar.
 
 ### Analitik Modeller ve Metodolojiler

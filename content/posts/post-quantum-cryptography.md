@@ -7,6 +7,7 @@ categories: ["Security Future"]
 ---
 
 
+
 Kuantum bilgisayarların gelişimi, günümüzde dijital güvenliğin temelini oluşturan asimetrik şifreleme yöntemleri (RSA, ECC) için varoluşsal bir tehdit oluşturmaktadır. Shor Algoritması'nın kuantum işlemciler üzerinde çalışması, klasik bilgisayarlar için çözülmesi imkansız kabul edilen tamsayı çarpanlarına ayırma (factoring) ve ayrık logaritma (discrete log) problemlerini polinom zamanda çözebilmektedir. **Post-Kuantum Kriptografi (PQC)**, kuantum bilgisayarların saldırılarına karşı dirençli matematiksel temellere dayanan yeni nesil kriptografik sistemleri temsil eder.
 
 ### Matematiksel Temeller ve Algoritmalar

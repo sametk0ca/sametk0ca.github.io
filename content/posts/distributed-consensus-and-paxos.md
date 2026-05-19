@@ -7,6 +7,7 @@ categories: ["Knowledge Base"]
 ---
 
 
+
 Dağıtık sistemlerin temel problemi, ağ arızaları veya düğüm (node) çökmeleri durumunda bile tüm katılımcıların tek bir değer üzerinde hemfikir olmasını sağlamaktır. **Dağıtık Konsensüs (Distributed Consensus)**, modern bulut altyapılarının, veritabanlarının ve blokzincir sistemlerinin tutarlılığını (consistency) sağlayan temel mekanizmadır. Bu alandaki en önemli teorik çalışma olan **Paxos Algoritması**, güvenilir olmayan bir ağ üzerinde konsensüs sağlamanın matematiksel ispatını sunar.
 
 ### Teknik Zorluklar ve FLP Teoremi

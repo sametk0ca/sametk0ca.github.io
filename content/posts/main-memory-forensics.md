@@ -7,6 +7,7 @@ categories: ["Digital Forensics"]
 ---
 
 
+
 Modern siber saldırılar, geleneksel disk tabanlı adli bilişim (forensics) yöntemlerini atlatmak için giderek daha karmaşık hale gelmektedir. "Fileless" (dosyasız) zararlı yazılımlar ve doğrudan bellekte (RAM) çalışan kodlar, adli bilişim uzmanlarını **Bellek Adli Bilişimi (Memory Forensics)** tekniklerine yöneltmektedir. Bu disiplin, sistemin çalışma zamanındaki (run-time) durumunu analiz ederek, diskte iz bırakmayan saldırı kanıtlarını ortaya çıkarmayı amaçlar.
 
 ### Teknik Mekanizmalar ve Veri Yapıları

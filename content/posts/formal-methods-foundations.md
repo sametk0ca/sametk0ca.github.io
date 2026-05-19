@@ -7,6 +7,7 @@ categories: ["Advanced Security"]
 ---
 
 
+
 Yazılım ve donanım sistemlerinin karmaşıklığı arttıkça, geleneksel test yöntemleri tüm olası hata durumlarını kapsamakta yetersiz kalmaktadır. **Formal Metotlar (Formal Methods)**, bir sistemin spesifikasyonlarına (tasarım özelliklerine) uygunluğunu matematiksel olarak kanıtlama sürecidir. Bu disiplin, güvenlik açısından kritik sistemlerde (havacılık, tıp, nükleer) "hatasızlık" garantisi sağlamak için kullanılan en ileri tekniktir.
 
 ### Teknik Yaklaşımlar ve Araçlar

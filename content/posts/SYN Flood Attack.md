@@ -7,6 +7,7 @@ categories: ["Writeups"]
 ---
 
 
+
 ## 🇹🇷 Türkçe Versiyon
 
 Siber güvenlik dünyasında saldırı yöntemleri, isimleri karmaşık olsa da genellikle günlük hayattaki davranışların dijital yansımalarıdır. Bugün, bir sunucuyu devre dışı bırakmanın en klasik yollarından biri olan **SYN Flood** saldırısını inceleyeceğiz.
@@ -36,6 +37,7 @@ Senaryo şöyle gelişir:
 3. **Ve sessizlik…** Saldırgan, son onay mesajı olan **ACK** paketini asla göndermez.
 
 Sunucu, karşı taraftan cevap gelmeyince “Belki bağlantısı yavaştır” diye düşünerek beklemeye devam eder. Bu duruma **Half-Open (Yarı Açık) Bağlantı** denir.
+
 
 
 
@@ -87,6 +89,7 @@ Here is the scenario:
 3. **Then, silence…** The attacker never sends the final **ACK** confirmation.
 
 The server, assuming the user might just have a slow connection, keeps the port open and waits. This state is called a **Half-Open connection**.
+
 
 
 

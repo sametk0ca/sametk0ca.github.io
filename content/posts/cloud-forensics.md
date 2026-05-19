@@ -7,6 +7,7 @@ categories: ["Digital Forensics"]
 ---
 
 
+
 Bulut bilişimin yaygınlaşması, adli bilişim (forensics) süreçlerini "fiziksel erişim" paradigmasından "uzaktan ve API tabanlı" bir yapıya dönüştürmüştür. **Cloud Forensics (Bulut Adli Bilişimi)**, bulut ortamlarında (IaaS, PaaS, SaaS) gerçekleşen siber olayların tespiti, analizi ve kanıtlanması sürecidir. Bu disiplin, geleneksel adli bilişime kıyasla benzersiz teknik ve hukuksal zorluklar barındırır.
 
 ### Teknik Katmanlar ve Kanıt Toplama

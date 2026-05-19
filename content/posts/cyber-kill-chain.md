@@ -7,6 +7,7 @@ categories: ["Knowledge Base"]
 ---
 
 
+
 Siber Ölüm Zinciri (Cyber Kill Chain), Lockheed Martin tarafından geliştirilen ve bir siber saldırının aşamalarını sistematik bir şekilde analiz eden yapısal bir çerçevedir. Bu model, saldırganların hedeflerine ulaşmak için tamamlaması gereken yedi aşamalı bir süreci tanımlar. Modern siber güvenlik operasyonlarında, bu zincirin herhangi bir halkasını kırmak, saldırıyı etkisiz hale getirmek için yeterlidir.
 
 ### Teknik Aşamalar ve Mekanizmalar
@@ -46,4 +47,5 @@ The Cyber Kill Chain is directly related to the "Adversarial Behaviour" and "Mal
 ### Defense Strategies and Standards
 
 The ISO/IEC 27035 (Incident Management) and NIST SP 800-61 (Incident Handling Guide) frameworks define the controls necessary to break this chain. According to the "Defense-in-Depth" principle, specialized detection (IDS/IPS), prevention (NGFW), and analysis (EDR/SIEM) solutions must be integrated for each stage.
+
 

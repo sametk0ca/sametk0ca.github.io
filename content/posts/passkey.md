@@ -21,6 +21,7 @@ Bu konsepti basitçe şöyle özetleyebiliriz: Cihazınızda gizli tutulan bir *
 "bir web sitesine parolanızı yazmak yerine, size bir token gönderirler, siz onu özel anahtarınızla imzalarsınız, onlar da bunu açık anahtarınızla doğrulayarak içeri girmenize izin verirler"
 
 
+
 **2. Neredeyse Tamamen Oltalama (Phishing) Saldırılarına Karşı Korumalıdır**
 
 Bu, Passkey'lerin parolalara kıyasla en büyük avantajlarından biridir. Peki bu nasıl mümkün oluyor? Bir Passkey oluşturulduğunda, doğası gereği web sitesinin belirli alan adına (örneğin, `amazon.co.uk`) bağlanır.
@@ -73,6 +74,7 @@ The most fundamental thing to understand about Passkeys is that they are not bas
 We can simplify this concept as follows: You have two keys—a **private key** kept secret on your device and a **public key** shared with the website you want to log in to. The purpose of this system is not to encrypt data, but to prove your identity beyond dispute using a digital signature. The process generally works like this: The website sends you a unique "challenge" (token); the "authenticator" on your device signs this token with your private key. The website then verifies this signature using your public key and grants you access. This method proves you are who you say you are without ever sending a "secret" over the internet.
 
 > "Instead of typing your password into a website, they send you a token, you sign it with your private key, and they allow you in by verifying it with your public key."
+
 
 
 
