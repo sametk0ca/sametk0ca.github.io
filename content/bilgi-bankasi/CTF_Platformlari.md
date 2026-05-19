@@ -2,8 +2,7 @@
 title = "CTF Platformları ve Öğrenme Kaynakları"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "CTFs"]
-categories = ["Eğitim"]
+categories = ["CTFs"]
 type = "bilgi-bankasi"
 +++
 

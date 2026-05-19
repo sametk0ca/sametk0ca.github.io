@@ -2,8 +2,7 @@
 title = "Snapshot ve Klonlama Yönetimi"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Virtualization"]
-categories = ["Eğitim"]
+categories = ["Virtualization"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "Proxy Sunucuları (Forward vs Reverse Proxy)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

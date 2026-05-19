@@ -2,8 +2,7 @@
 title = "Sayısal İmzalar ve Sertifika Otoriteleri (CA)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Cryptography"]
-categories = ["Eğitim"]
+categories = ["Cryptography"]
 type = "bilgi-bankasi"
 +++
 

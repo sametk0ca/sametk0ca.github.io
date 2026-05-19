@@ -2,8 +2,7 @@
 title = "WiFi Standartları (802.11)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Hardware"]
-categories = ["Eğitim"]
+categories = ["Hardware"]
 type = "bilgi-bankasi"
 +++
 

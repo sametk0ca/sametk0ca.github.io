@@ -2,8 +2,7 @@
 title = "IAM (Identity  Access Management) Temelleri"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Principles"]
-categories = ["Eğitim"]
+categories = ["Principles"]
 type = "bilgi-bankasi"
 +++
 

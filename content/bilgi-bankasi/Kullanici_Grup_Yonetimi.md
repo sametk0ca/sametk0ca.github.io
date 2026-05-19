@@ -2,8 +2,7 @@
 title = "Kullanıcı ve Grup Yönetimi (IAM Temelleri)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "OS"]
-categories = ["Eğitim"]
+categories = ["OS"]
 type = "bilgi-bankasi"
 +++
 

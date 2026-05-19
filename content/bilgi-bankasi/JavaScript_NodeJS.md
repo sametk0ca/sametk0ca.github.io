@@ -2,8 +2,7 @@
 title = "JavaScript  Node.js"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Programming"]
-categories = ["Eğitim"]
+categories = ["Programming"]
 type = "bilgi-bankasi"
 +++
 

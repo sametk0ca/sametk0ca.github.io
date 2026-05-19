@@ -2,8 +2,7 @@
 title = "SSO (Single Sign-On) Mekanizmaları"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Principles"]
-categories = ["Eğitim"]
+categories = ["Principles"]
 type = "bilgi-bankasi"
 +++
 

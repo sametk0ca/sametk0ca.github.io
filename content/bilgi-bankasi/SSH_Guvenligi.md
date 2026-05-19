@@ -2,8 +2,7 @@
 title = "SSH (Secure Shell) - Güvenli Erişim ve Anahtar Tabanlı Kimlik Doğrulama"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

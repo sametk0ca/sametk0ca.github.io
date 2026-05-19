@@ -2,8 +2,7 @@
 title = "Brute Force vs Password Spraying"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Attacks"]
-categories = ["Eğitim"]
+categories = ["Attacks"]
 type = "bilgi-bankasi"
 +++
 

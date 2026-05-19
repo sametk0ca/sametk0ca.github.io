@@ -2,8 +2,7 @@
 title = "SOAR (Security Orchestration, Automation and Response)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Defense"]
-categories = ["Eğitim"]
+categories = ["Defense"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "LDAP (Lightweight Directory Access Protocol)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

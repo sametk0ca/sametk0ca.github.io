@@ -2,8 +2,7 @@
 title = "Sorun Giderme Araçları - Bölüm 3: ipconfig, netstat, arp"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

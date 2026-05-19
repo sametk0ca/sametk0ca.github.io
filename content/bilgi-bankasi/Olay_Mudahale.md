@@ -2,8 +2,7 @@
 title = "Olay Müdahale Süreci (Incident Response)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "IncidentResponse"]
-categories = ["Eğitim"]
+categories = ["IncidentResponse"]
 type = "bilgi-bankasi"
 +++
 

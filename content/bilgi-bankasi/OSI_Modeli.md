@@ -2,8 +2,7 @@
 title = "OSI Modeli - 7 Katman Detayı ve Güvenlik Bakışı"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "SIEM (Security Information and Event Management)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Defense"]
-categories = ["Eğitim"]
+categories = ["Defense"]
 type = "bilgi-bankasi"
 +++
 

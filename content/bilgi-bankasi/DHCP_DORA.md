@@ -2,8 +2,7 @@
 title = "DHCP (Dynamic Host Configuration Protocol) - DORA Süreci"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "VirtualBox Yapılandırması ve Ağ Modları"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Virtualization"]
-categories = ["Eğitim"]
+categories = ["Virtualization"]
 type = "bilgi-bankasi"
 +++
 

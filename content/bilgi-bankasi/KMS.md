@@ -2,8 +2,7 @@
 title = "Cloud Key Management Service (KMS)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Cloud"]
-categories = ["Eğitim"]
+categories = ["Cloud"]
 type = "bilgi-bankasi"
 +++
 

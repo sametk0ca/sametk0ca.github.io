@@ -2,8 +2,7 @@
 title = "SOC 2 Uyumluluğu"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Legal_Compliance"]
-categories = ["Eğitim"]
+categories = ["Legal_Compliance"]
 type = "bilgi-bankasi"
 +++
 

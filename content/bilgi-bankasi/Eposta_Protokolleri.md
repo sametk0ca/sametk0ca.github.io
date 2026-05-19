@@ -2,8 +2,7 @@
 title = "SMTP  POP3  IMAP - E-posta Protokolleri ve Güvenlik"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

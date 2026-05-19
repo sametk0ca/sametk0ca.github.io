@@ -2,8 +2,7 @@
 title = "Siber Güvenlik Araçları"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Tools"]
-categories = ["Eğitim"]
+categories = ["Tools"]
 type = "bilgi-bankasi"
 +++
 

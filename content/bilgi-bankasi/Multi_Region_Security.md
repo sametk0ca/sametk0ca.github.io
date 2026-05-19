@@ -2,8 +2,7 @@
 title = "Çok Bölgeli (Multi-Region) Güvenlik Planlaması"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "DevSecOps"]
-categories = ["Eğitim"]
+categories = ["DevSecOps"]
 type = "bilgi-bankasi"
 +++
 

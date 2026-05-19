@@ -2,8 +2,7 @@
 title = "Güvenli Ağ Bölgeleme (Network Zoning)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "DevSecOps"]
-categories = ["Eğitim"]
+categories = ["DevSecOps"]
 type = "bilgi-bankasi"
 +++
 

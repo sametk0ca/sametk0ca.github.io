@@ -2,8 +2,7 @@
 title = "Siber Güvenlik Sertifikaları"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Certifications"]
-categories = ["Eğitim"]
+categories = ["Certifications"]
 type = "bilgi-bankasi"
 +++
 

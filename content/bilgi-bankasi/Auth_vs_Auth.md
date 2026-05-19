@@ -2,8 +2,7 @@
 title = "Authentication vs Authorization (Kimlik vs Yetki)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Principles"]
-categories = ["Eğitim"]
+categories = ["Principles"]
 type = "bilgi-bankasi"
 +++
 

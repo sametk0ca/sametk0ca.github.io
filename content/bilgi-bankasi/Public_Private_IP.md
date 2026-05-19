@@ -2,8 +2,7 @@
 title = "Public vs Private IP Farkları ve NAT Mekanizması"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Networking"]
-categories = ["Eğitim"]
+categories = ["Networking"]
 type = "bilgi-bankasi"
 +++
 

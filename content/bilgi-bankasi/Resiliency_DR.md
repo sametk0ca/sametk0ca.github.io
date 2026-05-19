@@ -2,8 +2,7 @@
 title = "Resiliency ve Olağanüstü Durum Kurtarma (DR)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Principles"]
-categories = ["Eğitim"]
+categories = ["Principles"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "Hypervisor Türleri (Type 1 vs Type 2)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Virtualization"]
-categories = ["Eğitim"]
+categories = ["Virtualization"]
 type = "bilgi-bankasi"
 +++
 

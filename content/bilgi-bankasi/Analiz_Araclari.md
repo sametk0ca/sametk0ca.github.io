@@ -2,8 +2,7 @@
 title = "Analiz Araçları (VirusTotal, Any.run, WHOIS)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Defense"]
-categories = ["Eğitim"]
+categories = ["Defense"]
 type = "bilgi-bankasi"
 +++
 

@@ -1,41 +1,31 @@
 ---
-title: "📚 Siber Güvenlik Bilgi Bankası"
+title: "Siber Güvenlik Bilgi Bankası"
 date: 2026-05-19
 draft: false
-description: "Sıfırdan siber güvenlik öğrenmek isteyenler için kategorize edilmiş teknik rehberler ve temel kavramlar."
+description: "Teknik rehberler ve temel kavramlar bilgi bankası."
 ---
 
-Bu sayfa, siber güvenlik dünyasına adım atmak isteyenler için hazırlanmış kapsamlı bir bilgi bankasıdır. Aşağıdaki kategoriler üzerinden temel bilişim temellerinden ileri seviye saldırı ve savunma tekniklerine kadar tüm konulara ulaşabilirsiniz.
+Bu sayfa, siber güvenlik dünyasına dair teknik konuların derlendiği kapsamlı bir bilgi bankasıdır.
 
-## 🚀 Öğrenme Yolculuğu
+## Kategoriler
 
-### 1. Bilişim ve Ağ Temelleri
-Bilgisayarların ve ağların nasıl çalıştığını anlamadan siber güvenlik öğrenilemez.
-- **Donanım:** CPU, RAM, Depolama ve Kablosuz teknolojiler.
-- **Ağ (Networking):** OSI Modeli, TCP/IP, DNS, HTTP/S ve temel protokoller.
-- **İşletim Sistemleri:** Windows ve Linux temelleri, dosya sistemleri ve CLI navigasyonu.
-- **Sanallaştırma:** Hypervisor teknolojileri ve konteyner yapılar.
-
-### 2. Güvenlik Prensipleri ve Mimari
-- **CIA Triad:** Gizlilik, Bütünlük ve Erişilebilirlik.
-- **Savunma Stratejileri:** Defense in Depth ve Zero Trust mimarileri.
-- **Kriptografi:** Hashing, şifreleme ve PKI bilesenleri.
-
-### 3. Saldırı Türleri ve Metodolojileri
-Düşmanı tanımak savunmanın ilk adımıdır.
-- **Sosyal Mühendislik:** Oltalama (Phishing) ve manipülasyon teknikleri.
-- **Teknik Saldırılar:** SQL Injection, XSS, CSRF, Buffer Overflow ve daha fazlası.
-- **Frameworkler:** MITRE ATT&CK ve Cyber Kill Chain.
-
-### 4. Savunma ve İzleme
-- **SIEM & EDR:** Tehdit tespiti ve olay müdahale araçları.
-- **Log Analizi:** Windows ve Linux sistem loglarının incelenmesi.
-- **Adli Bilişim:** Forensics temelleri ve zararlı yazılım analizi.
-
-### 5. Yazılım ve Bulut Güvenliği (DevSecOps)
-- **Güvenli Kodlama:** Yazılım geliştirme yaşam döngüsünde (SDLC) güvenlik.
-- **Konteyner Güvenliği:** Docker ve Kubernetes sıkılaştırma.
-- **Bulut Güvenliği:** CSPM, IAM ve KMS yönetimi.
+- [Saldırı Teknikleri (Attacks)](/categories/attacks/)
+- [Ağ Güvenliği (Networking)](/categories/networking/)
+- [İşletim Sistemleri (OS)](/categories/os/)
+- [Yazılım ve Bulut Güvenliği (DevSecOps)](/categories/devsecops/)
+- [Savunma ve İzleme (Defense)](/categories/defense/)
+* [Kriptografi (Cryptography)](/categories/cryptography/)
+* [Donanım (Hardware)](/categories/hardware/)
+* [Programlama (Programming)](/categories/programming/)
+* [Prensipler (Principles)](/categories/principles/)
+* [Sanallaştırma (Virtualization)](/categories/virtualization/)
+* [Araçlar (Tools)](/categories/tools/)
+* [Olay Müdahale (IncidentResponse)](/categories/incidentresponse/)
+* [Hukuk ve Uyum (Legal_Compliance)](/categories/legal_compliance/)
+* [Sertifikalar (Certifications)](/categories/certifications/)
+* [Bulut (Cloud)](/categories/cloud/)
+* [Frameworkler (Frameworks)](/categories/frameworks/)
+* [CTFs](/categories/ctfs/)
 
 ---
 

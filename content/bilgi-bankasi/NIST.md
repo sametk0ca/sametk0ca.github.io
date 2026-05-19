@@ -2,8 +2,7 @@
 title = "NIST Cybersecurity Framework (CSF)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Frameworks"]
-categories = ["Eğitim"]
+categories = ["Frameworks"]
 type = "bilgi-bankasi"
 +++
 

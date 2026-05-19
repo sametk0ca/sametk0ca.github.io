@@ -2,8 +2,7 @@
 title = "Docker Güvenliği ve Hardening"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "DevSecOps"]
-categories = ["Eğitim"]
+categories = ["DevSecOps"]
 type = "bilgi-bankasi"
 +++
 

@@ -2,8 +2,7 @@
 title = "CSPM (Cloud Security Posture Management)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "Cloud"]
-categories = ["Eğitim"]
+categories = ["Cloud"]
 type = "bilgi-bankasi"
 +++
 

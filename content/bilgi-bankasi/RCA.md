@@ -2,8 +2,7 @@
 title = "Kök Neden Analizi (Root Cause Analysis - RCA)"
 date = "2026-05-19"
 draft = false
-tags = ["Bilgi Bankası", "IncidentResponse"]
-categories = ["Eğitim"]
+categories = ["IncidentResponse"]
 type = "bilgi-bankasi"
 +++
 
