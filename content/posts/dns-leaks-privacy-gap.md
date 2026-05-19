@@ -4,7 +4,6 @@ date: 2026-05-12
 description: "An in-depth look at DNS leaks, how they bypass VPN security, and technical methods to prevent them."
 tags: ["Privacy", "CyberSecurity", "Networking", "VPN"]
 categories: ["Blog"]
-ShowToc: true
 math: false
 mermaid: true
 ---

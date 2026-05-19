@@ -1,5 +1,4 @@
 ---
-ShowToc: true
 title: "Passkey"
 date: 2026-03-31
 draft: false
@@ -61,7 +60,6 @@ Passkey'ler, oltalama gibi uzun süredir devam eden birçok sorunu çözen, paro
 Peki, tüm dijital kimliğimizi tek bir cihazı kaybetmenin bizi dışarıda bırakabileceği bir sisteme emanet etmeye hazır mıyız, yoksa eski ve kusurlu parolalarımız daha uzun yıllar boyunca güvenlik ağımız olmaya devam mı edecek?
 
 ---
-ShowToc: true
 
 # Is This the End of Passwords?
 

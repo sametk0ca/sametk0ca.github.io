@@ -4,7 +4,6 @@ date: 2026-04-15
 description: "Exploring the security challenges of autonomous AI agents in 2026, including Indirect Injection and Excessive Agency. / 2026'da otonom yapay zeka ajanlarının karşılaştığı Dolaylı Enjeksiyon ve Aşırı Yetkilendirme gibi güvenlik zorluklarını inceliyoruz."
 tags: ["AI Security", "Autonomous Agents", "Prompt Injection", "Cyber-Frontier", "Agentic AI"]
 categories: ["Blog"]
-ShowToc: true
 math: false
 mermaid: true
 ---

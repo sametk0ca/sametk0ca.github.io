@@ -54,7 +54,7 @@ paginate = 12
 [params]
   ShowRelatedPosts = true
   mainSections = ["posts"]
-  ShowToc = true
+  ShowToc = false
   defaultTheme = "dark"
   author = "Samet Koca"
   ShowReadingTime = true
