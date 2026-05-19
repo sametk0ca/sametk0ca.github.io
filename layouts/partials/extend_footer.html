@@ -1,0 +1,10 @@
+{{- if .IsPage -}}
+<div class="newsletter-container" style="margin-top: 50px; padding: 30px; border: 1px solid var(--border); border-radius: 12px; text-align: center; background: var(--code-bg);">
+    <h3 style="margin-top: 0;">Stay Updated</h3>
+    <p style="font-size: 0.9em; opacity: 0.8;">Get the latest cybersecurity insights delivered to your inbox.</p>
+    <form action="https://buttondown.email/api/emails/embed-subscribe/sametk0ca" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/sametk0ca', 'popupwindow')" class="embeddable-buttondown-form" style="margin-top: 20px;">
+        <input type="email" name="email" id="bd-email" placeholder="Enter your email" required style="padding: 10px 15px; border-radius: 6px; border: 1px solid var(--border); background: var(--theme); color: var(--primary); width: 100%; max-width: 250px; margin-bottom: 10px;">
+        <input type="submit" value="Subscribe" style="padding: 10px 25px; border-radius: 6px; border: none; background: #32a852; color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">
+    </form>
+</div>
+{{- end -}}
