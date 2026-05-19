@@ -13,7 +13,7 @@ paginate = 12
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "bilgi-bankasi"
-        name = "Bilgi Bankası"
+        name = "Info Bank"
         url = "/bilgi-bankasi/"
         weight = 5
       [[languages.en.menu.main]]

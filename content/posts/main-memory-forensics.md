@@ -1,5 +1,5 @@
 ---
-title: "Bellek Adli Bilişimi: RAM Analizi ve Olay Müdahale Teknikleri"
+title: "Bellek Adli Bilişimi"
 date: 2026-05-19
 draft: false
 tags: ["Forensics", "DFIR", "Malware Analysis", "CyBOK"]

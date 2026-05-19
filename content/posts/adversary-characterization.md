@@ -1,5 +1,5 @@
 ---
-title: "Adversary Characterization: Tehdit Aktörlerinin Analizi ve TTP Modelleme"
+title: "Adversary Characterization"
 date: 2026-05-19
 draft: false
 tags: ["Cyber Security", "Threat Intel", "Adversary Characterization", "CyBOK"]

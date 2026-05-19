@@ -1,5 +1,5 @@
 ---
-title: "Dağıtık Konsensüs ve Paxos: Güvenilir Sistemlerin Temelleri"
+title: "Dağıtık Konsensüs ve Paxos"
 date: 2026-05-19
 draft: false
 tags: ["Distributed Systems", "Consensus", "Paxos", "Raft", "CyBOK"]

@@ -1,11 +1,11 @@
 ---
-title: "Siber Güvenlik Bilgi Bankası"
+title: "Info Bank"
 date: 2026-05-19
 draft: false
-description: "Teknik rehberler ve temel kavramlar bilgi bankası."
+description: "Technical reference and knowledge base."
 ---
 
-Bu sayfa, siber güvenlik dünyasına dair teknik konuların derlendiği kapsamlı bir bilgi bankasıdır.
+This page is a comprehensive knowledge base of technical security topics.
 
 ## Kategoriler
 

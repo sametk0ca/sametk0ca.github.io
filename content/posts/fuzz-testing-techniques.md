@@ -1,5 +1,5 @@
 ---
-title: "Fuzz Testing: Yazılım Güvenliği ve Zafiyet Analizinde Otomasyon"
+title: "Fuzz Testing"
 date: 2026-05-19
 draft: false
 tags: ["Software Security", "Bug Hunting", "Fuzzing", "CyBOK"]
