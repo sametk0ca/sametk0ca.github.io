@@ -12,6 +12,11 @@ main.main {
     padding: 0 var(--gap) !important;
 }
 
+/* Post grid wrapper - grid child olarak davranması için */
+.post-grid {
+    display: contents !important;
+}
+
 /* Full-width elementler */
 main.main .page-header,
 main.main .post-content,
