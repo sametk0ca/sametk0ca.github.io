@@ -33,6 +33,7 @@ paginate = 12
         weight = 30
 
 [params]
+  mainSections = ["posts"]
   ShowToc = true
   defaultTheme = "dark"
   author = "Samet Koca"
