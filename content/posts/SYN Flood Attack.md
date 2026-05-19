@@ -4,13 +4,8 @@ date: 2026-01-04
 draft: false
 tags: ["DDoS", "Network Security", "Red Team"]
 categories: ["Writeups"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:700/1*iDPkUSm6uV9S4Mu7yCK_9A.png"
-    alt: "SYN Flood Attack"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:700/1*iDPkUSm6uV9S4Mu7yCK_9A.png)
 
 ## 🇹🇷 Türkçe Versiyon
 
@@ -44,7 +39,6 @@ Sunucu, karşı taraftan cevap gelmeyince “Belki bağlantısı yavaştır” d
 
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*6TBxLs7HJN6fyEtwZcCKYw.png)
 
 ### Sunucu Neden Çöküyor?
 
@@ -95,7 +89,6 @@ Here is the scenario:
 The server, assuming the user might just have a slow connection, keeps the port open and waits. This state is called a **Half-Open connection**.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*6TBxLs7HJN6fyEtwZcCKYw.png)
 
 ### Why Does the Server Crash?
 

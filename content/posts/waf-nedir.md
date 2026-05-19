@@ -4,10 +4,6 @@ date: 2026-04-04
 draft: false
 tags: ["WAF", "Web Security", "Cybersecurity", "Firewall", "Application Security"]
 categories: ["Security Tech"]
-cover:
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-    alt: "Web Application Firewall Illustration"
-    relative: false
 ---
 
 # [TR] WAF (Web Application Firewall) Nedir?

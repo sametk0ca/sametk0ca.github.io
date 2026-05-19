@@ -4,10 +4,6 @@ date: 2026-01-04
 draft: false
 tags: ["Cryptography", "Steganography"]
 categories: ["Writeups"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:700/1*p3tvvzQk7A6tDtmDc9uIxA.jpeg"
-    alt: "Steganography"
-    relative: false
 ---
 
 ## Steganografi Nedir?
@@ -30,7 +26,6 @@ Steganografi farklı medya türleri aracılığıyla yapılabilir:
 4. **Metin Steganografisi:** İlk bakışta fark edilmeyen harfler ya da boşluklar kullanılarak, metin dosyalarında bilgi saklanabilir. Bu yöntem, eski bir tekniktir ve daha çok düşük hacimli bilgi saklama için uygundur.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*p3tvvzQk7A6tDtmDc9uIxA.jpeg)
 
 ## Steganografinin Kullanım Alanları
 
@@ -56,7 +51,6 @@ Bu küçük değişiklik, pikselin rengini neredeyse fark edilmeyecek kadar az d
 
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*XI3yGfKYW35GkI1VCXaX6w.jpeg)
 
 LSB
 
@@ -86,7 +80,6 @@ Steganography can be applied to various media types:
 
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*p3tvvzQk7A6tDtmDc9uIxA.jpeg)
 
 ## Applications of Steganography
 
@@ -111,7 +104,6 @@ Here’s a quick example:
 This small change slightly alters the pixel’s color, but it’s hardly noticeable. By modifying the LSB of many pixels, a significant amount of data can be hidden within the image.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*XI3yGfKYW35GkI1VCXaX6w.jpeg)
 
 LSB
 

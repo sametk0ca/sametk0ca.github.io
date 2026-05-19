@@ -4,13 +4,8 @@ date: 2026-01-04
 draft: false
 tags: ["Blue Team", "Network Security"]
 categories: ["Writeups"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:700/1*aQlsJnw6hAkpfWJZoI5X2Q.jpeg"
-    alt: "Honeypot"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:700/1*aQlsJnw6hAkpfWJZoI5X2Q.jpeg)
 
 Siber güvenlik dünyasında saldırganları analiz etmek ve güvenlik açıklarını tespit etmek için kullanılan etkili yöntemlerden biri **honeypot** sistemleridir. Honeypot, kötü niyetli aktörleri kendine çekerek, saldırı yöntemlerini anlamaya ve savunma mekanizmalarını geliştirmeye yardımcı olan bir tuzak sistemidir. Bu makalede, honeypotların nasıl çalıştığını, türlerini ve neden önemli olduklarını ele alacağız.
 
@@ -20,7 +15,6 @@ Honeypot, gerçek bir sistem gibi davranan ancak aslında saldırganları kandı
 
 
 
-![](https://miro.medium.com/v2/resize:fit:600/1*5B8gsWS5eeWO860QgGOxtw.jpeg)
 
 ## Honeypot Türleri
 
@@ -58,7 +52,6 @@ A honeypot is a system that mimics a real network or server but is actually desi
 
 
 
-![](https://miro.medium.com/v2/resize:fit:600/1*5B8gsWS5eeWO860QgGOxtw.jpeg)
 
 ## Types of Honeypots
 

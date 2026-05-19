@@ -4,13 +4,8 @@ date: 2026-05-19
 draft: false
 tags: ["Cyber Security", "Threat Intel", "Adversary Characterization", "CyBOK"]
 categories: ["Knowledge Base"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png"
-    alt: "Adversary Characterization"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png)
 
 Siber tehdit istihbaratı (CTI) dünyasında, bir saldırıyı anlamak sadece kullanılan zararlı yazılımı bilmekten ibaret değildir. **Adversary Characterization (Saldırgan Karakterizasyonu)**, saldırganın motivasyonunu, kapasitesini, niyetini ve kullandığı metodolojileri (TTPs - Tactics, Techniques, and Procedures) sistematik bir şekilde tanımlama sürecidir. Bu süreç, savunma stratejilerinin "reaktif" bir yapıdan "proaktif" bir yapıya geçmesini sağlar.
 

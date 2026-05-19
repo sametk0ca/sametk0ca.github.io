@@ -5,10 +5,6 @@ date: 2026-03-31
 draft: false
 tags: ["Cybersecurity", "Trends", "AI", "2026"]
 categories: ["Blog"]
-cover:
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-    alt: "Cybersecurity 2026"
-    relative: false
 ---
 
 

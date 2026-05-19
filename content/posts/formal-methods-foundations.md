@@ -4,13 +4,8 @@ date: 2026-05-19
 draft: false
 tags: ["Formal Methods", "Verification", "Software Security", "CyBOK"]
 categories: ["Advanced Security"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png"
-    alt: "Formal Methods"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png)
 
 Yazılım ve donanım sistemlerinin karmaşıklığı arttıkça, geleneksel test yöntemleri tüm olası hata durumlarını kapsamakta yetersiz kalmaktadır. **Formal Metotlar (Formal Methods)**, bir sistemin spesifikasyonlarına (tasarım özelliklerine) uygunluğunu matematiksel olarak kanıtlama sürecidir. Bu disiplin, güvenlik açısından kritik sistemlerde (havacılık, tıp, nükleer) "hatasızlık" garantisi sağlamak için kullanılan en ileri tekniktir.
 

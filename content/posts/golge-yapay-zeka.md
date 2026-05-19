@@ -5,10 +5,6 @@ date: 2026-03-31
 draft: false
 tags: ["AI", "Shadow AI", "Security", "Risk Management"]
 categories: ["Blog"]
-cover:
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
-    alt: "Shadow AI"
-    relative: false
 ---
 
 

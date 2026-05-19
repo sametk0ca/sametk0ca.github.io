@@ -4,10 +4,6 @@ date: 2026-05-19
 draft: false
 tags: ["Cryptography", "Quantum Computing", "NIST", "CyBOK"]
 categories: ["Security Future"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:1000/1*M9y8z7x6c5v4b3n2m1.png"
-    alt: "Post-Quantum Cryptography"
-    relative: false
 ---
 
 ![1033](https://miro.medium.com/v2/resize:fit:1000/1*M9y8z7x6c5v4b3n2m1.png)

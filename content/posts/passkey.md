@@ -5,10 +5,6 @@ date: 2026-03-31
 draft: false
 tags: ["Passkey", "Authentication", "Security", "Phishing"]
 categories: ["Blog"]
-cover:
-    image: "https://images.unsplash.com/photo-1633265485768-3066373f1721?q=80&w=2070&auto=format&fit=crop"
-    alt: "Passkeys"
-    relative: false
 ---
 
 

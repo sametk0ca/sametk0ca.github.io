@@ -4,17 +4,11 @@ date: 2026-01-04
 draft: false
 tags: ["Security Architecture", "Network Security"]
 categories: ["Writeups"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:700/0*nb18LJob45T401tt.jpeg"
-    alt: "Zero Trust"
-    relative: false
 ---
-![](https://miro.medium.com/v2/resize:fit:700/0*nb18LJob45T401tt.jpeg)
 
 “Zero Trust” (Sıfır Güven) modeli, günümüzde güvenlik alanında öne çıkan, güvenlik önlemlerini yalnızca ağın sınırında almak yerine tüm sistemde sıkı bir şekilde uygulayan bir yaklaşımdır. Bu modelde, hem kurum içinden hem de dışından gelen tüm erişim talepleri için sürekli kimlik doğrulaması yapılır. Zero Trust’ın temel prensibi, **“Asla güvenme, daima doğrula”** anlayışına dayanır. Yani, kimseye — içeriden veya dışarıdan — otomatik olarak güven duyulmaz; herkesin erişim talebi önce doğrulama sürecinden geçer.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/0*YXSoQ-LddcoO739X.jpg)
 
 **Zero Trust’ın Temel Bileşenleri**  
 Zero Trust’ın çalışma prensiplerini daha iyi anlamak için üç ana bileşene odaklanalım:
@@ -32,7 +26,6 @@ Zero Trust’ın çalışma prensiplerini daha iyi anlamak için üç ana bileş
 — Örnek: Şirketin finans departmanındaki dosyalar, yalnızca finans ekibindeki çalışanların erişimine açıktır. Başka bir departmandan veya dışarıdan bir erişim talebi geldiğinde, güvenlik doğrulamasından geçilmeden bu verilere ulaşılamaz.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*kwIcOhUXQDi6uRZ3Psfm0g.png)
 
 **Zero Trust Modelinin Faydaları**  
 Zero Trust modelinin uygulanması, birçok saldırı türünü engeller ve hassas verilere erişimi ciddi anlamda koruma altına alır.
@@ -46,7 +39,6 @@ Bu model özellikle bulut sistemlerinde güvenliği artırmak ve veri ihlallerin
 The “Zero Trust” model is a prominent security approach today that enforces strict security controls throughout the entire system, rather than only at the network perimeter. In this model, all access requests, whether from inside or outside the organization, are continuously authenticated. The core principle of Zero Trust is **”Never trust, always verify.”** In other words, no one — whether internal or external — is automatically trusted, and everyone’s access request must go through verification.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/0*YXSoQ-LddcoO739X.jpg)
 
 **Key Components of Zero Trust**  
 To better understand how Zero Trust operates, let’s focus on three main components:
@@ -64,7 +56,6 @@ To better understand how Zero Trust operates, let’s focus on three main compon
 — Example: Files in the company’s finance department are accessible only to employees in the finance team. If another department or external party tries to access this data, they must pass security verification.
 
 
-![](https://miro.medium.com/v2/resize:fit:700/1*kwIcOhUXQDi6uRZ3Psfm0g.png)
 
 **Benefits of the Zero Trust Model and Examples**  
 Implementing Zero Trust helps prevent many types of attacks and provides substantial protection for sensitive data.

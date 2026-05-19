@@ -7,10 +7,6 @@ categories: ["Blog"]
 ShowToc: true
 math: false
 mermaid: true
-cover:
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2070&auto=format&fit=crop"
-    alt: "Network Security and Zero Trust"
-    relative: false
 ---
 
 # (TR) Zero Trust Olgunluk Modeli: CISA 2.0 Yol Haritası

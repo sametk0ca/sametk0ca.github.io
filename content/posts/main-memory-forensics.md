@@ -4,13 +4,8 @@ date: 2026-05-19
 draft: false
 tags: ["Forensics", "DFIR", "Malware Analysis", "CyBOK"]
 categories: ["Digital Forensics"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:800/1*A1B2C3D4E5F6G7H8I9.png"
-    alt: "Memory Forensics"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:800/1*A1B2C3D4E5F6G7H8I9.png)
 
 Modern siber saldırılar, geleneksel disk tabanlı adli bilişim (forensics) yöntemlerini atlatmak için giderek daha karmaşık hale gelmektedir. "Fileless" (dosyasız) zararlı yazılımlar ve doğrudan bellekte (RAM) çalışan kodlar, adli bilişim uzmanlarını **Bellek Adli Bilişimi (Memory Forensics)** tekniklerine yöneltmektedir. Bu disiplin, sistemin çalışma zamanındaki (run-time) durumunu analiz ederek, diskte iz bırakmayan saldırı kanıtlarını ortaya çıkarmayı amaçlar.
 

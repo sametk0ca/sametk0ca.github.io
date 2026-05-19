@@ -5,10 +5,6 @@ date: 2026-03-31
 draft: false
 tags: ["AI Security", "Prompt Injection", "Large Language Models", "Cybersecurity"]
 categories: ["Blog"]
-cover:
-    image: "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=2070&auto=format&fit=crop"
-    alt: "AI Security"
-    relative: false
 ---
 
 

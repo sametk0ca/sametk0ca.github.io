@@ -4,13 +4,8 @@ date: 2026-05-19
 draft: false
 tags: ["Distributed Systems", "Consensus", "Paxos", "Raft", "CyBOK"]
 categories: ["Knowledge Base"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png"
-    alt: "Distributed Consensus"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png)
 
 Dağıtık sistemlerin temel problemi, ağ arızaları veya düğüm (node) çökmeleri durumunda bile tüm katılımcıların tek bir değer üzerinde hemfikir olmasını sağlamaktır. **Dağıtık Konsensüs (Distributed Consensus)**, modern bulut altyapılarının, veritabanlarının ve blokzincir sistemlerinin tutarlılığını (consistency) sağlayan temel mekanizmadır. Bu alandaki en önemli teorik çalışma olan **Paxos Algoritması**, güvenilir olmayan bir ağ üzerinde konsensüs sağlamanın matematiksel ispatını sunar.
 

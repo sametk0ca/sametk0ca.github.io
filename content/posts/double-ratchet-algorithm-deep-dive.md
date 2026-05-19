@@ -7,10 +7,6 @@ categories: ["Blog"]
 ShowToc: true
 math: true
 mermaid: true
-cover:
-    image: "https://images.unsplash.com/photo-1510511459019-5dee667ff58b?q=80&w=2070&auto=format&fit=crop"
-    alt: "Cryptography and Secure Data Transmission"
-    relative: false
 ---
 
 # (TR) Double Ratchet Algoritması: Mesajlarınız Nasıl Güvende Kalıyor?

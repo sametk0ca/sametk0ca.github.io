@@ -4,13 +4,8 @@ date: 2026-05-19
 draft: false
 tags: ["Cloud Security", "Forensics", "DFIR", "CyBOK"]
 categories: ["Digital Forensics"]
-cover:
-    image: "https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png"
-    alt: "Cloud Forensics"
-    relative: false
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1200/1*b_Xb-V7i-e_7n06yG9vWyg.png)
 
 Bulut bilişimin yaygınlaşması, adli bilişim (forensics) süreçlerini "fiziksel erişim" paradigmasından "uzaktan ve API tabanlı" bir yapıya dönüştürmüştür. **Cloud Forensics (Bulut Adli Bilişimi)**, bulut ortamlarında (IaaS, PaaS, SaaS) gerçekleşen siber olayların tespiti, analizi ve kanıtlanması sürecidir. Bu disiplin, geleneksel adli bilişime kıyasla benzersiz teknik ve hukuksal zorluklar barındırır.
 
