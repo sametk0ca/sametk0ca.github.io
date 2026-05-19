@@ -1,7 +1,7 @@
 ---
 title: "Adversary Characterization: Tehdit Aktörlerinin Analizi ve TTP Modelleme"
 date: 2026-04-11
-draft: true
+draft: false
 tags: ["Cyber Security", "Threat Intel", "Adversary Characterization", "CyBOK"]
 categories: ["Knowledge Base"]
 cover:

@@ -1,7 +1,7 @@
 ---
 title: "Bellek Adli Bilişimi: RAM Analizi ve Olay Müdahale Teknikleri"
 date: 2026-04-11
-draft: true
+draft: false
 tags: ["Forensics", "DFIR", "Malware Analysis", "CyBOK"]
 categories: ["Digital Forensics"]
 cover:

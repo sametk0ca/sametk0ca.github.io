@@ -1,7 +1,7 @@
 ---
 title: "Dağıtık Konsensüs ve Paxos: Güvenilir Sistemlerin Temelleri"
 date: 2026-04-11
-draft: true
+draft: false
 tags: ["Distributed Systems", "Consensus", "Paxos", "Raft", "CyBOK"]
 categories: ["Knowledge Base"]
 cover:
