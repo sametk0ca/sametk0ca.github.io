@@ -1,5 +1,5 @@
 ---
-title: "Formal Metotlar"
+title: "Formal Methods"
 date: 2026-05-19
 draft: false
 tags: ["Formal Methods", "Verification", "Software Security", "CyBOK"]

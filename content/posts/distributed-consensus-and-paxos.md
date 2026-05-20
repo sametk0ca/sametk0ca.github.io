@@ -1,5 +1,5 @@
 ---
-title: "Dağıtık Konsensüs ve Paxos"
+title: "Distributed Consensus and Paxos"
 date: 2026-05-19
 draft: false
 tags: ["Distributed Systems", "Consensus", "Paxos", "Raft", "CyBOK"]

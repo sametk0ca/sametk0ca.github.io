@@ -1,5 +1,5 @@
 ---
-title: "Post-Kuantum Kriptografi"
+title: "Post-Quantum Cryptography"
 date: 2026-05-19
 draft: false
 tags: ["Cryptography", "Quantum Computing", "NIST", "CyBOK"]

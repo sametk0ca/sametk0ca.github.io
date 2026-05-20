@@ -1,5 +1,5 @@
 ---
-title: "Bellek Adli Bilişimi"
+title: "Main Memory Forensics"
 date: 2026-05-19
 draft: false
 tags: ["Forensics", "DFIR", "Malware Analysis", "CyBOK"]

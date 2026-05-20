@@ -16,7 +16,7 @@ disableShare: true
 
 Merhaba, ben **Samet**.
 
-Yazılım mühendisi olarak siber güvenlik alanında, özellikle **SOC**, **Blue Team** ve saldırı analizleri üzerine çalışıyorum. Bu platformda çözdüğüm **CTF**'leri, **lab notlarımı** ve teknik incelemelerimi hem Türkçe hem de İngilizce olarak paylaşıyorum. Amacım hem kendime bir referans oluşturmak hem de topluluğa fayda sağlamak.
+Yazılım mühendisi olarak siber güvenlik alanında, özellikle **SOC**, **Blue Team** ve saldırı analizleri üzerine çalışıyorum. Bu platformda lab notlarımı ve teknik incelemelerimi hem Türkçe hem de İngilizce olarak paylaşıyorum. Amacım hem kendime bir referans oluşturmak hem de topluluğa fayda sağlamak.
 
 ---
 
@@ -24,7 +24,7 @@ Yazılım mühendisi olarak siber güvenlik alanında, özellikle **SOC**, **Blu
 
 Hello, I'm **Samet**.
 
-I'm a software engineer specializing in cybersecurity, with a focus on **SOC**, **Blue Team**, and attack analysis. I share my **CTF** writeups, **lab notes**, and technical research in both Turkish and English. My goal is to create a personal reference and contribute to the community.
+I'm a software engineer specializing in cybersecurity, with a focus on **SOC**, **Blue Team**, and attack analysis. I share my lab notes and technical research in both Turkish and English. My goal is to create a personal reference and contribute to the community.
 
 ---
 
