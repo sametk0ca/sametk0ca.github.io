@@ -45,3 +45,8 @@ SIEM solution has detection rules that catch threats. These rules play an import
 - If login is successful after multiple failed login attempts, raise an alert for `Successful Login After multiple Login Attempts`
 - A rule is set to alert every time a user plugs in a USB (Useful if USB is restricted as per the company policy)
 - If outbound traffic is > 25 MB, raise an alert to potential data exfiltration Attempt (Usually, it depends on the company policy)
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

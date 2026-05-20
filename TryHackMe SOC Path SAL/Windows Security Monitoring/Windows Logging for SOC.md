@@ -59,3 +59,7 @@ PowerShell, on the other hand, is a powerful all-in-one tool for managing the sy
 
 There are at least five methods to monitor PowerShell, each with its own pros and cons. While you can check out the [Logless Hunt](https://tryhackme.com/room/loglesshunt) room and research AMSI and Transcript Logging topics, in this room, we will focus on a simple but effective way to track PowerShell commands - ==the PowerShell history file:==
 
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

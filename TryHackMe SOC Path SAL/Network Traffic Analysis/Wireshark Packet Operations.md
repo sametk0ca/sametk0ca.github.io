@@ -11,7 +11,7 @@ This is Wireshark's most powerful feature. It supports 3000 protocols and allows
 
 Wireshark has a built-in option (Display Filter Expression) that stores all supported protocol structures to help analysts create display filters. We will cover the "Display Filter Expression" menu later. Now let's understand the fundamentals of the display filter operations. A quick reference is available under the **"Analyse --> Display Filters"** menu.
 
-![Wireshark - display filters](https://tryhackme-images.s3.amazonaws.com/user-uploads/6131132af49360005df01ae3/room-content/aa2ca30ccfff2d7eba16d031f0ab1f38.png)
+![Wireshark - display filters|637](https://tryhackme-images.s3.amazonaws.com/user-uploads/6131132af49360005df01ae3/room-content/aa2ca30ccfff2d7eba16d031f0ab1f38.png)
 
 ## Comparison Operators
 
@@ -79,3 +79,8 @@ Search a pattern of a regular expression. It is case insensitive, and complex qu
 Search a value or field inside of a specific scope/range.
 
 `tcp.port in {80 443 8080}`http.server matches "Microsoft-IIS/7\.5"
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

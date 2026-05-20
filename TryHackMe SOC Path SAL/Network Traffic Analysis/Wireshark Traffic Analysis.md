@@ -544,3 +544,8 @@ Elinizde hem `.pcap` dosyası hem de o oturuma ait `.log` (anahtar) dosyası var
 ### Özetle
 
 Bu görev sana şunu öğretiyor: "Şifreli trafiği (HTTPS) analiz etmek imkansız değildir, sadece doğru anahtara (Key Log File) ihtiyacın vardır." Anahtarı Wireshark'a verdiğin an, şifreli trafik şeffaf bir HTTP trafiğine dönüşür.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

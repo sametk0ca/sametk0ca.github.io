@@ -49,3 +49,8 @@ Many of the indicators that analysts need to be on the lookout for in log analys
 - Unexpected Protocols or Ports
 - Unexpected Resource Usage
 - Web Server Processes Spawning Command Line Tools
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

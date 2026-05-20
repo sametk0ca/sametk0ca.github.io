@@ -94,3 +94,8 @@ Note that there is no "<-" operator in Snort.
 
 
 ![[Pasted image 20251217143712.png]]
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

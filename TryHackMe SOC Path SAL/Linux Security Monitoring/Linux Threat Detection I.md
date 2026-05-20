@@ -63,3 +63,8 @@ While not unique to Linux, you should also be aware of [Supply Chain Compromise]
 All Initial Access techniques described in this room can be uncovered through a ==**process tree analysis**==. You start with a trigger, such as a SIEM alert on a suspicious command or a connection to a known malicious IP. From there, you build a process tree to trace which application or user initiated the events - a web server, an internal application, or an IT administrator’s SSH session. Finally, you determine whether the activity is legitimate or an indicator of malicious behavior:
 
 ![A PHP process running whoami indicates a web attack, an internal THM service running wget indicates supply chain compromise, and, lastly, an XMrig miner installed from a user's SSH session indicates an SSH breach.](https://tryhackme-images.s3.amazonaws.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1757679022514.svg)
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

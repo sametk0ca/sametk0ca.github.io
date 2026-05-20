@@ -87,3 +87,8 @@ These limitations include, but are not limited to, the following:
 4. **Fileless & Living-off-the-Land (LotL) Malware**
     
     Some threats never touch disk, bypassing traditional sandbox analysis by employing PowerShell Attacks and WMI Persistence.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

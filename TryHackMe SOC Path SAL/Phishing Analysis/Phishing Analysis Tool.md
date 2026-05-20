@@ -19,3 +19,8 @@ Below is a checklist of the artifacts an analyst (you) needs to collect from the
 - The hash value of the attachment (hash type MD5 or SHA256, preferably the latter)
 
 **Warning**: Be careful not to click on any links or attachments in the email accidentally.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

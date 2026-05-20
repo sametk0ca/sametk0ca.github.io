@@ -1,0 +1,17 @@
+# Obsidian temporary files
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/plugins/obsidian-excalidraw-plugin/data.json
+
+# Hugo temporary files and output
+blog-source/public/
+blog-source/resources/
+blog-source/.hugo_build.lock
+
+# System and editor files
+.DS_Store
+Thumbs.db
+*.log

@@ -3,20 +3,63 @@
   "search": "",
   "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:blog-source/content/bilgi-bankasi  ",
+      "color": {
+        "a": 1,
+        "rgb": 297741
+      }
+    },
+    {
+      "query": "path:blog-source/content/posts  ",
+      "color": {
+        "a": 1,
+        "rgb": 10487499
+      }
+    },
+    {
+      "query": "path:\"TryHackMe Security Engineer Path\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 11209997
+      }
+    },
+    {
+      "query": "path:\"TryHackMe SOC Path SAL\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 14378502
+      }
+    },
+    {
+      "query": "path:digital-samet/wiki/concepts ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:digital-samet/wiki/sources  ",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    }
+  ],
   "collapse-display": false,
-  "showArrow": true,
+  "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.65677083333333,
-  "lineSizeMultiplier": 5,
+  "nodeSizeMultiplier": 2.10657552083333,
+  "lineSizeMultiplier": 2.30357384594558,
   "collapse-forces": false,
-  "centerStrength": 0.151041666666667,
-  "repelStrength": 10,
+  "centerStrength": 0.41072153783674,
+  "repelStrength": 18.7843508866928,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.18462325630937884,
-  "close": true
+  "linkDistance": 302,
+  "scale": 0.04447135783248692,
+  "close": false
 }

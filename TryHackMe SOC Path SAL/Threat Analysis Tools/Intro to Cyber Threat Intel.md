@@ -240,3 +240,8 @@ We previously discussed platforms and feeds from which threat intelligence can b
     It supports two sharing models: **Collection**, which ensures threat intel is collected and hosted by a producer, and **Channel**, which publishes threat intel to users from a central server.
 
 Sharing threat intelligence has its benefits, with near-real-time feeds shortening the gap between another organisation's incident and one's preventive procedures. Additionally, community contributions earn organisations reciprocal trust as valuable intelligence sources.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

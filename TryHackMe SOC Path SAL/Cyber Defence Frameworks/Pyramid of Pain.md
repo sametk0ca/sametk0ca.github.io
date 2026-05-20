@@ -21,3 +21,8 @@ From a defense standpoint, knowledge of the IP addresses an adversary uses can b
 Domain Names can be thought as ==simply mapping an IP address to a string of text.== 
 
 A domain name can contain a domain and a top-level domain (e.g. `evilcorp.com` ) or a sub-domain followed by a domain and top-level domain (e.g. `tryhackme.evilcorp.com`)
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

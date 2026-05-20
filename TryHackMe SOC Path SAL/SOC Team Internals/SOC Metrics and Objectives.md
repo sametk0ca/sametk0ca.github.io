@@ -20,3 +20,7 @@ Next, remember that an alert by itself will not stop the breach, and it is impor
 
 ![[678ecc92c80aa206339f0f23-1746642255233.svg]]
 
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

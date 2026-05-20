@@ -31,3 +31,8 @@ On the other hand, a misconfiguration isn't a bug in the software but a mistake 
 Another common scenario is when the IT department unknowingly introduces new flaws into secure systems. Below is a simple example of how a critical database can be breached because of the insecure configuration:
 
 ![[678ecc92c80aa206339f0f23-1754915771066.svg]]
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9bd63353417e355e",
+        "id": "41b9f3dcc4ac9f1c",
         "type": "tabs",
         "children": [
           {
-            "id": "a9a847e00065e91d",
+            "id": "a6aada2e88c2fd35",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Grafik Görünümü"
             }
           }
         ]
@@ -40,7 +40,7 @@
                 "autoReveal": true
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Dosya Gezgini"
             }
           },
           {
@@ -57,7 +57,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "Ara"
             }
           },
           {
@@ -74,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 393.5
+    "width": 387.5026054382324
   },
   "right": {
     "id": "d3ce961b8ff8897f",
@@ -109,12 +109,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Logging for SOC.md",
+                "file": "TryHackMe Security Engineer Path/Intro to Cryptography.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Windows Logging for SOC"
+              "title": "Intro to Cryptography'dan giden bağlantılar"
             }
           },
           {
@@ -138,17 +138,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Logging for SOC.md",
+                "file": "TryHackMe Security Engineer Path/Intro to Cryptography.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Windows Logging for SOC"
+              "title": "Intro to Cryptography ana hatları"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -157,64 +157,64 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
+      "switcher:Hızlı geçişi aç": false,
+      "graph:Grafik görünümünü aç": false,
+      "canvas:Yeni tuval oluşturun": false,
+      "daily-notes:Bugünün Notunu Aç": false,
+      "templates:Şablon ekle": false,
+      "command-palette:Komut paletini aç": false,
+      "bases:Yeni taban oluştur": false,
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "a9a847e00065e91d",
+  "active": "a6aada2e88c2fd35",
   "lastOpenFiles": [
-    "TryHackMe SOC Path SAL/Network Security Monitoring/MITM Detection.md",
-    "To-Do/spor.md",
-    "To-Do/Plan.md",
-    "To-Do/drafts/Gölge Yapay Zeka.md",
-    "To-Do/drafts/YZ Komut Enjeksiyonu.md",
-    "To-Do/Certs.md",
-    "To-Do/drafts/2026 for Security.md",
-    "To-Do/List.md",
-    "To-Do/drafts/Passkey.md",
-    "img/Pasted image 20260107172727.png",
-    "To-Do/drafts/SYN Flood Attack.md",
-    "To-Do/drafts/Fuzzy Hashing.md",
-    "To-Do/drafts/Zero-Click Exploit.md",
-    "To-Do/drafts/DHCP.md",
-    "To-Do/drafts/DEP & ASLR.md",
-    "To-Do/drafts/Honeypot.md",
-    "To-Do/drafts/Zero-Trust.md",
-    "To-Do/drafts/Steganografi.md",
-    "img/Pasted image 20260104171836.png",
-    "To-Do/drafts",
-    "TryHackMe SOC Path SAL/Network Traffic Analysis/SIEM Triage for SOC/Log Analysis with SIEM.md",
-    "results/Raporlar/AllinOne.pdf",
-    "results/Raporlar/Linux Güvenlik Tehditleri ve SOC Analizi_ Bir Brifing Notu-1 - Kopya.pdf",
-    "results/Raporlar/Kötü Amaçlı Yazılım Analizi ve Tespiti Üzerine Brifing Notu - Kopya.pdf",
-    "results/Raporlar/Güvenlik Operasyon Merkezi (SOC) Teknolojileri_ Kapsamlı Bir Bakış - Kopya.pdf",
-    "results/Raporlar/Ağ Trafik Analizi ve Araçları_ Kapsamlı Bilgilendirme Notu - Kopya.pdf",
-    "results/Raporlar/Ağ Güvenliği ve Tehdit Tespiti Üzerine Bilgilendirme Notu - Kopya.pdf",
-    "results/Raporlar/Oltalama Saldırıları_ Analiz, Temeller ve Önleme Stratejileri - Kopya.pdf",
-    "results/Raporlar/SOC-MiniÖzet.pdf",
-    "results/Raporlar/Web Güvenliği Saldırıları ve Savunma Mekanizmaları_ Kapsamlı Bir Değerlendirme.pdf",
-    "TryHackMe SOC Path SAL/SIEM Triage for SOC/Alert Triage with Splunk.md",
-    "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Threat Detection III.md",
-    "TryHackMe SOC Path SAL/Windows Security Monitoring/Windows Threat Detection I.md",
-    "TryHackMe SOC Path SAL/Core SOC Solutions/Splunk.md",
-    "TryHackMe SOC Path SAL/Threat Analysis Tools/IP and Domain Threat Intel.md",
-    "TryHackMe SOC Path SAL/Threat Analysis Tools/File and Hash Threat Intel.md",
-    "TryHackMe SOC Path SAL/Threat Analysis Tools/Intro to Cyber Threat Intel.md",
-    "TryHackMe SOC Path SAL/Malware Concepts for SOC/Intro to Malware Analysis.md",
-    "img/Pasted image 20251225155103.png",
-    "img/Pasted image 20251225144409.png",
-    "img/Pasted image 20251225142153.png",
-    "img/Pasted image 20251223165015.png",
-    "img/Pasted image 20251223164917.png",
-    "img/Pasted image 20251223164250.png",
-    "img/Pasted image 20251223163634.png",
-    "img/Pasted image 20251223163415.png",
+    "blog-source/content/posts/mfa-fatigue-attack.md",
+    "blog-source/content/posts/shadow-ai.md",
+    "blog-source/content/posts/2026-for-security.md",
+    "scripts/translate_post_titles.py",
+    "blog-source/content/about.md",
+    "blog-source/archetypes/bilgi-bankasi.md",
+    "blog-source/archetypes/default.md",
+    "blog-source/public/f858c0d22d015b663438dae207981532.png",
+    "blog-source/public/678ecc92c80aa206339f0f23-1743606354595.svg",
+    "blog-source/public/6645aa8c024f7893371eb7ac-1718872774537.png",
+    "blog-source/public/2369fa2efc856b793f1ecbf415681d4d 1.png",
+    "blog-source/content/bilgi-bankasi/Secure_Coding_Patterns.md",
+    "blog-source/content/bilgi-bankasi/_index.md",
+    "blog-source/content/posts/passkey.md",
+    "blog-source/content/posts/adversary-characterization.md",
+    "blog-source/content/bilgi-bankasi/STRIDE.md",
+    "blog-source/content/posts/side-channel-attacks-and-masking.md",
+    "blog-source/content/bilgi-bankasi/macOS_Dosya_Sistemi.md",
+    "digital-samet/wiki/index.md",
+    "TryHackMe SOC Path SAL/SOC Team Internals/SOC Metrics and Objectives.md",
+    "digital-samet/wiki/concepts/index.md",
+    "digital-samet/wiki/roadmap/cybersecurity.md",
+    "scripts/link_thm_notes.py",
+    "TryHackMe SOC Path SAL/Linux Security Monitoring/Linux Logging for SOC.md",
+    "TryHackMe SOC Path SAL/index.md",
+    "TryHackMe Security Engineer Path/index.md",
+    "blog-source/content/bilgi-bankasi/NTFS_Izinler.md",
+    "scripts/fix_vault_links.py",
+    "scripts",
+    "blog-source/content/posts/dns-leaks-privacy-gap.md",
+    "wiki/concepts/network-security-basics.md",
+    "wiki/concepts",
+    "wiki",
+    "blog-source/content/bilgi-bankasi/CPU.md",
+    "blog-source/content/bilgi-bankasi/Firewall_Prensipleri.md",
+    "blog-source/content/bilgi-bankasi/PSU_Enerji.md",
+    "digital-samet/raw/devsecops.pdf",
+    "digital-samet/raw/cyber-security.pdf",
+    "categories",
+    "blog-source/content/tags",
+    "img/Pasted image 20260501163605.png",
+    "img/Pasted image 20260501163556.png",
+    "img/Pasted image 20260501161836.png",
+    "img/Pasted image 20260501161830.png",
+    "blog-source/public/TryHackMe SOC Path MindMap1.png",
+    "blog-source/static/TryHackMe SOC Path MindMap1.png",
     "Untitled 1.canvas",
     "Untitled.canvas"
   ]

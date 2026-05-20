@@ -17,3 +17,8 @@ Even without deepfakes, the attackers are quite successful in pretending to be s
 **Other Attacks**
 
 This task covered some popular social engineering methods, but there are many more! USB drop campaigns, physical attacks, insider threats, and even fake job offers - all of them are a constant risk to the employees, and you as a SOC analyst should be ready to respond!
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

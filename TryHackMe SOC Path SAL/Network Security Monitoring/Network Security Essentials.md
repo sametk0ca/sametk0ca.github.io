@@ -133,3 +133,8 @@ The network perimeter is the boundary that separates an organization's internal 
 - The internal network is where business-critical systems live.
 - The external Internet is full of potential threats.
 - The perimeter is the controlled entry point through which all traffic passes.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

@@ -41,3 +41,7 @@ After you have made a verdict and written your alert report, you must choose whe
 3. Communication with customers, partners, management, or law enforcement agencies is required
 4. You just do not fully understand the alert and need some help from more senior analysts
 
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

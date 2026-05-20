@@ -43,3 +43,8 @@ Communication between victim host and hacker.
 ### Action
 
 Hacker can do whatever he wants to.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

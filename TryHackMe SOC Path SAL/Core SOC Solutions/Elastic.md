@@ -83,3 +83,8 @@ Free text search allows users to search for logs based on text only. That means 
 In the Field-based search, we will provide the field name and the value we are looking for in the logs. This search has a special syntax as `Field: Value`. It uses a colon as a separator between the field and the value.
 
 ![[ffbf735277d98273d6229f4d9ee586bf.gif]]
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

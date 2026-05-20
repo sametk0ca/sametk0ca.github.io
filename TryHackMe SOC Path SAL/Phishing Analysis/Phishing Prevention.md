@@ -66,3 +66,8 @@ Modern email systems employ various technical controls to help detect and block 
 - **Phishing Reporting**: Easy, in-email reporting options that let users quickly report suspicious messages.
 - **User Awareness Training**: Train employees on identifying phishing attempts, social engineering tactics, and safe email practices.
 - **Phishing Simulation Exercises**: Run controlled phishing campaigns to test and reinforce employee training.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

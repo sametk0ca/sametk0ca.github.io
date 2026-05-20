@@ -31,3 +31,8 @@ There are two main operating modes:
 | Ease of Management          | ✅                                                    | ✅                 |
 
 Versiyon 1.6 ve 2.7'de farklılıklar var !!
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

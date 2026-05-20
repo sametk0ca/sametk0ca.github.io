@@ -110,3 +110,8 @@ System logs are another essential source of visibility. They capture events rela
 
 Almost every organisation has its own website and therefore a web server running it. Logs from these web servers are collected from Apache, Nginx, and other resources.  
 The most useful for analysis are the **access logs**, where you can detect requests to website resources. These logs often contain signs of malicious activity, such as scanning, DDoS attempts, various web-based attacks, and web shells. In addition, error logs can provide valuable insight, helping you understand possible failures or issues.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

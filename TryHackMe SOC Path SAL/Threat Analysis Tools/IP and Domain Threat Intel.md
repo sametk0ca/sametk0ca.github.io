@@ -135,3 +135,8 @@ We can now follow a simple playbook to make informed decisions when investigatin
 - Score: Apply the confidence matrix and record the rationale.
 - Decide: Block, monitor, or allow. Prefer precise controls, add expiry, and document.
 - Hunt and notify: Search for related indicators, inform stakeholders, and create follow-up tasks.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

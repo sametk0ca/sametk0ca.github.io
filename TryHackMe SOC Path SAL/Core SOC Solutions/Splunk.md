@@ -34,3 +34,7 @@ Splunk Search Head is the place within the **Search & Reporting App** where user
 
 The Search Head also allows you to transform results into presentable tables and visualizations such as pie, bar, and column charts.
 
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

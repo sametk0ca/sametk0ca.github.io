@@ -19,4 +19,7 @@ Asset inventory, also called asset lookup, is a list of all computing resources 
 
 ![[678ecc92c80aa206339f0f23-1743455620681.svg]]
 
-
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

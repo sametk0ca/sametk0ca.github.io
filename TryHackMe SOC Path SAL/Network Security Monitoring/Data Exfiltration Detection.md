@@ -114,3 +114,8 @@ Common techniques:
 - Custom ICMP types/codes: using uncommon ICMP types or non-zero codes to avoid signature-based detections.
 - Fragmentation and reassembly: large payloads are split across multiple packets.
 - Encryption/obfuscation: Encrypting or encrypting payloads (base64 is common) to look like random data.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

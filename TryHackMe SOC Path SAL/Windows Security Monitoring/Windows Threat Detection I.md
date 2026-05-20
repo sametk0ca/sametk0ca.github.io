@@ -78,3 +78,8 @@ Although there are many advanced techniques on how to run the malware from USB a
 - Malware hides all legitimate files on USB and creates a malicious "**RECOVERY.lnk**" file
 - Malware creates a "**Photos.exe**" binary and sets its icon to look like a simple folder
 - Malware creates double-extension copies of all files, like "**photo_2024_1_12.jpg.exe**"
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]

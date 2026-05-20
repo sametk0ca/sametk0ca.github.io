@@ -56,3 +56,8 @@ Let's take a closer look at the types of WAFs available to us as defenders, then
 - Cloud-based (Reverse Proxy): Sits in front of the web server. These WAFs are easy to deploy and have great scalability.
 - Host-based: Software deployed directly on the web server and offers control for each application.
 - Network-based: A physical or virtual appliance situated on the network perimeter. More suited for enterprise environments.
+
+---
+## 🔗 Bağlantılar
+- [[TryHackMe SOC Path SAL/index|🛡️ TryHackMe: SOC Analyst Learning Path]]
+- [[index|🏠 Ana İndeks]]
