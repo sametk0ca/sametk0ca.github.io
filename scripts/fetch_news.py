@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 import os
 import html
+import sys
 
 # Cybersecurity feeds to fetch (RSS and Atom formats supported)
 FEEDS = {
@@ -141,6 +142,17 @@ def ask_gemini(prompt, api_key):
         with urllib.request.urlopen(req, timeout=60) as response:
             res_data = json.loads(response.read().decode("utf-8"))
             text_response = res_data["candidates"][0]["content"]["parts"][0]["text"]
+            
+            # Clean markdown code blocks from Gemini response
+            text_response = text_response.strip()
+            if text_response.startswith("```"):
+                lines = text_response.splitlines()
+                if lines[0].startswith("```"):
+                    lines = lines[1:]
+                if lines[-1].startswith("```"):
+                    lines = lines[:-1]
+                text_response = "\n".join(lines).strip()
+                
             return json.loads(text_response)
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
@@ -225,7 +237,7 @@ def main():
         
     if not all_articles:
         print("No articles fetched. Exiting.")
-        return
+        sys.exit(1)
         
     # Sort by timestamp descending to get latest news
     all_articles.sort(key=lambda x: x['timestamp'], reverse=True)
@@ -256,7 +268,7 @@ def main():
         weekly_data = ask_gemini(prompt, api_key)
         if not weekly_data or "news" not in weekly_data:
             print("Failed to get parsed weekly news from Gemini. Exiting.")
-            return
+            sys.exit(1)
 
     # Generate markdown content
     today = datetime.now()
