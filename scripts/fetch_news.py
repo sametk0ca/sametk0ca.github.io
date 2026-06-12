@@ -1,4 +1,5 @@
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 import json
 import re
@@ -122,7 +123,8 @@ def parse_feed(source_name, xml_data):
 
 def ask_gemini(prompt, api_key):
     print("Sending news to Gemini for filtering and summarization...")
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    # Using stable v1 endpoint
+    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={api_key}"
     data = {
         "contents": [{
             "parts": [{"text": prompt}]
@@ -154,6 +156,11 @@ def ask_gemini(prompt, api_key):
                 text_response = "\n".join(lines).strip()
                 
             return json.loads(text_response)
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode("utf-8") if e else ""
+        print(f"HTTP Error calling Gemini API: {e.code} - {e.reason}")
+        print(f"API Response: {error_body}")
+        return None
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
         return None
