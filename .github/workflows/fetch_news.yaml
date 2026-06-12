@@ -1,0 +1,46 @@
+name: Fetch and Publish Weekly Security Summary
+
+on:
+  schedule:
+    # Run every Sunday at 18:00 UTC (21:00 / 22:00 TRT)
+    - cron: '0 18 * * 0'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write # Needed to commit and push the new post back to the repo
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Get all history for push
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Fetch and Summarize News
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/fetch_news.py
+
+      - name: Commit and Push Changes
+        run: |
+          # Configure git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Check if there are changes in content/posts/
+          git add content/posts/
+          if git diff --cached --quiet; then
+            echo "No new weekly summary found or nothing to commit."
+          else
+            echo "New weekly summary found. Committing..."
+            git commit -m "publish: weekly security summary"
+            git push origin main
+          fi
