@@ -141,7 +141,7 @@ def ask_gemini(prompt, api_key):
         method="POST"
     )
     try:
-        with urllib.request.urlopen(req, timeout=60) as response:
+        with urllib.request.urlopen(req, timeout=90) as response:
             res_data = json.loads(response.read().decode("utf-8"))
             text_response = res_data["candidates"][0]["content"]["parts"][0]["text"]
             
@@ -175,7 +175,7 @@ def build_prompt(news_items):
         
     prompt = f"""
 Aşağıda bu haftaya ait siber güvenlik haberlerinin listesi (başlık, kaynak ve özetler) yer almaktadır.
-Lütfen bu haberler içinden siber güvenlik dünyasını bu hafta en çok etkileyen, teknik derinliği en yüksek ve en kritik 5 haberi seç.
+Lütfen bu haberler içinden siber güvenlik dünyasını bu hafta en çok etkileyen, teknik derinliği en yüksek ve en kritik 5 haberi seç (eğer listede 5'ten az kritik haber varsa sadece onları seç).
 
 Haberler:
 {formatted_news}
@@ -249,8 +249,8 @@ def main():
     # Sort by timestamp descending to get latest news
     all_articles.sort(key=lambda x: x['timestamp'], reverse=True)
     
-    # We send top 40 articles to Gemini for selection
-    candidate_articles = all_articles[:40]
+    # We send top 10 articles to Gemini for selection (reduced from 40 to avoid timeouts)
+    candidate_articles = all_articles[:10]
     
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
