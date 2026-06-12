@@ -123,8 +123,8 @@ def parse_feed(source_name, xml_data):
 
 def ask_gemini(prompt, api_key):
     print("Sending news to Gemini for filtering and summarization...")
-    # Using v1beta endpoint to support responseMimeType
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    # Using v1beta endpoint to support responseMimeType with gemini-3.5-flash
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={api_key}"
     data = {
         "contents": [{
             "parts": [{"text": prompt}]
