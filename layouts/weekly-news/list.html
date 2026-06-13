@@ -120,9 +120,11 @@
         
         const secChildren = Array.from(section.children);
         let currentCard = null;
+        let startedCards = false;
         
         secChildren.forEach(child => {
           if (child.tagName === "H3") {
+            startedCards = true;
             if (currentCard) {
               cardsContainer.appendChild(currentCard);
             }
@@ -177,7 +179,11 @@
               cardsContainer.appendChild(currentCard);
               currentCard = null;
             }
-            cardsContainer.appendChild(child.cloneNode(true));
+            if (!startedCards) {
+              section.appendChild(child.cloneNode(true));
+            } else {
+              cardsContainer.appendChild(child.cloneNode(true));
+            }
             child.remove();
           }
         });
