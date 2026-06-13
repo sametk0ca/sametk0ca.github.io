@@ -389,9 +389,15 @@
 
   /* News Card Design */
   .news-cards-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .news-cards-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .news-card {
@@ -401,6 +407,9 @@
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .news-card:hover {
@@ -459,6 +468,7 @@
     line-height: 1.6;
     color: var(--secondary);
     font-size: 0.95rem;
+    flex-grow: 1;
   }
 </style>
 

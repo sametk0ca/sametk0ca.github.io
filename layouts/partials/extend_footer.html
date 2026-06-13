@@ -7,4 +7,161 @@
         <input type="submit" value="Subscribe" style="padding: 10px 25px; border-radius: 6px; border: none; background: #32a852; color: white; cursor: pointer; font-weight: bold; transition: opacity 0.2s;">
     </form>
 </div>
+
+<!-- Bilingual Blog Post Language Switcher -->
+<style>
+  .post-lang-switcher {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .post-lang-btn {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .post-lang-btn:hover {
+    border-color: var(--secondary);
+  }
+
+  .post-lang-btn.active {
+    background: var(--primary);
+    color: var(--theme);
+    border-color: var(--primary);
+  }
+</style>
+
+<script>
+  (function() {
+    const postContent = document.querySelector(".post-content");
+    if (!postContent) return;
+
+    const children = Array.from(postContent.children);
+    let splitIndex = -1;
+    let trHeader = null;
+    let enHeader = null;
+
+    // Find the language boundary
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      const text = child.textContent.toUpperCase();
+      const isHeading = /^H[1-6]$/.test(child.tagName);
+
+      if (isHeading && (text.includes("(TR)") || text.includes("[TR]") || text.includes("TR:") || text === "TÜRKÇE")) {
+        trHeader = child;
+      }
+      if (isHeading && (text.includes("(EN)") || text.includes("[EN]") || text.includes("EN:") || text === "ENGLISH")) {
+        enHeader = child;
+        splitIndex = i;
+        break;
+      }
+    }
+
+    // Split at preceding HR if there is one
+    if (splitIndex > 0 && children[splitIndex - 1].tagName === "HR") {
+      splitIndex = splitIndex - 1;
+    }
+
+    // Fallback: If no explicit headers but single HR exists, split there
+    if (splitIndex === -1) {
+      const hrIndices = [];
+      children.forEach((child, idx) => {
+        if (child.tagName === "HR") hrIndices.push(idx);
+      });
+      if (hrIndices.length === 1) {
+        splitIndex = hrIndices[0];
+      }
+    }
+
+    if (splitIndex === -1) return; // Monolingual post, exit silently
+
+    // Create language sections
+    const trWrapper = document.createElement("div");
+    trWrapper.className = "post-lang-section post-lang-tr";
+    
+    const enWrapper = document.createElement("div");
+    enWrapper.className = "post-lang-section post-lang-en";
+
+    // Distribute content
+    children.forEach((child, idx) => {
+      if (child === trHeader) {
+        child.style.display = "none";
+        return;
+      }
+      if (child === enHeader) {
+        child.style.display = "none";
+        return;
+      }
+      if (child.tagName === "HR" && idx === splitIndex) {
+        child.style.display = "none";
+        return;
+      }
+
+      if (idx < splitIndex) {
+        trWrapper.appendChild(child.cloneNode(true));
+        child.remove();
+      } else {
+        enWrapper.appendChild(child.cloneNode(true));
+        child.remove();
+      }
+    });
+
+    postContent.appendChild(trWrapper);
+    postContent.appendChild(enWrapper);
+
+    // Create & prepend language toggle buttons
+    const switcher = document.createElement("div");
+    switcher.className = "post-lang-switcher";
+    switcher.innerHTML = `
+      <button class="post-lang-btn" data-lang="tr">Türkçe</button>
+      <button class="post-lang-btn" data-lang="en">English</button>
+    `;
+    postContent.insertBefore(switcher, postContent.firstChild);
+
+    const buttons = switcher.querySelectorAll(".post-lang-btn");
+    let activeLang = localStorage.getItem("preferred-blog-lang") || "tr";
+
+    function setLanguage(lang) {
+      activeLang = lang;
+      localStorage.setItem("preferred-blog-lang", lang);
+      
+      buttons.forEach(btn => {
+        if (btn.dataset.lang === lang) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+
+      if (lang === "tr") {
+        trWrapper.style.display = "block";
+        enWrapper.style.display = "none";
+      } else {
+        trWrapper.style.display = "none";
+        enWrapper.style.display = "block";
+      }
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", function() {
+        setLanguage(this.dataset.lang);
+      });
+    });
+
+    // Set initial language
+    setLanguage(activeLang);
+  })();
+</script>
 {{- end -}}
