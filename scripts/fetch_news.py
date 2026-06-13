@@ -286,9 +286,9 @@ def main():
     markdown_content = generate_markdown(weekly_data, year, week)
     
     # Ensure content directory exists
-    os.makedirs('content/posts', exist_ok=True)
+    os.makedirs('content/weekly-news', exist_ok=True)
     
-    filepath = f"content/posts/weekly-security-summary-{year}-w{week:02d}.md"
+    filepath = f"content/weekly-news/weekly-security-summary-{year}-w{week:02d}.md"
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(markdown_content)
         

@@ -22,6 +22,11 @@ paginate = 12
         url = "/posts/"
         weight = 10
       [[languages.en.menu.main]]
+        identifier = "weekly-news"
+        name = "Weekly News"
+        url = "/weekly-news/"
+        weight = 15
+      [[languages.en.menu.main]]
         identifier = "search"
         name = "Search"
         url = "/search/"
