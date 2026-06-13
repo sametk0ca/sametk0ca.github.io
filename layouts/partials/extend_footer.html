@@ -53,7 +53,7 @@
     let trHeader = null;
     let enHeader = null;
 
-    // Find the language boundary
+    // 1. Deterministic Method: Search for explicit TR/EN section headers
     for (let i = 0; i < children.length; i++) {
       const child = children[i];
       const text = child.textContent.toUpperCase();
@@ -69,12 +69,12 @@
       }
     }
 
-    // Split at preceding HR if there is one
+    // Split at preceding HR if it's next to the EN header
     if (splitIndex > 0 && children[splitIndex - 1].tagName === "HR") {
       splitIndex = splitIndex - 1;
     }
 
-    // Fallback: If no explicit headers but single HR exists, split there
+    // 2. Deterministic Fallback: Split at a single horizontal separator line (---)
     if (splitIndex === -1) {
       const hrIndices = [];
       children.forEach((child, idx) => {
@@ -82,6 +82,76 @@
       });
       if (hrIndices.length === 1) {
         splitIndex = hrIndices[0];
+      }
+    }
+
+    // 3. Heuristic Fallback: Statistical language boundary detection
+    if (splitIndex === -1) {
+      const trStopWords = new Set(["ve", "bir", "bu", "da", "de", "için", "ile", "en", "olan", "olarak", "ise", "veya", "ama", "nedir", "nelerdir", "gibi", "kadar", "kendi", "hakkında"]);
+      const enStopWords = new Set(["the", "of", "and", "to", "a", "in", "is", "that", "it", "for", "on", "with", "as", "this", "are", "by", "from", "at", "an", "be", "how", "what", "why"]);
+
+      const scores = children.map(child => {
+        const text = child.textContent.toLowerCase().replace(/[^\w\sıişğüçö]/g, "");
+        const words = text.split(/\s+/);
+        
+        let trCount = 0;
+        let enCount = 0;
+        
+        words.forEach(word => {
+          if (trStopWords.has(word)) trCount++;
+          if (enStopWords.has(word)) enCount++;
+        });
+        
+        if (trCount > enCount) return "tr";
+        if (enCount > trCount) return "en";
+        return "neutral";
+      });
+
+      // Maximize TRs before split point and ENs after split point
+      let maxScore = -1;
+      let bestSplitIndex = -1;
+
+      // Restrict split boundaries to avoid empty slices
+      const minIdx = Math.floor(children.length * 0.1);
+      const maxIdx = Math.ceil(children.length * 0.9);
+
+      for (let i = minIdx; i <= maxIdx; i++) {
+        let trBefore = 0;
+        let enAfter = 0;
+
+        for (let j = 0; j < children.length; j++) {
+          if (j < i) {
+            if (scores[j] === "tr") trBefore++;
+          } else {
+            if (scores[j] === "en") enAfter++;
+          }
+        }
+
+        const totalScore = trBefore + enAfter;
+        if (totalScore > maxScore) {
+          maxScore = totalScore;
+          bestSplitIndex = i;
+        }
+      }
+
+      // Check if the page is actually bilingual
+      const totalTr = scores.filter(s => s === "tr").length;
+      const totalEn = scores.filter(s => s === "en").length;
+
+      if (totalTr >= 2 && totalEn >= 2) {
+        splitIndex = bestSplitIndex;
+        
+        // Align splitIndex to nearby HR if any exists
+        const searchRange = 2;
+        for (let offset = -searchRange; offset <= searchRange; offset++) {
+          const checkIdx = splitIndex + offset;
+          if (checkIdx >= 0 && checkIdx < children.length) {
+            if (children[checkIdx].tagName === "HR") {
+              splitIndex = checkIdx;
+              break;
+            }
+          }
+        }
       }
     }
 
