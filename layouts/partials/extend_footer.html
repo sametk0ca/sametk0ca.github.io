@@ -1,4 +1,4 @@
-{{- if .IsPage -}}
+{{- if or .IsPage .IsSection -}}
 <div class="newsletter-container" style="margin-top: 50px; padding: 30px; border: 1px solid var(--border); border-radius: 12px; text-align: center; background: var(--code-bg);">
     <h3 style="margin-top: 0;">Stay Updated</h3>
     <p style="font-size: 0.9em; opacity: 0.8;">Get the latest cybersecurity insights delivered to your inbox.</p>

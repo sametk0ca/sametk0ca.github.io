@@ -108,5 +108,8 @@ paginate = 12
   lineNos = true
   guessSyntax = true
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
