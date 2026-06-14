@@ -28,23 +28,7 @@ BFT kavramı, 1982 yılında Leslie Lamport, Robert Shostak ve Marshall Pease ta
 ### Problem Senaryosu
 Aşağıdaki diyagramda, iki dürüst general ile ağa çelişkili mesajlar göndererek konsensüsü bozmaya çalışan hain bir lider generalin yarattığı Bizans çıkmazı gösterilmiştir:
 
-```mermaid
-graph TD
-    Leader[Hain Lider General] -->|Mesaj A: Saldır!| GenA[Dürüst General A]
-    Leader -->|Mesaj B: Geri Çekil!| GenB[Dürüst General B]
-    
-    GenA <-->|Karşılaştırma: Lider bana Saldır dedi| GenB
-    GenB <-->|Karşılaştırma: Lider bana Geri Çekil dedi| GenA
-    
-    noteA[Konsensüs Bozuldu:<br/>Karar verilemiyor!]
-    GenA --- noteA
-    GenB --- noteA
-    
-    style Leader fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style GenA fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style GenB fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style noteA fill:#7c2d12,stroke:#ea580c,stroke-width:1px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-byzantine-fault-tolerance-1-ba9d19c3.svg)
 
 ### BFT Matematiksel Gereksinimleri
 Matematiksel olarak kanıtlanmıştır ki, dürüst generallerin (düğümlerin) hainlerin (kötü niyetli düğümlerin) varlığına rağmen doğru bir kararda uzlaşabilmesi için dürüst düğüm sayısının hain düğüm sayısının en az üç katından fazla olması gerekir.
@@ -76,23 +60,7 @@ The concept of BFT originated from a logical puzzle proposed in 1982 by Leslie L
 ### Problem Scenario
 The diagram below illustrates the Byzantine deadlock created when a malicious leader general sends contradictory instructions to two honest generals:
 
-```mermaid
-graph TD
-    Leader[Traitorous Leader General] -->|Message A: Attack!| GenA[Honest General A]
-    Leader -->|Message B: Retreat!| GenB[Honest General B]
-    
-    GenA <-->|Verification: Leader told me to Attack| GenB
-    GenB <-->|Verification: Leader told me to Retreat| GenA
-    
-    noteA[Consensus Broken:<br/>No decision can be reached!]
-    GenA --- noteA
-    GenB --- noteA
-    
-    style Leader fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style GenA fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style GenB fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style noteA fill:#7c2d12,stroke:#ea580c,stroke-width:1px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-byzantine-fault-tolerance-2-08d9de94.svg)
 
 ### Mathematical Requirements of BFT
 It is mathematically proven that for honest nodes to reach consensus in the presence of traitors, the honest nodes must outnumber the malicious ones by a factor of three:

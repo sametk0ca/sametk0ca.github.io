@@ -16,17 +16,7 @@ mermaid: true
 
 Aşağıdaki şema, bir yapay zeka ajanının çalışma döngüsünü ve saldırganların bu döngüye nereden sızabileceğini göstermektedir:
 
-```mermaid
-graph TD
-    A[Kullanıcı Komutu] --> B[Ajanın Planlama Katmanı]
-    B --> C{Dış Dünya Etkileşimi}
-    C -->|Web Tarama| D[Malicious Website - Dolaylı Enjeksiyon]
-    C -->|API Çağrısı| E[Hatalı Uç Nokta Erişimi]
-    D --> F[Zehirlenmiş Bağlam - Context Poisoning]
-    F --> G[Yetkisiz Eylem - Örn: E-posta Gönderme]
-    E --> G
-    G --> H[Veri Sızıntısı veya Sistem Hasarı]
-```
+![Diyagram / Diagram](/img/mermaid-agentic-ai-security-2026-1-42f1038d.svg)
 
 ## 2026'nın Kritik Tehditleri
 
@@ -49,17 +39,7 @@ As of 2026, we are witnessing a fundamental shift in the AI landscape. We have m
 
 The following diagram illustrates the lifecycle of an AI agent and the points where an attacker can intervene:
 
-```mermaid
-graph TD
-    A[User Instruction] --> B[Agent Planning Layer]
-    B --> C{External Interaction}
-    C -->|Web Browsing| D[Malicious Website - Indirect Injection]
-    C -->|API Calls| E[Insecure Endpoint Access]
-    D --> F[Poisoned Context]
-    F --> G[Unauthorized Action - e.g., Sending Emails]
-    E --> G
-    G --> H[Data Exfiltration or System Damage]
-```
+![Diyagram / Diagram](/img/mermaid-agentic-ai-security-2026-2-acb01429.svg)
 
 ## Critical Threats of 2026
 

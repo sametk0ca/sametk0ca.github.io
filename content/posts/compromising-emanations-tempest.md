@@ -28,28 +28,7 @@ Sızan sinyaller birkaç temel fiziksel ortamda kendisini gösterir:
 ### Saldırı Akışı
 Aşağıdaki mimari diyagram, sızan sinyallerin sistemden nasıl ayrıldığını ve pasif bir gözlemci tarafından nasıl yakalanıp işlendiğini göstermektedir:
 
-```mermaid
-graph TD
-    subgraph Target System [Hedef Güvenli Sistem]
-        A[Veri İşleyen CPU/GPU] -->|Hızlı Durum Geçişleri| B(İstem Dışı RF Gürültüsü / Isı / Ses)
-        C[Kablolar ve Monitörler] -->|Yüksek Frekanslı Sinyaller| D(EM Alan Radyasyonu)
-    end
-    
-    subgraph Physical Boundary [Fiziksel Sınır]
-        B --> E[Hava / Duvarlar Üzerinden Yayılım]
-        D --> E
-    end
-    
-    subgraph Attacker [Pasif Alıcı]
-        E --> F[Anten / Yüksek Hızlı Fotodiyot / Mikrofon]
-        F --> G[Sinyal Yükseltme ve Filtreleme]
-        G --> H[Dijital Sinyal İşleme DSP]
-        H --> I[Veri Yeniden Oluşturma ve Görselleştirme]
-    end
-    
-    style Target System fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style Attacker fill:#1c1917,stroke:#7c2d12,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-compromising-emanations-tempest-1-cea59abd.svg)
 
 ### Korunma ve Savunma Yöntemleri (TEMPEST Zırhlama)
 TEMPEST saldırılarına karşı korunmak, fiziksel katmanda alınacak önlemlere dayanır:
@@ -75,28 +54,7 @@ Compromising emanations manifest in several physical mediums:
 ### The Attack Flow
 The following architecture diagram visualizes how compromising emanations escape a system and are captured by a passive observer:
 
-```mermaid
-graph TD
-    subgraph Target System [Target Secure System]
-        A[Data Processing CPU/GPU] -->|Fast State Transitions| B(Unintentional RF Noise / Heat / Sound)
-        C[Cables & Monitors] -->|High-Frequency Signals| D(EM Field Radiation)
-    end
-    
-    subgraph Physical Boundary [Air / Walls]
-        B --> E[Free-Space Propagation]
-        D --> E
-    end
-    
-    subgraph Attacker [Passive Receiver]
-        E --> F[Antenna / High-Speed Photodiode / Microphone]
-        F --> G[Signal Amplification & Filtering]
-        G --> H[Digital Signal Processing DSP]
-        H --> I[Data Reconstruction & Visualization]
-    end
-    
-    style Target System fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style Attacker fill:#1c1917,stroke:#7c2d12,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-compromising-emanations-tempest-2-ee356e46.svg)
 
 ### Defense and Mitigation (TEMPEST Shielding)
 Securing against TEMPEST attacks requires physical-layer countermeasures:

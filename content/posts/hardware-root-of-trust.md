@@ -27,30 +27,7 @@ Bir donanım güven kökü, sistemin güvenliğini sağlamak için üç ana işl
 ### Güven Zinciri (Chain of Trust)
 Bir sistem açılırken donanım güven kökü, bir sonraki yazılım adımını doğrular ve kontrolü ona devreder. Bu adım bir sonrakini doğrular ve bu süreç uygulamalara kadar uzanır. Aşağıdaki hiyerarşik şemada, donanım güven kökü ile başlayan Güven Zinciri'nin yapısı gösterilmiştir:
 
-```mermaid
-graph TD
-    subgraph Trusted Foundation [Güven Temeli]
-        RoT[Hardware Root of Trust<br/>TPM / ROM Kod / Güvenli Çip]
-    end
-    
-    subgraph ChainOfTrust [Güven Zinciri Akışı]
-        Firmware[1. Firmware / UEFI]
-        Bootloader[2. OS Bootloader]
-        Kernel[3. Çekirdek ve Sürücüler]
-        Apps[4. Uygulamalar ve Servisler]
-    end
-    
-    RoT -->|Doğrular ve Yükler| Firmware
-    Firmware -->|Doğrular ve Yükler| Bootloader
-    Bootloader -->|Doğrular ve Yükler| Kernel
-    Kernel -->|Doğrular ve Yükler| Apps
-    
-    style RoT fill:#1e1b4b,stroke:#8b5cf6,stroke-width:3px,color:#fff
-    style Firmware fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Bootloader fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Kernel fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Apps fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-hardware-root-of-trust-1-dd864f69.svg)
 
 ### Gerçek Dünyadaki Uygulamaları
 *   **TPM (Trusted Platform Module)**: Bilgisayarların anakartları üzerinde yer alan özel bir mikrodenetleyicidir. TPM 2.0 standardı, Windows 11'in temel gereksinimlerinden biri olup BitLocker disk şifreleme anahtarlarını korumak ve güvenli önyüklemeyi doğrulamak için kullanılır.
@@ -75,30 +52,7 @@ A Hardware Root of Trust performs three primary functions to establish system-wi
 ### The Chain of Trust
 During a secure boot process, the Hardware RoT measures and verifies the integrity of the firmware. The firmware then measures and verifies the bootloader, which in turn verifies the operating system kernel. This unbroken sequence is called the Chain of Trust, visualized in the hierarchy below:
 
-```mermaid
-graph TD
-    subgraph Trusted Foundation [Trusted Foundation]
-        RoT[Hardware Root of Trust<br/>TPM / ROM Code / Secure Element]
-    end
-    
-    subgraph ChainOfTrust [Chain of Trust Flow]
-        Firmware[1. Firmware / UEFI]
-        Bootloader[2. OS Bootloader]
-        Kernel[3. OS Kernel & Drivers]
-        Apps[4. Applications & Services]
-    end
-    
-    RoT -->|Measures and Loads| Firmware
-    Firmware -->|Measures and Loads| Bootloader
-    Bootloader -->|Measures and Loads| Kernel
-    Kernel -->|Measures and Loads| Apps
-    
-    style RoT fill:#1e1b4b,stroke:#8b5cf6,stroke-width:3px,color:#fff
-    style Firmware fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Bootloader fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Kernel fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style Apps fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-hardware-root-of-trust-2-2d363095.svg)
 
 ### Real-world Implementations
 *   **TPM (Trusted Platform Module)**: A dedicated microcontroller chip on a computer motherboard. The modern TPM 2.0 standard is a baseline requirement for Windows 11, protecting BitLocker disk encryption keys and verifying boot integrity.

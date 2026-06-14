@@ -43,17 +43,7 @@ Tahminci polislik sistemlerine yöneltilen en büyük teknik ve etik eleştiri, 
 
 Yapay zeka modelleri "objektif" suç oranlarını değil, sadece polise yansıyan ve kayda geçen suç verilerini öğrenir. Bu durum aşağıdaki tehlikeli döngüyü tetikler:
 
-```mermaid
-graph TD
-    A[Tarihsel Olarak Önyargılı Suç Verisi] -->|Yapay Zekayı Eğitir| B[Modelin Risk Haritaları Üretmesi]
-    B -->|Polis Devriyelerini Yönlendirir| C[Belirli Mahallelerde Yoğun Polis Varlığı]
-    C -->|Çok Sayıda Polis Nedeniyle Daha Çok Gözaltı/Ceza| D[Yeni Suç Kayıtları]
-    D -->|Yeni Veri Olarak Modeli Besler| A
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#ffb,stroke:#333,stroke-width:2px
-```
+![Diyagram / Diagram](/img/mermaid-predictive-policing-algorithms-ethics-1-cc25c606.svg)
 
 Bu döngüde algoritma, polisin zaten sıkça gittiği ve tarihsel önyargılar nedeniyle aşırı denetlenen yoksul veya azınlık mahallelerini sürekli "yüksek riskli" olarak göstermeye devam eder. Sonuçta, algoritmanın tahmini "suç oranını" değil, **polisin gelecekte nereyi denetleyeceğini** tahmin etmekten öteye gidemez.
 
@@ -111,17 +101,7 @@ The most severe technical and ethical criticism leveled at predictive policing i
 
 Machine learning models do not learn the actual, objective crime rates of a city; they only learn the crimes that are actively reported to, and recorded by, the police. This creates a dangerous loop:
 
-```mermaid
-graph TD
-    A[Historically Biased Crime Data] -->|Trains AI Models| B[Model Generates High-Risk Maps]
-    B -->|Directs Police Patrols| C[Concentrated Police Presence in Specific Neighborhoods]
-    C -->|More Arrests due to Heavy Surveillance| D[New Crime Records Logged]
-    D -->|Feeds Back as New Data| A
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style C fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#ffb,stroke:#333,stroke-width:2px
-```
+![Diyagram / Diagram](/img/mermaid-predictive-policing-algorithms-ethics-2-ca615b1d.svg)
 
 In this cycle, the algorithm continuously marks low-income or minority neighborhoods as "high risk" simply because police officers have historically spent more time patrolling and making arrests in those areas. Ultimately, the algorithm's prediction ceases to forecast objective crime rates and instead merely predicts **where police officers will go next**.
 

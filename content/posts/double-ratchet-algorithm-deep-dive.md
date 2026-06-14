@@ -28,18 +28,7 @@ Asıl büyü buradadır. Diyelim ki telefonunuz fiziksel olarak saldırganın el
 
 Double Ratchet ismini, mekanik bir dişli çarkın (ratchet) sadece bir yöne dönmesi ve geri gitmemesi prensibinden alır.
 
-```mermaid
-graph TD
-    A[Kök Anahtar - Root Key] --> B{DH Ratchet Güncellemesi}
-    B --> C[Zincir Anahtarı - Chain Key]
-    C --> D[KDF - Key Derivation Function]
-    D --> E[Mesaj Anahtarı 1]
-    D --> F[Yeni Zincir Anahtarı]
-    F --> G[KDF]
-    G --> H[Mesaj Anahtarı 2]
-    G --> I[Yeni Zincir Anahtarı]
-    B -- Yeni DH Değişimi --> J[Yeni Kök Anahtar]
-```
+![Diyagram / Diagram](/img/mermaid-double-ratchet-algorithm-deep-dive-1-7f873bcb.svg)
 
 ## Neden Bu Kadar Önemli?
 
@@ -69,18 +58,7 @@ This is where the "self-healing" magic happens. Imagine your phone is physically
 
 The name "Double Ratchet" comes from the mechanical tool that allows motion in only one direction. Once the "gear" turns, it cannot go back.
 
-```mermaid
-graph TD
-    A[Root Key] --> B{DH Ratchet Update}
-    B --> C[Chain Key]
-    C --> D[KDF - Key Derivation Function]
-    D --> E[Message Key 1]
-    D --> F[Next Chain Key]
-    F --> G[KDF]
-    G --> H[Message Key 2]
-    G --> I[Next Chain Key]
-    B -- New DH Exchange --> J[New Root Key]
-```
+![Diyagram / Diagram](/img/mermaid-double-ratchet-algorithm-deep-dive-2-3eb54283.svg)
 
 ## Why It Matters Today
 

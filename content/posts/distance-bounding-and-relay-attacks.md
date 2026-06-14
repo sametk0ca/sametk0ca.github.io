@@ -36,27 +36,7 @@ Mesafe sınırlandırma protokolleri, doğrulayıcı (Verifier - Araba/POS) ile 
 ### İletişim Akışı ve Röle Saldırısı Anatomisi
 Aşağıdaki diyagramda, standart bir röle saldırısının nasıl gerçekleştiği ve gidiş-dönüş süresinin (RTT) uzamasıyla bu saldırının nasıl tespit edilebileceği gösterilmektedir:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant V as Doğrulayıcı (Araba)
-    participant A1 as Saldırgan 1 (Proxy)
-    participant A2 as Saldırgan 2 (Proxy)
-    participant P as Kanıtlayıcı (Anahtar)
-
-    rect rgb(30, 41, 59)
-        note right of V: Normal Şartlarda RTT < 2 Nanosaniye Olmalıdır
-    end
-    V->>A1: Sorgu Gönder (Bit: 1)
-    A1->>A2: Sinyali Havadan Uzat (Röle Et)
-    A2->>P: Sorguyu İlet (Bit: 1)
-    P->>A2: Anında Yanıtla (Bit: 0)
-    A2->>A1: Sinyali Geri Röle Et
-    A1->>V: Yanıtı İlet (Bit: 0)
-    rect rgb(244, 63, 94)
-        note left of V: Toplam RTT: 50 Mikrosaniye! <br/> Limit Aşıldı -> Erişim Reddedildi (Saldırı Tespit Edildi)
-    end
-```
+![Diyagram / Diagram](/img/mermaid-distance-bounding-and-relay-attacks-1-abd3b7d6.svg)
 
 ### Uygulama Alanları ve Zafiyetler
 *   **NFC ve RSSI Zafiyeti**: Çoğu temassız kart ve eski nesil anahtarlar mesafe sınırlandırma yapmaz; sadece sinyal gücüne (RSSI) güvenir. Saldırganlar sinyal yükselticilerle gücü artırarak bu sistemleri kolayca kandırabilir.
@@ -87,27 +67,7 @@ Distance bounding protocols establish an upper limit on the physical distance be
 ### Communication Flow and Relay Anatomy
 The diagram below shows how a relay attack operates and how measuring the RTT detects the added latency:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant V as Verifier (Car)
-    participant A1 as Attacker 1 (Proxy)
-    participant A2 as Attacker 2 (Proxy)
-    participant P as Prover (Key)
-
-    rect rgb(30, 41, 59)
-        note right of V: Under Normal Conditions, RTT < 2 Nanoseconds
-    end
-    V->>A1: Send Challenge (Bit: 1)
-    A1->>A2: Relay Signal over Air
-    A2->>P: Forward Challenge (Bit: 1)
-    P->>A2: Immediate Response (Bit: 0)
-    A2->>A1: Relay Response Back
-    A1->>V: Forward Response (Bit: 0)
-    rect rgb(244, 63, 94)
-        note left of V: Total RTT: 50 Microseconds! <br/> Timeout Exceeded -> Access Denied (Attack Detected)
-    end
-```
+![Diyagram / Diagram](/img/mermaid-distance-bounding-and-relay-attacks-2-0d9712dc.svg)
 
 ### Technologies and Vulnerabilities
 *   **NFC and RSSI Weakness**: Many contactless cards and older entry systems rely solely on Received Signal Strength Indication (RSSI) to determine proximity. Attackers can bypass this by using high-gain directional antennas and amplifiers.

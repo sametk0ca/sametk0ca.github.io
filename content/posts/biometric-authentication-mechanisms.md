@@ -24,26 +24,7 @@ Biyometrik sistemler sihirli bir şekilde çalışmaz. Arkalarında matematiksel
 2.  **Yakalama ve Çıkarma**: Giriş yapmak istediğinizde sensör yeni bir tarama yapar ve aynı özellikleri çıkarır.
 3.  **Karşılaştırma ve Eşik Değeri**: Sistem, yeni veriyle kayıtlı şablonu karşılaştırır. İki veri hiçbir zaman %100 uyuşmaz (cildin nemi, ışık açısı vb. nedenlerle). Bu yüzden sistem bir **Eşik Değeri (Threshold)** kullanır. Eğer benzerlik oranı bu eşiğin üzerindeyse giriş izni verilir.
 
-```mermaid
-graph TD
-    subgraph Kayit [1. Kayıt Aşaması]
-        A[Parmak İzi / Yüz Taraması] -->|Özellik Çıkarma| B[Referans Şablonu]
-        B -->|Güvenli Saklama| C[(Cihaz Belleği)]
-    end
-    
-    subgraph Dogrulama [2. Kimlik Doğrulama]
-        D[Yeni Tarama] -->|Özellik Çıkarma| E[Yeni Şablon]
-        C --> F{Eşleştirme Analizi}
-        E --> F
-        F -->|Benzerlik >= Eşik Değeri %85| G[Erişim Onaylandı]
-        F -->|Benzerlik < Eşik Değeri| H[Erişim Reddedildi]
-    end
-    
-    style C fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style F fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style G fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
-    style H fill:#7c2d12,stroke:#ef4444,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-biometric-authentication-mechanisms-1-725082c4.svg)
 
 ### Güvenlik Zafiyetleri ve Hata Türleri
 Biyometrik sistemler iki temel hata türüyle ölçülür:
@@ -71,26 +52,7 @@ Biometric scanners do not work by magic. Behind every scan lies a statistical an
 2.  **Capture and Extraction**: When you try to log in, the scanner captures a new sample and extracts the same set of features.
 3.  **Comparison and Threshold**: The system compares the new features against the stored reference. Because physical conditions change (e.g., skin moisture or lighting), two scans are never a 100% identical match. Therefore, systems use a statistical **Threshold**. If the similarity score exceeds this threshold, access is granted.
 
-```mermaid
-graph TD
-    subgraph Enrollment [1. Enrollment Phase]
-        A[Fingerprint / Face Scan] -->|Feature Extraction| B[Reference Template]
-        B -->|Secure Storage| C[(Secure Device Memory)]
-    end
-    
-    subgraph Authentication [2. Authentication Phase]
-        D[New Scan] -->|Feature Extraction| E[New Template]
-        C --> F{Matching Analysis}
-        E --> F
-        F -->|Similarity >= Threshold e.g. 85%| G[Access Granted]
-        F -->|Similarity < Threshold| H[Access Denied]
-    end
-    
-    style C fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style F fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style G fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
-    style H fill:#7c2d12,stroke:#ef4444,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-biometric-authentication-mechanisms-2-9f702f7d.svg)
 
 ### Vulnerabilities and Statistical Errors
 Biometric performance is measured using two core error rates:

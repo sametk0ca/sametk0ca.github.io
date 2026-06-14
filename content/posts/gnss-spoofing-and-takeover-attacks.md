@@ -30,19 +30,7 @@ Bir yanıltma saldırısının başarısı ve fark edilebilirliği, sinyallerin 
 *   **Uyumsuz (Non-Coherent) Yanıltma**: Saldırgan, uydulardan gelen gerçek sinyallerle hiçbir zaman veya güç eşleştirmesi yapmadan doğrudan daha güçlü sahte sinyaller yayınlar. Hedef alıcı bu güçlü sinyali aldığında ani koordinat sıçramaları yaşar veya bağlantıyı kısa süreliğine kaybedip tekrar bağlanır. Bu ani sıçramalar, alıcıdaki anomali tespit yazılımları tarafından kolayca yakalanır.
 *   **Uyumlu (Coherent - Kesintisiz Ele Geçirme)**: Elektronik harbin en gelişmiş seviyesidir. Saldırgan, gökyüzündeki gerçek uydulardan gelen sinyallerle hiçbir zaman ve güç eşleştirmesi yapmadan bunları anlık izler ve zaman, faz ve güç açısından bunlarla kusursuz şekilde senkronize olmuş sahte sinyaller üretir. Sahte sinyal önce düşük güçle verilir, ardından yavaş yavaş gücü artırılarak alıcının takip döngüsü (tracking loop) hissettirilmeden sahte sinyale kilitlenir. Ele geçirme tamamlandıktan sonra koordinatlar milim milim kaydırılır; alıcı hiçbir alarm tetiklemeden yanlış konuma yönlendirilir.
 
-```mermaid
-graph TD
-    A[Gerçek Uydular] -->|Gerçek Sinyaller| R[Alıcı Takip Döngüsü]
-    S[Saldırgan SDR] -->|1. Uyumlu Düşük Güç Senkronizasyonu| R
-    S -->|2. Yavaş Sinyal Gücü Artırımı| R
-    R -->|3. Alıcı Sahte Sinyale Kilitlenir| R
-    S -->|4. Koordinat Verisi Yavaşça Kaydırılır| R
-    R -->|Sonuç: Kesintisiz Ele Geçirme Başarılı| Target[Yanlış Koordinat Üretimi]
-    
-    style R fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style S fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style Target fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-gnss-spoofing-and-takeover-attacks-1-41fc4f34.svg)
 
 ### Savunma ve Korunma Yöntemleri
 Yazılım Tanımlı Radyo (SDR) donanımlarının ucuzlaması ve açık kaynak kodlu GPS simülatörlerinin yaygınlaşması nedeniyle sivil alıcıların korunması kritik öneme sahiptir:
@@ -69,19 +57,7 @@ The difficulty and effectiveness of a spoofing attack depend heavily on synchron
 *   **Non-Coherent Spoofing**: The attacker generates a set of authentic-looking GPS signals but does not synchronize them with the real satellites currently in the sky. When the fake signal is transmitted at a higher power, the target receiver experiences a sudden jump in signal power and coordinate location, or temporarily loses its lock. This makes it relatively easy for anomaly detection algorithms to flag the attack.
 *   **Coherent Spoofing (Seamless Takeover)**: The gold standard of electronic warfare. The attacker records the legitimate GPS signals and synthesizes a spoofed signal that is perfectly synchronized in time, phase, and power with the real satellites. The attacker starts at a lower power, matches the authentic signal, and then gradually raises the transmission power. Once the receiver's tracking loop locks onto the malicious signal, the attacker slowly shifts the coordinates, leading the receiver away without triggering any alarm.
 
-```mermaid
-graph TD
-    A[Legitimate Satellites] -->|Real Signals| R[Receiver Tracking Loop]
-    S[Spoofer SDR] -->|1. Coherent Low-Power Sync| R
-    S -->|2. Gradual Power Ramp Up| R
-    R -->|3. Tracking Loop Locks onto Spoofer| R
-    S -->|4. Slowly Shift Coordinate Data| R
-    R -->|Result: Seamless Takeover achieved| Target[False Coordinates Generated]
-    
-    style R fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style S fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style Target fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-gnss-spoofing-and-takeover-attacks-2-c6fffeac.svg)
 
 ### Detection and Mitigation
 As Software Defined Radios (SDRs) have become cheaper and open-source spoofing tools more accessible, guarding civilian receivers is crucial:

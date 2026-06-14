@@ -28,19 +28,7 @@ Deepfake teknolojisi siber suç pazarında endüstriyelleşti ve günlük yaşan
 ### Deepfake ile Ses Klonlama Saldırısı Nasıl Gerçekleşir?
 Aşağıdaki diyagramda, sosyal medyadan toplanan kısa bir ses örneğinin yapay zeka aracılığıyla klonlanıp bir finans yöneticisini hedef alan sosyal mühendislik saldırısına dönüştürülme süreci gösterilmektedir:
 
-```mermaid
-graph TD
-    A[Sosyal Medya Videosu] -->|1. Ses Örneği Toplama - En az 3 sn| B(Saldırgan)
-    B -->|2. Örneği Ses Klonlama Yapay Zekasına Yükleme| C{DFaaS Portalı}
-    C -->|3. Hedef Ses Modeli ve Metin Girişi| D[Yapay Zeka Ses Üretici]
-    D -->|4. Gerçekçi Sahte Ses Dosyası / Canlı Yayın| E[Finans Yöneticisi / Aile Üyesi]
-    E -->|5. Acil Para Transferi Talebine İnanma| F[Para Kaybı / Güvenlik İhlali]
-    
-    style B fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style C fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style E fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style F fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-synthetic-identity-deepfakes-1-064a894c.svg)
 
 ### Kendimizi Nasıl Koruyabiliriz?
 Yapay zekanın bu karanlık yüzüne karşı hem bireysel hem de kurumsal olarak alabileceğimiz önlemler şunlardır:
@@ -65,19 +53,7 @@ Generative AI tools have industrialized the cybercrime market, giving rise to hi
 ### Anatomy of an AI Voice-Cloning Attack
 The following flowchart illustrates how a brief audio sample harvested from social media is processed by generative AI and turned into a targeted vishing (voice phishing) attack:
 
-```mermaid
-graph TD
-    A[Social Media Video] -->|1. Harvest Audio Sample - Min 3 sec| B(Attacker)
-    B -->|2. Upload Sample to Voice Cloner| C{DFaaS Portal}
-    C -->|3. Input Script & Generate Speech| D[AI Audio Generator]
-    D -->|4. Highly Realistic Impersonation Call| E[Finance Manager / Family Member]
-    E -->|5. Believes Urgent Request & Transfers Funds| F[Financial / Security Breach]
-    
-    style B fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style C fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-    style E fill:#1e293b,stroke:#475569,stroke-width:2px,color:#fff
-    style F fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
-```
+![Diyagram / Diagram](/img/mermaid-synthetic-identity-deepfakes-2-1ed3947c.svg)
 
 ### Defensive Strategies: How to Protect Yourself
 Guarding against AI-generated identity threats requires new habits and technologies:

@@ -15,16 +15,7 @@ mermaid: true
 
 Mythos'un sıfırıncı gün (zero-day) açıklarını nasıl tespit ettiğini ve zincirleme saldırı vektörleri oluşturduğunu gösteren kavramsal model:
 
-```mermaid
-graph TD
-    A[Kaynak Kod Denetimi] --> B{Hevristik Keşif}
-    B -->|Yüksek Entropi| C[Sembolik Yürütme Motoru]
-    C --> D{Zafiyet Onaylandı mı?}
-    D -->|Evet| E[Otonom Exploit Geliştirme]
-    D -->|Hayır| A
-    E --> F[Çok Katmanlı Zincir Oluşturma]
-    F --> G[Project Glasswing Savunma Yaması]
-```
+![Diyagram / Diagram](/img/mermaid-claude-mythos-1-061290b2.svg)
 
 ## Mythos'u Diğerlerinden Ayıran Nedir?
 
@@ -51,16 +42,7 @@ As of April 12, 2026, the cybersecurity landscape has been fundamentally altered
 
 Below is the conceptual model of how Mythos identifies and chains zero-day vulnerabilities:
 
-```mermaid
-graph TD
-    A[Raw Source Code Audit] --> B{Heuristic Discovery}
-    B -->|High Entropy Found| C[Symbolic Execution Engine]
-    C --> D{Vulnerability Confirmed?}
-    D -->|Yes| E[Autonomous Exploit Generation]
-    D -->|No| A
-    E --> F[Multi-Layer Chain Construction]
-    F --> G[Project Glasswing Defense Patch]
-```
+![Diyagram / Diagram](/img/mermaid-claude-mythos-2-c853c589.svg)
 
 ## Why Mythos is Different
 
