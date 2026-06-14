@@ -1,7 +1,7 @@
 ---
 title: "GNSS Spoofing: The Vulnerability of Civilian GPS | GNSS Spoofing: Sivil GPS Sistemlerinin Kırılganlığı"
 date: 2026-06-14
-description: "An analysis of civilian GPS vulnerability to spoofing and takeover attacks at the physical layer, and how to defend systems. / Sivil GPS sinyallerinin fiziksel katmandaki yanıltma (spoofing) ve ele geçirme saldırılarına karşı zafiyeti ve sistemlerin nasıl korunacağı."
+description: "Sivil GPS sinyallerinin fiziksel katmandaki yanıltma (spoofing) ve ele geçirme saldırılarına karşı zafiyeti ve sistemlerin nasıl korunacağı. / An analysis of civilian GPS vulnerability to spoofing and takeover attacks at the physical layer, and how to defend systems."
 tags: ["Physical Security", "GPS", "SDR", "Wireless Security"]
 categories: ["Blog"]
 ShowToc: true
@@ -11,6 +11,45 @@ cover:
     image: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=1200&auto=format&fit=crop"
     alt: "Satellite orbital transmission and GPS signals representation"
     relative: false
+---
+
+## Türkçe (TR)
+
+### Giriş
+Küresel Seyrüsefer Uydu Sistemleri (GNSS) – ABD'nin GPS'i, Rusya'nın GLONASS'ı, Çin'in BeiDou'su ve AB'nin Galileo'su dahil olmak üzere – modern dünyada konumlandırma, rota bulma ve zaman senkronizasyonunun temelini oluşturur. Kargo gemilerinin yönlendirilmesinden otonom İHA'ların uçuşuna, finansal borsaların işlem zaman damgalarından hücresel baz istasyonlarının senkronizasyonuna kadar devasa bir altyapı bu uydulara bağlıdır. Ancak sivil uydulardan gönderilen GNSS sinyallerinin kritik bir güvenlik açığı vardır: Fiziksel katmanda şifrelenmemiş ve doğrulanmamıştır. Bu durum, sivil sinyalleri "spoofing" (yanıltma) saldırılarına karşı son derece savunmasız hale getirir. Saldırganlar sahte uydu sinyalleri yayınlayarak hedef alıcının yanlış konum veya zaman hesaplamasını sağlayabilir.
+
+### Saldırı Hedefleri: Konum ve Zaman Manipülasyonu
+GNSS yanıltması sadece rota değiştirmekle kalmaz, saldırganlar genellikle şu üç hedeften birini amaçlar:
+1.  **Konum Saptırma (Yanlış Konum)**: Hedef alıcının (örneğin bir İHA veya gemi) kendisini farklı bir koordinatta sanmasını sağlamak. Bu yöntemle askeri İHA'lar sınır ihlali yapmaya zorlanabilir ya da kargo gemileri normal rota bildirdiğini sanırken düşman karasularına çekilebilir.
+2.  **Zaman Kaydırma (Yanlış Zaman)**: Uydulardaki hassas atomik saatler, kritik altyapıların zaman senkronizasyonu için kullanılır. Saldırgan zaman sinyalini kaydırarak baz istasyonlarını devre dışı bırakabilir, yüksek frekanslı finansal borsalarda paket kayıpları yaratabilir veya elektrik şebekelerindeki faz ölçümlerini bozarak büyük kesintilere yol açabilir.
+3.  **Hizmet Dışı Bırakma (Disruption)**: GPS frekans bandını tamamen gürültüyle doldurarak alıcının uydu bağlantısını koparmasını sağlamak ve sistemi GPS'siz bırakmak.
+
+### Uyumlu (Coherent) ve Uyumsuz (Non-Coherent) Yanıltma
+Bir yanıltma saldırısının başarısı ve fark edilebilirliği, sinyallerin senkronizasyon kalitesine bağlıdır:
+
+*   **Uyumsuz (Non-Coherent) Yanıltma**: Saldırgan, uydulardan gelen gerçek sinyallerle hiçbir zaman veya güç eşleştirmesi yapmadan doğrudan daha güçlü sahte sinyaller yayınlar. Hedef alıcı bu güçlü sinyali aldığında ani koordinat sıçramaları yaşar veya bağlantıyı kısa süreliğine kaybedip tekrar bağlanır. Bu ani sıçramalar, alıcıdaki anomali tespit yazılımları tarafından kolayca yakalanır.
+*   **Uyumlu (Coherent - Kesintisiz Ele Geçirme)**: Elektronik harbin en gelişmiş seviyesidir. Saldırgan, gökyüzündeki gerçek uydulardan gelen sinyallerle hiçbir zaman ve güç eşleştirmesi yapmadan bunları anlık izler ve zaman, faz ve güç açısından bunlarla kusursuz şekilde senkronize olmuş sahte sinyaller üretir. Sahte sinyal önce düşük güçle verilir, ardından yavaş yavaş gücü artırılarak alıcının takip döngüsü (tracking loop) hissettirilmeden sahte sinyale kilitlenir. Ele geçirme tamamlandıktan sonra koordinatlar milim milim kaydırılır; alıcı hiçbir alarm tetiklemeden yanlış konuma yönlendirilir.
+
+```mermaid
+graph TD
+    A[Gerçek Uydular] -->|Gerçek Sinyaller| R[Alıcı Takip Döngüsü]
+    S[Saldırgan SDR] -->|1. Uyumlu Düşük Güç Senkronizasyonu| R
+    S -->|2. Yavaş Sinyal Gücü Artırımı| R
+    R -->|3. Alıcı Sahte Sinyale Kilitlenir| R
+    S -->|4. Koordinat Verisi Yavaşça Kaydırılır| R
+    R -->|Sonuç: Kesintisiz Ele Geçirme Başarılı| Target[Yanlış Koordinat Üretimi]
+    
+    style R fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
+    style S fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
+    style Target fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
+```
+
+### Savunma ve Korunma Yöntemleri
+Yazılım Tanımlı Radyo (SDR) donanımlarının ucuzlaması ve açık kaynak kodlu GPS simülatörlerinin yaygınlaşması nedeniyle sivil alıcıların korunması kritik öneme sahiptir:
+*   **Galileo OS-NMA (Açık Servis Seyrüsefer Mesajı Doğrulaması)**: Avrupa'nın Galileo uydu sistemi, sivil yayınlara kriptografik imzalar ekleyerek alıcıların bu sinyalin gerçek uydudan gelip gelmediğini doğrulamasına imkan tanımaktadır.
+*   **Ataletsel Seyrüsefer Sistemleri (INS) Entegrasyonu**: Modern otopilotlar sadece GPS kullanmaz; jiroskop ve ivmeölçer verilerini birleştirir. Eğer GPS geminin 50 knot hızla gittiğini söylüyor ancak ivmeölçerler herhangi bir hareket algılamıyorsa, GPS verisi reddedilir.
+*   **Çoklu Anten Dizileri (Spatial Filtering)**: Sinyallerin geliş açısını kontrol etmek. Gerçek uydu sinyallerini gökyüzünün farklı yönlerinden alırken, yanıltma sinyalleri genellikle yerdeki tek bir saldırgan vericisinden gelir.
+
 ---
 
 ## English (EN)
@@ -49,45 +88,6 @@ As Software Defined Radios (SDRs) have become cheaper and open-source spoofing t
 *   **Galileo OS-NMA (Open Service Navigation Message Authentication)**: The European Galileo system is leading the way by adding cryptographic signatures to civilian navigation messages, letting receivers verify that the signal originated from a real satellite.
 *   **Inertial Navigation System (INS) Fusion**: Modern autopilots combine GPS with gyroscopes and accelerometers. If GPS says the ship is moving west at 50 knots but inertial sensors detect no physical acceleration, the system rejects the GPS data.
 *   **Multi-Antenna Arrays (Spatial Filtering)**: Checking the angle of arrival of incoming signals. Authentic GPS signals come from different directions in the sky, while spoofed signals usually originate from a single ground-based transmitter.
-
----
-
-## Türkçe (TR)
-
-### Giriş
-Küresel Seyrüsefer Uydu Sistemleri (GNSS) – ABD'nin GPS'i, Rusya'nın GLONASS'ı, Çin'in BeiDou'su ve AB'nin Galileo'su dahil olmak üzere – modern dünyada konumlandırma, rota bulma ve zaman senkronizasyonunun temelini oluşturur. Kargo gemilerinin yönlendirilmesinden otonom İHA'ların uçuşuna, finansal borsaların işlem zaman damgalarından hücresel baz istasyonlarının senkronizasyonuna kadar devasa bir altyapı bu uydulara bağlıdır. Ancak sivil uydulardan gönderilen GNSS sinyallerinin kritik bir güvenlik açığı vardır: Fiziksel katmanda şifrelenmemiş ve doğrulanmamıştır. Bu durum, sivil sinyalleri "spoofing" (yanıltma) saldırılarına karşı son derece savunmasız hale getirir. Saldırganlar sahte uydu sinyalleri yayınlayarak hedef alıcının yanlış konum veya zaman hesaplamasını sağlayabilir.
-
-### Saldırı Hedefleri: Konum ve Zaman Manipülasyonu
-GNSS yanıltması sadece rota değiştirmekle kalmaz, saldırganlar genellikle şu üç hedeften birini amaçlar:
-1.  **Konum Saptırma (Yanlış Konum)**: Hedef alıcının (örneğin bir İHA veya gemi) kendisini farklı bir koordinatta sanmasını sağlamak. Bu yöntemle askeri İHA'lar sınır ihlali yapmaya zorlanabilir ya da kargo gemileri normal rota bildirdiğini sanırken düşman karasularına çekilebilir.
-2.  **Zaman Kaydırma (Yanlış Zaman)**: Uydulardaki hassas atomik saatler, kritik altyapıların zaman senkronizasyonu için kullanılır. Saldırgan zaman sinyalini kaydırarak baz istasyonlarını devre dışı bırakabilir, yüksek frekanslı finansal borsalarda paket kayıpları yaratabilir veya elektrik şebekelerindeki faz ölçümlerini bozarak büyük kesintilere yol açabilir.
-3.  **Hizmet Dışı Bırakma (Disruption)**: GPS frekans bandını tamamen gürültüyle doldurarak alıcının uydu bağlantısını koparmasını sağlamak ve sistemi GPS'siz bırakmak.
-
-### Uyumlu (Coherent) ve Uyumsuz (Non-Coherent) Yanıltma
-Bir yanıltma saldırısının başarısı ve fark edilebilirliği, sinyallerin senkronizasyon kalitesine bağlıdır:
-
-*   **Uyumsuz (Non-Coherent) Yanıltma**: Saldırgan, uydulardan gelen gerçek sinyallerle hiçbir zaman veya güç eşleştirmesi yapmadan doğrudan daha güçlü sahte sinyaller yayınlar. Hedef alıcı bu güçlü sinyali aldığında ani koordinat sıçramaları yaşar veya bağlantıyı kısa süreliğine kaybedip tekrar bağlanır. Bu ani sıçramalar, alıcıdaki anomali tespit yazılımları tarafından kolayca yakalanır.
-*   **Uyumlu (Coherent - Kesintisiz Ele Geçirme)**: Elektronik harbin en gelişmiş seviyesidir. Saldırgan, gökyüzündeki gerçek uydulardan gelen sinyalleri anlık izler ve zaman, faz ve güç açısından bunlarla kusursuz şekilde senkronize olmuş sahte sinyaller üretir. Sahte sinyal önce düşük güçle verilir, ardından yavaş yavaş gücü artırılarak alıcının takip döngüsü (tracking loop) hissettirilmeden sahte sinyale kilitlenir. Ele geçirme tamamlandıktan sonra koordinatlar milim milim kaydırılır; alıcı hiçbir alarm tetiklemeden yanlış konuma yönlendirilir.
-
-```mermaid
-graph TD
-    A[Gerçek Uydular] -->|Gerçek Sinyaller| R[Alıcı Takip Döngüsü]
-    S[Saldırgan SDR] -->|1. Uyumlu Düşük Güç Senkronizasyonu| R
-    S -->|2. Yavaş Sinyal Gücü Artırımı| R
-    R -->|3. Alıcı Sahte Sinyale Kilitlenir| R
-    S -->|4. Koordinat Verisi Yavaşça Kaydırılır| R
-    R -->|Sonuç: Kesintisiz Ele Geçirme Başarılı| Target[Yanlış Koordinat Üretimi]
-    
-    style R fill:#1e1b4b,stroke:#4338ca,stroke-width:2px,color:#fff
-    style S fill:#1c1917,stroke:#b91c1c,stroke-width:2px,color:#fff
-    style Target fill:#7c2d12,stroke:#ea580c,stroke-width:2px,color:#fff
-```
-
-### Savunma ve Korunma Yöntemleri
-Yazılım Tanımlı Radyo (SDR) donanımlarının ucuzlaması ve açık kaynak kodlu GPS simülatörlerinin yaygınlaşması nedeniyle sivil alıcıların korunması kritik öneme sahiptir:
-*   **Galileo OS-NMA (Açık Servis Seyrüsefer Mesajı Doğrulaması)**: Avrupa'nın Galileo uydu sistemi, sivil yayınlara kriptografik imzalar ekleyerek alıcıların bu sinyalin gerçek uydudan gelip gelmediğini doğrulamasına imkan tanımaktadır.
-*   **Ataletsel Seyrüsefer Sistemleri (INS) Entegrasyonu**: Modern otopilotlar sadece GPS kullanmaz; jiroskop ve ivmeölçer verilerini birleştirir. Eğer GPS geminin 50 knot hızla gittiğini söylüyor ancak ivmeölçerler herhangi bir hareket algılamıyorsa, GPS verisi reddedilir.
-*   **Çoklu Anten Dizileri (Spatial Filtering)**: Sinyallerin geliş açısını kontrol etmek. Gerçek uydu sinyalleri gökyüzünün farklı yönlerinden gelirken, yanıltma sinyalleri genellikle yerdeki tek bir saldırgan vericisinden gelir.
 
 ---
 
