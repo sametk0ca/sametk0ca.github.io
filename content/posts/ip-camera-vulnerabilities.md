@@ -1,7 +1,7 @@
 ---
 title: "The Security Gaps of IP Cameras: From Exploit to Defense | IP Kameraların Güvenlik Açıkları: Sızma Yöntemleri ve Savunma"
 slug: "ip-camera-vulnerabilities"
-date: 2026-06-21
+date: 2026-06-20
 description: "IP kameraların ve CCTV sistemlerinin güvenlik zafiyetleri, hacklenme yöntemleri ve ağ sıkılaştırma (hardening) stratejileri. / An in-depth look at IP camera and CCTV security vulnerabilities, exploitation vectors, and network hardening strategies."
 tags: ["Security", "IoT", "Network Security", "Privacy"]
 categories: ["Blog"]
