@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 import html
 import sys
+import time
 
 # Cybersecurity feeds to fetch (RSS and Atom formats supported)
 FEEDS = {
@@ -140,30 +141,45 @@ def ask_gemini(prompt, api_key):
         headers=headers,
         method="POST"
     )
-    try:
-        with urllib.request.urlopen(req, timeout=90) as response:
-            res_data = json.loads(response.read().decode("utf-8"))
-            text_response = res_data["candidates"][0]["content"]["parts"][0]["text"]
-            
-            # Clean markdown code blocks from Gemini response
-            text_response = text_response.strip()
-            if text_response.startswith("```"):
-                lines = text_response.splitlines()
-                if lines[0].startswith("```"):
-                    lines = lines[1:]
-                if lines[-1].startswith("```"):
-                    lines = lines[:-1]
-                text_response = "\n".join(lines).strip()
+    
+    max_retries = 4
+    for attempt in range(max_retries):
+        try:
+            with urllib.request.urlopen(req, timeout=90) as response:
+                res_data = json.loads(response.read().decode("utf-8"))
+                text_response = res_data["candidates"][0]["content"]["parts"][0]["text"]
                 
-            return json.loads(text_response)
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8") if e else ""
-        print(f"HTTP Error calling Gemini API: {e.code} - {e.reason}")
-        print(f"API Response: {error_body}")
-        return None
-    except Exception as e:
-        print(f"Error calling Gemini API: {e}")
-        return None
+                # Clean markdown code blocks from Gemini response
+                text_response = text_response.strip()
+                if text_response.startswith("```"):
+                    lines = text_response.splitlines()
+                    if lines[0].startswith("```"):
+                        lines = lines[1:]
+                    if lines[-1].startswith("```"):
+                        lines = lines[:-1]
+                    text_response = "\n".join(lines).strip()
+                    
+                return json.loads(text_response)
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode("utf-8") if e else ""
+            print(f"HTTP Error calling Gemini API (Attempt {attempt+1}/{max_retries}): {e.code} - {e.reason}")
+            print(f"API Response: {error_body}")
+            
+            # Retry on transient errors (503 Service Unavailable, 429 Too Many Requests)
+            if e.code in [429, 503] and attempt < max_retries - 1:
+                sleep_time = (attempt + 1) * 10
+                print(f"Waiting {sleep_time} seconds before retrying...")
+                time.sleep(sleep_time)
+            else:
+                return None
+        except Exception as e:
+            print(f"Error calling Gemini API (Attempt {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                sleep_time = (attempt + 1) * 10
+                print(f"Waiting {sleep_time} seconds before retrying...")
+                time.sleep(sleep_time)
+            else:
+                return None
 
 def build_prompt(news_items):
     formatted_news = ""
