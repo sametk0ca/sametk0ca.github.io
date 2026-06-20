@@ -35,22 +35,7 @@ Siber güvenlik dünyasında bu zafiyet genellikle **TOCTOU (Time of Check to Ti
 
 Aşağıdaki diyagramda, bir saldırganın aynı anda başlattığı iki satın alma isteğiyle sistemi nasıl manipüle ettiği gösterilmektedir:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Attacker as Saldırgan
-    participant App as Web Uygulaması
-    participant DB as Veritabanı
-    
-    Note over Attacker, DB: Başlangıç Bakiyesi: 100 TL | Ürün Fiyatı: 100 TL
-    Attacker->>App: İstek 1: Satın Al (Ödeme Yap)
-    Attacker->>App: İstek 2: Satın Al (Ödeme Yap) - (Aynı Anda)
-    App->>DB: İstek 1: Bakiye Kontrolü (100 >= 100? -> Evet)
-    App->>DB: İstek 2: Bakiye Kontrolü (100 >= 100? -> Evet)
-    App->>DB: İstek 1: Bakiyeyi Güncelle (100 - 100 = 0) ve Ürünü Teslim Et
-    App->>DB: İstek 2: Bakiyeyi Güncelle (0 - 100 = -100 veya 0) ve Ürünü Teslim Et
-    Note over Attacker, DB: Sonuç: Saldırgan 100 TL ödeyerek 2 adet ürün aldı!
-```
+![Diyagram / Diagram](/img/mermaid-race-condition-1-d4331d33.svg)
 
 ---
 
@@ -99,22 +84,7 @@ In the cybersecurity world, this vulnerability usually feeds on a time window kn
 
 The following diagram illustrates how an attacker can manipulate a system using two purchase requests triggered at the exact same time:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Attacker as Attacker
-    participant App as Web Application
-    participant DB as Database
-    
-    Note over Attacker, DB: Initial Balance: $100 | Item Price: $100
-    Attacker->>App: Request 1: Purchase (Pay)
-    Attacker->>App: Request 2: Purchase (Pay) - (Simultaneous)
-    App->>DB: Request 1: Check Balance ($100 >= $100? -> Yes)
-    App->>DB: Request 2: Check Balance ($100 >= $100? -> Yes)
-    App->>DB: Request 1: Update Balance ($100 - $100 = $0) & Deliver Item
-    App->>DB: Request 2: Update Balance ($0 - $100 = -$100 or $0) & Deliver Item
-    Note over Attacker, DB: Result: Attacker bought 2 items for the price of $100!
-```
+![Diyagram / Diagram](/img/mermaid-race-condition-2-2a009799.svg)
 
 ---
 
