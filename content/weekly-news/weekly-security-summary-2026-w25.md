@@ -1,5 +1,5 @@
 ---
-title: "Weekly Security Summary | Haftalık Siber Güvenlik Özeti - Week 2026/25"
+title: "Week 25 - 15/06 - 21/06"
 date: 2026-06-21
 draft: false
 tags: ["Weekly Summary", "Cyber Security", "Haftalık Özet"]
