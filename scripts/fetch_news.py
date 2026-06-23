@@ -3,7 +3,7 @@ import urllib.error
 import xml.etree.ElementTree as ET
 import json
 import re
-from datetime import datetime
+from datetime import datetime, date
 import os
 import html
 import sys
@@ -217,8 +217,17 @@ Seçtiğin her haber için aşağıdaki JSON yapısına uygun olarak bir liste �
 def generate_markdown(weekly_data, year, week):
     date_str = datetime.now().strftime("%Y-%m-%d")
     
+    # Calculate Monday and Sunday for the ISO week
+    monday = date.fromisocalendar(year, week, 1)
+    sunday = date.fromisocalendar(year, week, 7)
+    
+    monday_str = monday.strftime("%d/%m")
+    sunday_str = sunday.strftime("%d/%m")
+    
+    title_str = f"Week {week} - {monday_str} - {sunday_str}"
+    
     content = f"""---
-title: "Weekly Security Summary | Haftalık Siber Güvenlik Özeti - Week {year}/{week:02d}"
+title: "{title_str}"
 date: {date_str}
 draft: false
 tags: ["Weekly Summary", "Cyber Security", "Haftalık Özet"]
