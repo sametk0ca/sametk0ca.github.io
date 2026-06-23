@@ -53,24 +53,7 @@ Sabit Zamanlı Kriptografi yazmak sezgisel değildir ve modern derleyici (compil
 2.  **Gizli Veriye Bağlı Bellek Erişimi Yasağı (No Secret-Indexed Memory):** Gizli veriler, dizilerde indeks olarak kullanılamaz (örn: `S-Box[secret_key]`). Farklı indeksler işlemci önbelleğinde (L1/L2 cache) hit veya miss durumuna yol açarak bellek okuma sürelerini değiştirir.
 3.  **Bit Düzeyinde Mantıksal İşlemler (Bitwise Logic):** Koşullu ifadeler yerine bit düzeyinde maskeleme işlemleri yapılır. Örneğin, bir koşul doğruysa `x`, yanlışsa `y` seçmek için `if` yerine `x = (mask & a) | (~mask & b)` gibi matematiksel yapılar kurulur.
 
----
 
-## **5. Meraklısına: Siber Güvenlikçi Bakış Açısıyla Günlük Sorular**
-
-Siber güvenlikte karmaşık teknik konular, günlük hayatta insanların en çok merak ettiği sorularla doğrudan kesişir. 
-
-### **Soru 1: WhatsApp mesajlarımız gerçekten güvenli mi? Neden?**
-**Kısa Cevap:** Evet, teknik ve matematiksel olarak son derece güvenli.
-**Detaylı Analiz:** WhatsApp, uçtan uca şifreleme için "Signal Protokolü"nü (Double Ratchet algoritmasını) kullanır. Bu protokol sayesinde mesajlarınız daha cihazınızdan çıkmadan şifrelenir ve sadece alıcının cihazında çözülebilir. Araya giren hiç kimse, hatta WhatsApp/Meta bile mesajlarınızı okuyamaz.
-Ancak burada **Sabit Zamanlı Kriptografi** devreye girer: Matematiksel olarak mükemmel olan bu algoritmalar, eğer donanımda sabit sürede çalışacak şekilde kodlanmazsa, bir saldırgan cihazınızın işlemcisindeki elektromanyetik dalgalanmaları veya işlem sürelerini izleyerek (Side-Channel) şifreleme anahtarlarını doğrudan telefonunuzdan çalabilir. Neyse ki günümüzdeki modern mesajlaşma kütüphaneleri (libsignal gibi) bu yan kanal saldırılarına karşı sabit zamanlı olarak geliştirilmiştir.
-
-### **Soru 2: Instagram hesabı çalmak gerçekten basit mi? Neden ya da neden değil?**
-**Kısa Cevap:** Instagram sunucularını hacklemek çok zordur, ancak kullanıcıyı kandırarak hesabı almak çok kolaydır.
-**Detaylı Analiz:** Instagram veya çatı şirketi Meta, dünyanın en iyi siber güvenlik ekiplerine ve altyapılarına sahiptir. Şifre doğrulama, token yönetimi ve oturum mekanizmaları sabit zamanlı kriptografi ve gelişmiş hashing (Argon2, bcrypt vb.) sistemleriyle korunur. Sunucu tarafında bir zafiyet bularak şifreleri çalmak veya şifre doğrulama mekanizmasını bypass etmek neredeyse imkansızdır.
-Ancak bireysel bir hesabı çalmak saldırganlar için hala çok basittir. Bunun sebebi sistemin değil, **insanın hacklenmesidir (Sosyal Mühendislik)**. Saldırganlar karmaşık teknik yolları denemek yerine:
-*   Sizi sahte bir Instagram giriş sayfasına yönlendirirler (Oltalama - Phishing).
-*   Başka sitelerde çaldırdığınız eski şifrelerinizi Instagram üzerinde otomatik denerler (Credential Stuffing).
-Kısacası, kale kapısı çeliktir ve kırılamaz; ancak saldırganlar kapıyı kırmak yerine sizi kandırıp anahtarı doğrudan sizden alırlar.
 
 ---
 
@@ -113,25 +96,6 @@ Writing constant-time code is highly non-intuitive and requires fighting modern 
 1.  **No Secret-Dependent Branching:** You cannot use `if`, `else`, or `while` statements whose conditions depend on secret data (such as keys or plaintexts). Otherwise, CPU branch predictors will alter execution times.
 2.  **No Secret-Indexed Memory Access:** Secrets must not be used as array indices (e.g., `S-Box[secret_key]`). Accessing varying memory addresses causes cache hits or misses in the CPU cache (L1/L2), altering retrieval times.
 3.  **Use Bitwise Operations:** Conditional checks are replaced with bitwise logic. For example, selecting `x` if a condition is met and `y` otherwise is achieved mathematically using `x = (mask & a) | (~mask & b)` instead of an `if` block.
-
----
-
-## **5. FAQs: A Cybersecurity Perspective on Everyday Questions**
-
-Complex technical concepts in security often explain the real-world safety questions everyday users ask.
-
-### **Question 1: Are our WhatsApp messages really secure? Why?**
-**Short Answer:** Yes, they are technically and mathematically highly secure.
-**In-depth Analysis:** WhatsApp uses the "Signal Protocol" (specifically the Double Ratchet algorithm) for end-to-end encryption. This means messages are encrypted on your device before transmission and can only be decrypted by the recipient. No third party—including WhatsApp or Meta—can read your messages.
-However, **Constant-Time Cryptography** is crucial here: even if the math is perfect, if the cryptographic library is poorly coded, an attacker could observe timing or electromagnetic fluctuations (Side-Channels) on your phone's processor to extract the private keys. Thankfully, modern messaging libraries (like libsignal) are meticulously audited to prevent timing vulnerabilities.
-
-### **Question 2: Is stealing an Instagram account really simple? Why or why not?**
-**Short Answer:** Hacking Instagram's servers is extremely difficult, but hacking the user to steal the account is very easy.
-**In-depth Analysis:** Meta employs world-class security engineers. Authentication, password storage (using secure hashes like Argon2/bcrypt), and session handling are heavily protected against cryptographic and timing attacks.
-However, stealing an individual account remains simple because attackers target the **human factor (Social Engineering)** rather than the code:
-*   They trick you with fake login pages (Phishing).
-*   They try credentials leaked from other compromised databases (Credential Stuffing).
-In short, the castle gates are solid steel; instead of breaking them, attackers trick you into handing over the keys.
 
 ---
 *This post is linked to the Knowledge Base: [[Knowledge Base / Constant-Time-Cryptography]]*
