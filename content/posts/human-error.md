@@ -1,5 +1,5 @@
 ---
-title: "Human Error in Cybersecurity: Is the Human Really the Weakest Link? | Siber Güvenlikte İnsan Hatası: İnsan Gerçekten En Zayıf Halka mı?"
+title: "Human Error"
 date: 2026-06-14
 description: "Siber güvenlikteki insan hatalarının arkasındaki psikolojik ve sistemsel nedenler, İsviçre Peyniri Modeli ve hızlı/yavaş düşünme teorisi. / The psychological and systemic factors behind human errors in cybersecurity, the Swiss Cheese Model, and fast/slow thinking theory."
 tags: ["Human Factors", "Security Awareness", "Psychology", "Security Hygiene"]

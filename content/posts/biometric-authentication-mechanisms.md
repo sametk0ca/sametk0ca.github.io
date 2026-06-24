@@ -1,5 +1,5 @@
 ---
-title: "Biometric Authentication: Are Fingerprint and Face Scanners Really Safe? | Biyometrik Kimlik Doğrulama: Parmak İzi ve Yüz Tarayıcılar Ne Kadar Güvenli?"
+title: "Biometric Authentication"
 date: 2026-06-14
 description: "Parmak izi, yüz tanıma ve göz tarama teknolojilerinin arkasındaki siber güvenlik zafiyetleri ve sahte parmak izleriyle yanıltma (spoofing) saldırıları. / The cybersecurity vulnerabilities behind fingerprint, facial recognition, and iris scanning technologies, and how spoofing attacks work."
 tags: ["Biometrics", "Authentication", "Liveness Detection", "Security"]

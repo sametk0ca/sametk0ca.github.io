@@ -1,5 +1,5 @@
 ---
-title: "Synthetic Identity & Deepfakes: The Rise of GenAI Scams | Sentetik Kimlik ve Deepfake: Üretken Yapay Zeka Dolandırıcılığı"
+title: "Synthetic Identity & Deepfakes"
 date: 2026-06-14
 description: "Yapay zeka tabanlı ses taklidi, gerçek zamanlı video değiştirme ve kimlik dolandırıcılığının günlük hayattaki tehlikeleri. / The everyday dangers of AI-powered voice cloning, real-time video impersonation, and synthetic identity fraud."
 tags: ["Deepfake", "Generative AI", "Biometrics", "Social Engineering"]

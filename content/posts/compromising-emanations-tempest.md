@@ -1,5 +1,5 @@
 ---
-title: "TEMPEST: Understanding Compromising Emanations | TEMPEST: Sızan Sinyalleri Anlamak"
+title: "TEMPEST"
 date: 2026-06-14
 description: "Elektronik cihazların fiziksel sinyallerle gizli verileri nasıl sızdırdığı ve TEMPEST saldırılarına karşı korunma yöntemleri. / How electronic devices leak confidential data through physical signals and how to defend against TEMPEST attacks."
 tags: ["Physical Security", "TEMPEST", "Side-Channel", "Hardware Security"]

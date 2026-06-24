@@ -1,5 +1,5 @@
 ---
-title: "Is Stealing Instagram Accounts Really Easy? | Instagram Hesabı Çalmak Gerçekten Basit mi?"
+title: "Instagram Hacking"
 date: 2026-06-23
 description: "An analysis of server-side application security versus human vulnerabilities when it comes to account takeovers. / Hesap ele geçirme saldırılarında sunucu tarafı güvenliği ile insan faktörünün karşılaştırılması."
 tags: ["Phishing", "Social Engineering", "Credential Stuffing", "Authentication", "Cybersecurity"]

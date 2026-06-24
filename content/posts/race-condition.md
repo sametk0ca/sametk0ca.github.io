@@ -1,5 +1,5 @@
 ---
-title: "Race Condition: The Silent Concurrency Vulnerability | Race Condition: Sessiz Eşzamanlılık Zafiyeti"
+title: "Race Condition"
 date: 2026-06-20
 draft: false
 tags: ["Race Condition", "Concurrency", "Web Security", "Cybersecurity", "Exploit"]

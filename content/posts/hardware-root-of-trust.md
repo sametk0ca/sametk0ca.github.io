@@ -1,5 +1,5 @@
 ---
-title: "Hardware Root of Trust | Donanım Güven Kökü"
+title: "Hardware Root of Trust"
 date: 2026-06-14
 description: "Güven zincirinin en alt basamağı olan donanım güven köklerinin (RoT) çalışma mantığı, TPM, HSM ve Secure Element teknolojileri. / The core logic of Hardware Roots of Trust (RoT), and the technologies of TPM, HSM, and Secure Elements."
 tags: ["Hardware Security", "Root of Trust", "TPM", "Cryptography"]

@@ -1,5 +1,5 @@
 ---
-title: "GNSS Spoofing: The Vulnerability of Civilian GPS | GNSS Spoofing: Sivil GPS Sistemlerinin Kırılganlığı"
+title: "GNSS Spoofing"
 date: 2026-06-14
 description: "Sivil GPS sinyallerinin fiziksel katmandaki yanıltma (spoofing) ve ele geçirme saldırılarına karşı zafiyeti ve sistemlerin nasıl korunacağı. / An analysis of civilian GPS vulnerability to spoofing and takeover attacks at the physical layer, and how to defend systems."
 tags: ["Physical Security", "GPS", "SDR", "Wireless Security"]

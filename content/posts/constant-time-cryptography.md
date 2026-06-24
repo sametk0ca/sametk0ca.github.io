@@ -1,5 +1,5 @@
 ---
-title: "Constant-Time Cryptography: Why Timing is Everything in Security | Sabit Zamanlı Kriptografi: Güvenlikte Zamanlama Neden Her Şeydir?"
+title: "Constant-Time Cryptography"
 date: 2026-06-23
 description: "Why mathematical encryption can fail on physical hardware and how constant-time code prevents timing attacks. Also answering common myths like WhatsApp security and Instagram hacking. / Matematiksel şifrelemenin fiziksel donanımda nasıl çöktüğü, sabit zamanlı kodun zamanlama saldırılarını nasıl önlediği ve günlük güvenlik sorularının yanıtları."
 tags: ["Constant-Time", "Cryptography", "Side-Channel", "Cybersecurity", "Authentication"]

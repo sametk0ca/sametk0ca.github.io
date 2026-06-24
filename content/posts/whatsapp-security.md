@@ -1,5 +1,5 @@
 ---
-title: "Are WhatsApp Messages Really Secure? | WhatsApp Mesajlarımız Gerçekten Güvenli mi?"
+title: "WhatsApp Security"
 date: 2026-06-23
 description: "A deep dive into the security of WhatsApp's end-to-end encryption, the Signal Protocol, and the reality of potential leaks. / WhatsApp'ın uçtan uca şifreleme mekanizması, Signal Protokolü ve olası güvenlik açıklarının arkasındaki siber güvenlik gerçekleri."
 tags: ["Encryption", "Signal Protocol", "Privacy", "Cybersecurity", "Messaging"]

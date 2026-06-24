@@ -1,5 +1,5 @@
 ---
-title: "Byzantine Fault Tolerance (BFT) | Bizans Hata Toleransı"
+title: "Byzantine Fault Tolerance"
 date: 2026-06-14
 description: "Dağıtık sistemlerin ve blokzincir ağlarının, kötü niyetli veya hatalı düğümlere rağmen nasıl konsensüse varabildiği ve Bizans Generalleri Problemi. / How distributed systems and blockchain networks reach consensus despite malicious or faulty nodes, and the Byzantine Generals Problem."
 tags: ["Distributed Systems", "Consensus", "BFT", "Blockchain"]

@@ -1,5 +1,5 @@
 ---
-title: "Distance Bounding & Relay Attacks | Mesafe Sınırlandırma ve Röle Saldırıları"
+title: "Distance Bounding & Relay Attacks"
 date: 2026-06-14
 description: "Anahtarsız giriş ve temassız ödeme sistemlerinin röle saldırılarıyla nasıl istismar edildiği ve fiziksel katmanda mesafe sınırlandırma yöntemleriyle nasıl korunduğu. / How keyless entry and contactless payment systems are exploited by relay attacks and secured using physical-layer distance bounding protocols."
 tags: ["Physical Security", "Relay Attack", "Distance Bounding", "Wireless Security"]
