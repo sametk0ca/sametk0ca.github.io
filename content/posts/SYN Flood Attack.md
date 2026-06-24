@@ -8,7 +8,7 @@ categories: ["Writeups"]
 
 
 
-## 🇹🇷 Türkçe Versiyon
+## (TR) Türkçe Versiyon
 
 Siber güvenlik dünyasında saldırı yöntemleri, isimleri karmaşık olsa da genellikle günlük hayattaki davranışların dijital yansımalarıdır. Bugün, bir sunucuyu devre dışı bırakmanın en klasik yollarından biri olan **SYN Flood** saldırısını inceleyeceğiz.
 
@@ -60,7 +60,7 @@ Buna ek olarak sunucu cevaplar için **timeout** da ayarlayabilir. Karşı taraf
 
 **Özetle:** SYN Flood, sunucuyu binlerce sonuçsuz diyalog içinde boğmaktır. Modern güvenlik duvarları ve doğru konfigürasyonlarla bu hayaletlerden korunmak mümkündür.
 
-##  English Version
+## (EN) English Version
 
 In the world of cybersecurity, many attack vectors act like digital reflections of real-world behaviors. Today, we will look at one of the most classic ways to overwhelm a server: the **SYN Flood** attack.
 

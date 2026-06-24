@@ -37,6 +37,8 @@ categories: ["Writeups"]
 **Özet**  
 DHCP, bir cihazın ağa bağlandığında IP adresini otomatik olarak almasını sağlayan pratik bir protokoldür. Süreç, cihazın Discover paketiyle sunucuyu aramasıyla başlar, sunucunun Offer paketiyle bir IP adresi önermesiyle devam eder, cihazın Request paketiyle bu adresi istemesi ve son olarak sunucunun ACK paketiyle atamayı onaylamasıyla tamamlanır. Bu otomatik süreç, IP çakışmalarını önler ve özellikle büyük ağlarda yönetimi kolaylaştırır.
 
+---
+
 **DHCP (Dynamic Host Configuration Protocol)** is a protocol that allows a device to automatically obtain an IP address and other network settings when it connects to a network. This eliminates the need for manual IP assignment and makes network management easier. The process of DHCP assigning an IP address to a device consists of four basic steps: **_Discover_**, **_Offer_**, **_Request_**, and **Acknowledge**. Below, I explain these steps step by step:
 
 **1. DHCP Discover (Discovery)**  

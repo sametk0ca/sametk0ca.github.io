@@ -60,6 +60,8 @@ LSB
 
 Kriptografi, veriyi şifreleyerek koruma altına alırken, steganografi verinin varlığını gizler. Kriptografik bir mesaj ele geçirildiğinde, şifreleme algoritmasına dayanarak mesajın içeriği anlaşılabilir. Steganografide ise mesajın varlığı fark edilmediğinden, yakalanması daha zordur. Bu iki yöntem bir arada kullanılarak, güvenlik iki katına çıkarılabilir. Önce mesaj şifrelenip sonra bir dosyanın içine gömülerek iletilir.
 
+---
+
 ## What is Steganography?
 
 Steganography is the art of concealing information within other data. In contrast to cryptography, which encrypts the content of a message, steganography hides the existence of the message itself, making it a discreet and undetectable form of secure communication.

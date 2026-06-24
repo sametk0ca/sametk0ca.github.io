@@ -46,6 +46,8 @@ Her ne kadar honeypot sistemleri güvenlik için önemli bir araç olsa da bazı
 
 Honeypotlar, siber güvenlik uzmanları için kritik bir araç olup, saldırganların davranışlarını anlamak ve güvenlik stratejilerini geliştirmek için kullanılır. Ancak, güvenlik riskleri göz önünde bulundurularak dikkatli bir şekilde tasarlanmalı ve yönetilmelidir. Doğru kullanıldığında, honeypotlar kurumlar için güçlü bir savunma mekanizması oluşturabilir.
 
+---
+
 In the world of cybersecurity, one of the most effective methods for analyzing attackers and identifying vulnerabilities is honeypot systems. A honeypot is a decoy system designed to lure malicious actors, helping security professionals understand attack methods and improve defense mechanisms. In this article, we will explore how honeypots work, their types, and why they are important.
 
 ## What is a Honeypot?

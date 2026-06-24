@@ -50,7 +50,7 @@ Evet, ne yazık ki bu iki güvenlik önlemi **kusursuz değil.** Saldırganlar *
 
 **Sonuç olarak:** Eğer bir yazılım geliştiriciyseniz veya güvenlik alanında çalışıyorsanız, **DEP ve ASLR’nin aktif olduğundan emin olun.** Günümüz saldırılarının büyük bir kısmı, bu önlemler devrede değilken başarılı olur.
 
-
+---
 
 ## What Are DEP and ASLR? Why Are They Important in Cybersecurity?
 

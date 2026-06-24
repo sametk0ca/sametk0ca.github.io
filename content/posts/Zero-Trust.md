@@ -38,6 +38,7 @@ Zero Trust modelinin uygulanması, birçok saldırı türünü engeller ve hassa
 
 Bu model özellikle bulut sistemlerinde güvenliği artırmak ve veri ihlallerini önlemek için kritik öneme sahiptir.
 
+---
 
 The “Zero Trust” model is a prominent security approach today that enforces strict security controls throughout the entire system, rather than only at the network perimeter. In this model, all access requests, whether from inside or outside the organization, are continuously authenticated. The core principle of Zero Trust is **”Never trust, always verify.”** In other words, no one — whether internal or external — is automatically trusted, and everyone’s access request must go through verification.
 
