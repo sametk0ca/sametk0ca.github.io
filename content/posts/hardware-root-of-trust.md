@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1601597111158-2fceff292cdc.jpg"
     alt: "Silicon hardware microchip and cryptography keys representation"
     relative: false
 ---

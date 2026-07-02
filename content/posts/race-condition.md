@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211"
+    image: "/img/cover-1461896836934-ffe607ba8211.jpg"
     alt: "Athletes racing, symbolizing multiple processes competing for the same resource."
     relative: false
 ---

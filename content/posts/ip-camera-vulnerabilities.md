@@ -9,7 +9,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1557597774-9d273605dfa9.jpg"
     alt: "A security camera mounted on a wall under dynamic blue lighting"
     relative: false
 ---

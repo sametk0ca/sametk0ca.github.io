@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7"
+    image: "/img/cover-1611162617213-7d7a39e9b1d7.jpg"
     alt: "Instagram logo display"
     relative: false
 ---

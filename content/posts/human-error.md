@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1541746972996-4e0b0f43e02a.jpg"
     alt: "Workplace pressure, human decisions, and cybersecurity errors"
     relative: false
 ---

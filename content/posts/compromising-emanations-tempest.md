@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1558494949-ef010cbdcc31.jpg"
     alt: "TEMPEST signal leakage and hardware security representation"
     relative: false
 ---

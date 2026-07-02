@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1544197150-b99a580bb7a8.jpg"
     alt: "Global network and routing infrastructure visualization"
     relative: false
 ---

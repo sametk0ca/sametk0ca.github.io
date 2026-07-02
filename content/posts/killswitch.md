@@ -9,7 +9,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1601597111158-2fceff270190?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1601597111158-2fceff270190.jpg"
     alt: "Emergency kill switch button and network systems"
     relative: false
 ---

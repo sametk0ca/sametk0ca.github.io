@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1618005182384-a83a8bd57fbe.jpg"
     alt: "Digital human face abstract representation and AI deepfakes"
     relative: false
 ---

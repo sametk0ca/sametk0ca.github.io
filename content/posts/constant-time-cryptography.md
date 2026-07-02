@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1501139083538-0139883ac326"
+    image: "/img/cover-1501139083538-0139883ac326.jpg"
     alt: "Hourglass symbolizing time and security"
     relative: false
 ---

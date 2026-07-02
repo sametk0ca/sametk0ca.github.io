@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1618401471353-b98aedd07871.jpg"
     alt: "Software development code and repository management visualization"
     relative: false
 ---

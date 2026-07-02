@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=1200&auto=format&fit=crop"
+    image: "/img/cover-1541185933-ef5d8ed016c2.jpg"
     alt: "Satellite orbital transmission and GPS signals representation"
     relative: false
 ---

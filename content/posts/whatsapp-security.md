@@ -8,7 +8,7 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3"
+    image: "/img/cover-1563986768609-322da13575f3.jpg"
     alt: "Smartphone showing secure chat threads"
     relative: false
 ---
