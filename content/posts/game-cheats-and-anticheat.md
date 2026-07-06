@@ -8,8 +8,8 @@ ShowToc: true
 math: false
 mermaid: true
 cover:
-    image: "https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf"
-    alt: "Gaming Controller with Neon Light"
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000"
+    alt: "Gaming Controller and Retro Hardware"
     relative: false
 ---
 
