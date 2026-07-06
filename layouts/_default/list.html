@@ -58,7 +58,22 @@
 
 <article class="{{ $class }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+  <div class="entry-cover-wrapper">
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+    <div class="entry-cover-title">
+      {{- if in .Title "|" }}
+        {{- $parts := split .Title "|" }}
+        <span class="title-main">{{ trim (index $parts 0) " " }}</span>
+        <span class="title-sub">{{ trim (index $parts 1) " " }}</span>
+      {{- else if in .Title "/" }}
+        {{- $parts := split .Title "/" }}
+        <span class="title-main">{{ trim (index $parts 0) " " }}</span>
+        <span class="title-sub">{{ trim (index $parts 1) " " }}</span>
+      {{- else }}
+        <span class="title-main">{{ .Title }}</span>
+      {{- end }}
+    </div>
+  </div>
   <header class="entry-header">
     <h2 class="entry-hint-parent">
       {{- .Title }}
