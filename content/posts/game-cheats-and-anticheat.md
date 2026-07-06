@@ -52,23 +52,7 @@ Geleneksel anti-cheat yazılımları kullanıcı modunda (Ring 3) çalışırdı
 #### 3. Sunucu Taraflı Doğrulama (Server-Side Validation)
 Hile mühendisliğinin altın kuralı şudur: **"İstemciye asla güvenme."** Oyun içi fizik kuralları, hız limitleri ve mermi isabetleri istemcinin bilgisayarında değil, sunucuda hesaplanmalıdır. Sunucu, istemcinin "Işınlandım" veya "Duvarın arkasından vurdum" gibi taleplerini kendi fizik motorunda simüle ederek reddeder.
 
-```mermaid
-graph TD
-    subgraph Client [Oyuncu Bilgisayarı]
-        gp[Oyun Süreci - Ring 3]
-        cheat[Hile Yazılımı / Sürücüsü]
-        ac[Anti-Cheat Sürücüsü - Ring 0]
-    end
-    subgraph Server [Oyun Sunucusu]
-        val[Fizik ve Kural Doğrulama Engine]
-    end
-
-    cheat -- "Bellek Manipülasyonu / Kod Enjeksiyonu" --> gp
-    ac -- "Süreç Koruması & Yetkisiz Erişim Engelleme" --> cheat
-    ac -- "Bütünlük Doğrulaması" --> gp
-    gp -- "Girdi ve Aksiyon Paketleri" --> val
-    val -- "Durum Güncellemeleri & Reddetme" --> gp
-```
+![Diyagram / Diagram](/img/mermaid-game-cheats-and-anticheat-1-699d3b5c.svg)
 
 Hile geliştiricileri ve anti-cheat mühendisleri arasındaki bu kedi-fare oyunu, işletim sistemi mimarilerinin sınırlarını zorlamaya devam etmektedir.
 
@@ -113,23 +97,7 @@ Even if client-side software security is airtight, hackers can bypass memory-lev
 #### 3. Server-Side Validation
 The absolute golden rule of game engineering is: **"Never trust the client."** Game physics, maximum movement speeds, and projectile collisions must be processed or validated on the remote server. The server simulates the client's reported state transitions, instantly rejecting illegal behaviors such as teleportation or shooting through solid obstacles.
 
-```mermaid
-graph TD
-    subgraph Client [Player Computer]
-        gp[Game Process - Ring 3]
-        cheat[Cheat Software / Driver]
-        ac[Anti-Cheat Driver - Ring 0]
-    end
-    subgraph Server [Game Server]
-        val[Physics & Rule Validation Engine]
-    end
-
-    cheat -- "Memory Manipulation / Code Injection" --> gp
-    ac -- "Process Protection & Access Blocking" --> cheat
-    ac -- "Integrity Verification" --> gp
-    gp -- "Input & Action Packets" --> val
-    val -- "State Updates & Rejections" --> gp
-```
+![Diyagram / Diagram](/img/mermaid-game-cheats-and-anticheat-2-ee8916a9.svg)
 
 This endless cat-and-mouse game between cheat developers and anti-cheat engineers continues to drive the evolution of operating system architecture and real-time security systems.
 
