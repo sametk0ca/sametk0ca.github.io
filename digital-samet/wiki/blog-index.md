@@ -6,6 +6,9 @@ This index tracks all synthesized blog posts published from the internal Wiki to
 
 | Date | Title | Wiki Source | Blog Post Path |
 | :--- | :--- | :--- | :--- |
+| 2026-07-20 | Neuromorphic & BCI Security | [[bci-neuromorphic-security]] | `posts/bci-neuromorphic-security.md` |
+| 2026-07-20 | eBPF for Agentic AI Security | [[ebpf-agentic-ai-security]] | `posts/ebpf-agentic-ai-security.md` |
+| 2026-07-20 | Post-Quantum Handshake Overhead | [[post-quantum-kyber-tls-overhead]] | `posts/post-quantum-kyber-tls-overhead.md` |
 | 2026-07-13 | Bypassing Path Traversal Filters | [[path-traversal-filter-bypass]] | `posts/path-traversal-filter-bypass.md` |
 | 2026-07-10 | Zero-Knowledge Proofs | [[zero-knowledge-proofs]] | `posts/zero-knowledge-proofs.md` |
 | 2026-07-06 | Game Cheats & Anti-Cheats | [[game-security-and-cheats]] | `posts/game-cheats-and-anticheat.md` |

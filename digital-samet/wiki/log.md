@@ -1,5 +1,11 @@
 # Wiki Log
 
+## [2026-07-20] publish | Neuromorphic BCI, eBPF Agentic AI & Post-Quantum TLS (bci-neuromorphic-security.md, ebpf-agentic-ai-security.md, post-quantum-kyber-tls-overhead.md)
+- Synthesized and published 3 bilingual blog posts:
+  1. **Neuromorphic & BCI Security**: Analyzed brain-computer interface threat vectors, P300 brain eavesdropping side-channels, neural signal injection, and differential privacy / hardware enclave mitigations. Included Xiaohei hand-drawn illustration.
+  2. **eBPF for Agentic AI Security**: Explored kernel-level sandboxing, dynamic system call filtering (`openat`, `execve`), and network egress control for autonomous LLM agents. Included Xiaohei hand-drawn illustration.
+  3. **Post-Quantum Handshake Overhead**: Detailed real-world TLS 1.3 packet fragmentation, MTU boundaries, middlebox drops, and TTFB latency overhead when deploying Kyber768 hybrid key exchanges. Included Xiaohei hand-drawn illustration.
+
 ## [2026-07-13] publish | Bypassing Path Traversal Filters (To-Do/drafts/path-traversal-filter-bypass.md)
 - Synthesized and published a bilingual blog post explaining Directory Traversal and Filter Bypass vulnerabilities.
 - **Path Traversal & Filter Bypass**: Explored how simple string replacement (`replace("../", "")`) fails to protect web applications. Explained the mechanics of nested string bypasses (`....//`) and secure coding remedies using canonical path resolution (`os.path.abspath`) and whitelisting.
