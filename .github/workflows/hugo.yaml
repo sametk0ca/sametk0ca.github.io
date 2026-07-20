@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - master
   workflow_run:
     workflows: ["Fetch and Publish Weekly Security Summary"]
     types:
