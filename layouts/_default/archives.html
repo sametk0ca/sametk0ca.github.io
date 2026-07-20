@@ -1,0 +1,77 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>
+    {{ .Title }}
+    {{- if (.Param "ShowRssButtonInSectionTermList") }}
+    {{- $rss := (.OutputFormats.Get "rss") }}
+    {{- if (eq .Kind `page`) }}
+    {{- $rss = (.Parent.OutputFormats.Get "rss") }}
+    {{- end }}
+    {{- with $rss }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+{{- if site.Params.ShowAllPagesInArchive }}
+{{- $pages = site.RegularPages }}
+{{- end }}
+
+{{- range $pages.GroupByPublishDate "2006" }}
+{{- if ne .Key "0001" }}
+<div class="archive-year" style="margin-bottom: 3rem;">
+  {{- $year := replace .Key "0001" "" }}
+  <h2 class="archive-year-header" id="{{ $year }}" style="margin-top: 2rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">
+    <a class="archive-header-link" href="#{{ $year }}" style="font-weight: 700;">
+      {{- $year -}}
+    </a>
+    <sup class="archive-count" style="font-size: 1rem; color: var(--secondary);">&nbsp;{{ len .Pages }}</sup>
+  </h2>
+  
+  <div class="archive-month-grid">
+    {{- range .Pages.GroupByPublishDate "January" "desc" }}
+    <div class="archive-month-card">
+      <div class="archive-month-card-header">
+        <h3 class="archive-month-title">
+          {{- .Key -}}
+        </h3>
+        <span class="archive-month-badge">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
+      </div>
+      <ul class="archive-month-list">
+        {{- range .Pages }}
+        {{- if eq .Kind "page" }}
+        <li class="archive-month-item">
+          <a href="{{ .Permalink }}" class="archive-month-link" title="{{ .Title }}">
+            {{- .Title -}}
+            {{- if .Draft }}
+            <span class="archive-draft-hint" title="Draft">*</span>
+            {{- end }}
+          </a>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+  </div>
+</div>
+{{- end }}
+{{- end }}
+
+{{- end }}

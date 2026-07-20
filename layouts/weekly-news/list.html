@@ -1,0 +1,508 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+<div class="weekly-news-container">
+  <!-- Interactive Week Selector Control -->
+  <div class="week-selector-wrapper">
+    <button id="prev-week" class="selector-btn" aria-label="Previous week">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    
+    <div class="dropdown-wrapper">
+      <select id="week-dropdown" class="custom-select">
+        {{- range $index, $page := .Pages }}
+        {{- if ne .Name "_index.md" }}
+        {{- $title := .Title }}
+        <option value="week-{{ $index }}">
+          {{ $title }}
+        </option>
+        {{- end }}
+        {{- end }}
+      </select>
+    </div>
+
+    <button id="next-week" class="selector-btn" aria-label="Next week">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- Language Switcher -->
+  <div class="lang-toggle-wrapper">
+    <button class="lang-btn active" data-lang="tr">Türkçe</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+
+  <!-- Weekly News Content Panes -->
+  <div class="weeks-content-container">
+    {{- range $index, $page := .Pages }}
+    {{- if ne .Name "_index.md" }}
+    <div id="week-{{ $index }}" class="week-pane hidden">
+      <article class="post-single">
+        <header class="post-header">
+          <h2 class="post-title" style="display: none;">{{ .Title }}</h2>
+        </header>
+        <div class="post-content">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
+    {{- end }}
+    {{- end }}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const select = document.getElementById("week-dropdown");
+    const prevBtn = document.getElementById("prev-week");
+    const nextBtn = document.getElementById("next-week");
+    const panes = document.querySelectorAll(".week-pane");
+    const langBtns = document.querySelectorAll(".lang-btn");
+    let currentLang = "tr"; // default language
+
+    function setupLanguageToggle(pane) {
+      const contentDiv = pane.querySelector(".post-content");
+      if (!contentDiv || contentDiv.dataset.processed) return;
+      contentDiv.dataset.processed = "true";
+
+      const children = Array.from(contentDiv.children);
+      const trDiv = document.createElement("div");
+      trDiv.className = "lang-section lang-tr";
+      const enDiv = document.createElement("div");
+      enDiv.className = "lang-section lang-en";
+
+      let currentSection = null;
+
+      children.forEach(child => {
+        const text = child.textContent.toLowerCase();
+        const id = child.id ? child.id.toLowerCase() : "";
+        
+        if (child.tagName === "H2" && (id === "türkçe" || id === "turkce" || text.includes("türkçe"))) {
+          currentSection = "tr";
+          child.style.display = "none";
+          return;
+        }
+        if (child.tagName === "H2" && (id === "english" || text.includes("english"))) {
+          currentSection = "en";
+          child.style.display = "none";
+          return;
+        }
+        if (child.tagName === "HR") {
+          child.style.display = "none";
+          return;
+        }
+
+        if (currentSection === "tr") {
+          trDiv.appendChild(child.cloneNode(true));
+          child.remove();
+        } else if (currentSection === "en") {
+          enDiv.appendChild(child.cloneNode(true));
+          child.remove();
+        }
+      });
+
+      contentDiv.appendChild(trDiv);
+      contentDiv.appendChild(enDiv);
+      
+      // Structure into cards
+      [trDiv, enDiv].forEach(section => {
+        const cardsContainer = document.createElement("div");
+        cardsContainer.className = "news-cards-container";
+        
+        const secChildren = Array.from(section.children);
+        let currentCard = null;
+        let startedCards = false;
+        
+        secChildren.forEach(child => {
+          if (child.tagName === "H3") {
+            startedCards = true;
+            if (currentCard) {
+              cardsContainer.appendChild(currentCard);
+            }
+            currentCard = document.createElement("div");
+            currentCard.className = "news-card";
+            
+            const aTag = child.querySelector("a");
+            const titleText = child.textContent.replace(/^\d+\.\s*/, ""); // strip "1. "
+            
+            const titleElem = document.createElement("h3");
+            titleElem.className = "news-title";
+            if (aTag) {
+              const newA = document.createElement("a");
+              newA.href = aTag.href;
+              newA.target = "_blank";
+              newA.rel = "noopener noreferrer";
+              newA.textContent = titleText;
+              titleElem.appendChild(newA);
+            } else {
+              titleElem.textContent = titleText;
+            }
+            currentCard.appendChild(titleElem);
+            child.remove();
+          } else if (child.tagName === "P" && currentCard) {
+            if (child.querySelector("code")) {
+              const metaDiv = document.createElement("div");
+              metaDiv.className = "news-meta";
+              
+              const codes = Array.from(child.querySelectorAll("code"));
+              if (codes.length >= 1) {
+                const catBadge = document.createElement("span");
+                catBadge.className = "news-badge category-badge";
+                catBadge.textContent = codes[0].textContent;
+                metaDiv.appendChild(catBadge);
+              }
+              if (codes.length >= 2) {
+                const srcBadge = document.createElement("span");
+                srcBadge.className = "news-badge source-badge";
+                srcBadge.textContent = codes[1].textContent;
+                metaDiv.appendChild(srcBadge);
+              }
+              currentCard.appendChild(metaDiv);
+            } else {
+              const descElem = document.createElement("p");
+              descElem.className = "news-description";
+              descElem.textContent = child.textContent;
+              currentCard.appendChild(descElem);
+            }
+            child.remove();
+          } else {
+            if (currentCard) {
+              cardsContainer.appendChild(currentCard);
+              currentCard = null;
+            }
+            if (!startedCards) {
+              section.appendChild(child.cloneNode(true));
+            } else {
+              cardsContainer.appendChild(child.cloneNode(true));
+            }
+            child.remove();
+          }
+        });
+        
+        if (currentCard) {
+          cardsContainer.appendChild(currentCard);
+        }
+        
+        section.appendChild(cardsContainer);
+      });
+    }
+
+    function showWeek(weekId) {
+      panes.forEach(pane => {
+        if (pane.id === weekId) {
+          setupLanguageToggle(pane);
+          pane.classList.remove("hidden");
+          pane.classList.add("active");
+          updateLanguageVisibility(pane);
+        } else {
+          pane.classList.add("hidden");
+          pane.classList.remove("active");
+        }
+      });
+      
+      select.value = weekId;
+      
+      const currentIndex = Array.from(select.options).findIndex(opt => opt.value === weekId);
+      prevBtn.disabled = currentIndex === select.options.length - 1;
+      nextBtn.disabled = currentIndex === 0;
+    }
+
+    function updateLanguageVisibility(activePane) {
+      const pane = activePane || document.querySelector(".week-pane.active");
+      if (!pane) return;
+      
+      const trSection = pane.querySelector(".lang-tr");
+      const enSection = pane.querySelector(".lang-en");
+      
+      if (currentLang === "tr") {
+        if (trSection) trSection.style.display = "block";
+        if (enSection) enSection.style.display = "none";
+      } else {
+        if (trSection) trSection.style.display = "none";
+        if (enSection) enSection.style.display = "block";
+      }
+    }
+
+    select.addEventListener("change", function() {
+      showWeek(this.value);
+    });
+
+    prevBtn.addEventListener("click", function() {
+      const currentIndex = select.selectedIndex;
+      if (currentIndex < select.options.length - 1) {
+        showWeek(select.options[currentIndex + 1].value);
+      }
+    });
+
+    nextBtn.addEventListener("click", function() {
+      const currentIndex = select.selectedIndex;
+      if (currentIndex > 0) {
+        showWeek(select.options[currentIndex - 1].value);
+      }
+    });
+
+    langBtns.forEach(btn => {
+      btn.addEventListener("click", function() {
+        langBtns.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        currentLang = this.dataset.lang;
+        updateLanguageVisibility();
+      });
+    });
+
+    // Initialize
+    if (select.options.length > 0) {
+      showWeek(select.options[0].value);
+    } else {
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+    }
+  });
+</script>
+
+<style>
+  .weekly-news-container {
+    margin: 2rem 0;
+  }
+
+  .week-selector-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: var(--entry);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .selector-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.2s, opacity 0.2s;
+  }
+
+  .selector-btn:hover:not(:disabled) {
+    background: var(--border);
+  }
+
+  .selector-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .dropdown-wrapper {
+    flex-grow: 1;
+    max-width: 450px;
+  }
+
+  .custom-select {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--theme);
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    text-align-last: center;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+  
+  .custom-select:focus {
+    border-color: var(--primary);
+  }
+
+  .lang-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    gap: 0.5rem;
+  }
+
+  .lang-btn {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--secondary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .lang-btn:hover {
+    border-color: var(--secondary);
+  }
+
+  .lang-btn.active {
+    background: var(--primary);
+    color: var(--theme);
+    border-color: var(--primary);
+  }
+
+  .weeks-content-container {
+    position: relative;
+    min-height: 300px;
+  }
+
+  .week-pane {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 0.4s forwards cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .week-pane.active {
+    display: block;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Override PaperMod main container width for weekly news page */
+  main.main {
+    max-width: 1200px !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .weekly-news-container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .weekly-news-container .post-single {
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+
+  .weekly-news-container .post-content {
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* News Card Design */
+  .news-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .news-cards-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .news-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+  }
+
+  .news-title {
+    margin: 0 0 0.75rem 0 !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+  }
+
+  .news-title a {
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: none !important;
+    transition: opacity 0.2s;
+  }
+
+  .news-title a:hover {
+    opacity: 0.85;
+  }
+
+  .news-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .news-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .category-badge {
+    background: rgba(var(--primary), 0.1);
+    color: var(--primary);
+    border: 1px solid rgba(var(--primary), 0.2);
+  }
+
+  .source-badge {
+    background: rgba(var(--secondary), 0.1);
+    color: var(--secondary);
+    border: 1px solid rgba(var(--secondary), 0.2);
+  }
+
+  .news-description {
+    margin: 0 !important;
+    line-height: 1.6;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+</style>
+
+{{- end }}

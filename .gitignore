@@ -9,6 +9,9 @@
 # Hugo temporary files and output
 blog-source/public/
 blog-source/resources/
+public
+resources
+.hugo_build.lock
 blog-source/.hugo_build.lock
 
 # System and editor files

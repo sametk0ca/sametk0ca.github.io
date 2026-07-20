@@ -1,0 +1,115 @@
+baseURL = 'https://sametk0ca.github.io/'
+defaultContentLanguage = 'en'
+title = 'Samet Koca'
+theme = 'papermod'
+paginate = 12
+
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    languageName = "English"
+    contentDir = "content"
+    weight = 1
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "cyberwiki"
+        name = "CyberWiki"
+        url = "/cyberwiki/"
+        weight = 5
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+      [[languages.en.menu.main]]
+        identifier = "weekly-news"
+        name = "Weekly News"
+        url = "/weekly-news/"
+        weight = 15
+      [[languages.en.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "Whoami"
+        url = "/about/"
+        weight = 30
+      [[languages.en.menu.main]]
+        identifier = "archives"
+        name = "Archive"
+        url = "/archives/"
+        weight = 40
+
+[related]
+  threshold = 80
+  includeNewer = true
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 50
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+[params]
+  ShowRelatedPosts = true
+  mainSections = ["posts"]
+  ShowToc = false
+  defaultTheme = "dark"
+  author = "Samet Koca"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  
+  # Hide the language switcher in the header
+  disableLanguageAltLinks = true
+
+  [params.profileMode]
+    enabled = true
+    title = "Samet Koca"
+    imageUrl = "/avatar.jpg"
+    imageWidth = 120
+    imageHeight = 120
+
+  [[params.socialIcons]]
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/samet-koca-7b3033188/"
+
+  [[params.socialIcons]]
+    name = "Email"
+    url = "mailto:samet.kocats@gmail.com"
+
+  [params.toc]
+    enable = true
+    autoCollapse = false
+    ordered = false
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.0
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
+
+[markup.highlight]
+  noClasses = false
+  style = "dracula"
+  tabWidth = 4
+  lineNos = true
+  guessSyntax = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
