@@ -1,12 +1,18 @@
 ---
 title: "Adversary Characterization"
 date: 2026-05-19
+description: "How analysts characterize threat actors through the Diamond Model, TTP analysis and actor profiling. / Diamond Model, TTP analizi ve saldırgan profilleme ile tehdit aktörlerinin karakterize edilmesi."
 draft: false
 tags: ["Cyber Security", "Threat Intel", "Adversary Characterization", "CyBOK"]
 categories: ["Knowledge Base"]
+related:
+  - "[[concepts/adversary-characterization|Adversary Characterization]]"
+  - "[[adversarial-ttp-foundations|Adversarial TTP Foundations]]"
+  - "[[cyber-threat-intelligence|Cyber-Threat Intelligence (CTI)]]"
+  - "[[Guvenlik_Frameworkleri|Güvenlik Çerçeveleri ve Standartlar (Frameworks)]]"
 ---
 
-
+## 🇹🇷 Türkçe (TR)
 
 Siber tehdit istihbaratı (CTI) dünyasında, bir saldırıyı anlamak sadece kullanılan zararlı yazılımı bilmekten ibaret değildir. **Adversary Characterization (Saldırgan Karakterizasyonu)**, saldırganın motivasyonunu, kapasitesini, niyetini ve kullandığı metodolojileri (TTPs - Tactics, Techniques, and Procedures) sistematik bir şekilde tanımlama sürecidir. Bu süreç, savunma stratejilerinin "reaktif" bir yapıdan "proaktif" bir yapıya geçmesini sağlar.
 
@@ -20,9 +26,11 @@ Saldırgan davranışlarının karakterizasyonu, CyBOK "Adversarial Behaviour" b
 
 ### Standartlar ve Teknik Zorluklar
 
-NIST SP 800-150 (Guide to Cyber Threat Information Sharing) standardı, tehdit bilgisinin nasıl karakterize edileceği ve paydaşlar arasında nasıl paylaşılacağı konusunda rehberlik sunar. Ancak, karakterizasyon sürecinde "Attribution" (Atıf Yapma) problemi, saldırganların "False Flag" operasyonları ve gelişmiş gizleme teknikleri nedeniyle en büyük teknik zorluklardan biri olarak kalmaktadır. Gelişmiş saldırganlar, kendi izlerini silmek için "Living off the Land" (LotL) tekniklerini kullanarak meşru sistem araçlarını istismar ederler.
+NIST SP 800-150 (Guide to Cyber Threat Information Sharing) standardı, tehdit bilgisinin nasıl karakterize edileceği ve paydaşlar arasında nasıl paylaşılacağı konusunda rehberlik sunar. Ancak, karakterizasyon sürecinde "Attribution" (Atıf Yapma) problemi, saldırganların "False Flag" operasyonları ve gelişmiş gizleme teknikleri nedeniyle en büyük teknik zorluklardan biri olarak kalmaktadır. Gelişmiş saldırganlar, tespit edilmemek için "Living off the Land" (LotL) tekniklerini kullanır: sisteme zararlı yazılım getirmek yerine PowerShell gibi meşru sistem araçlarını istismar ederek normal trafiğin içinde kaybolurlar.
 
 ---
+
+## 🇬🇧 English (EN)
 
 ### Adversary Characterization: Analysis of Threat Actors and TTP Modeling
 
@@ -38,4 +46,4 @@ Characterization of adversarial behavior is performed through various analytical
 
 ### Standards and Technical Challenges
 
-The NIST SP 800-150 (Guide to Cyber Threat Information Sharing) standard provides guidance on how to characterize threat information and share it among stakeholders. However, the problem of "Attribution" remains one of the greatest technical challenges in the characterization process due to "False Flag" operations and advanced obfuscation techniques employed by adversaries. Sophisticated attackers exploit legitimate system tools using "Living off the Land" (LotL) techniques to erase their tracks.
+The NIST SP 800-150 (Guide to Cyber Threat Information Sharing) standard provides guidance on how to characterize threat information and share it among stakeholders. However, the problem of "Attribution" remains one of the greatest technical challenges in the characterization process due to "False Flag" operations and advanced obfuscation techniques employed by adversaries. Sophisticated attackers use "Living off the Land" (LotL) techniques to avoid detection: instead of bringing malware onto the system, they abuse legitimate tools such as PowerShell and blend into normal activity.

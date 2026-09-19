@@ -1,18 +1,22 @@
 ---
 title: "Side-Channel Attacks and Masking"
 date: 2026-05-19
+description: "How power, EM and timing side channels leak secret keys, and how masking and threshold implementations defend against them. / Güç, EM ve zamanlama yan kanallarının gizli anahtarları nasıl sızdırdığı ve maskeleme ile threshold implementation'ın nasıl korunduğu."
 draft: false
 tags: ["Hardware Security", "Cryptography", "Side-Channel", "CyBOK"]
 categories: ["Advanced Security"]
+related:
+  - "[[concepts/side-channel-attacks-and-masking|Side-Channel Attacks and Masking]]"
+  - "[[cryptographic-implementation-security|Cryptographic Implementation Security]]"
 ---
 
-
+## 🇹🇷 Türkçe (TR)
 
 Kriptografik algoritmaların matematiksel güvenliği, bu algoritmaların fiziksel donanımlar üzerindeki uygulamalarının güvenliğini her zaman garanti etmez. **Yan Kanal Saldırıları (Side-Channel Attacks - SCA)**, bir cihazın şifreleme işlemi sırasında sızdırdığı fiziksel bilgileri (güç tüketimi, elektromanyetik radyasyon, zamanlama) analiz ederek gizli anahtarları ele geçirmeyi amaçlar. Bu saldırılar, algoritmanın kendisini değil, fiziksel gerçeklemesini hedef alır.
 
 ### Teknik Analiz ve Saldırı Vektörleri
 
-CyBOK "Hardware Security" bilgi alanı çerçevesinde, yan kanal saldırıları temel olarak iki ana kategoriye ayrılır:
+CyBOK "Hardware Security" bilgi alanı çerçevesinde, yan kanal saldırıları temel olarak üç ana kategoriye ayrılır:
 
 1. **Güç Analizi Saldırıları (Power Analysis):** İşlemcinin tükettiği elektrik akımındaki dalgalanmaların izlenmesidir.
     * **Basit Güç Analizi (SPA):** Tek bir güç izinin (power trace) doğrudan gözlemlenmesidir.
@@ -23,9 +27,11 @@ CyBOK "Hardware Security" bilgi alanı çerçevesinde, yan kanal saldırıları 
 
 ### Korunma Mekanizmaları ve Standartlar
 
-ISO/IEC 17825 standardı, non-invasive saldırı sınıflarına karşı koruma yöntemlerinin test edilmesi için bir metodoloji sunar. En etkili savunma tekniklerinden biri olan **Maskeleme (Masking)**, veriyi rastgele parçalara (shares) bölerek işleme prensibine dayanır. "Boolean Masking" (XOR tabanlı) ve "Arithmetic Masking" gibi yöntemler, güç tüketimi ile gizli veri arasındaki korelasyonu koparmayı hedefler. Ayrıca, "Threshold Implementation" gibi teknikler, donanım düzeyinde (glitch'lere karşı dirençli) güvenli tasarım sağlamak için kullanılır.
+ISO/IEC 17825 standardı, non-invasive saldırı sınıflarına karşı koruma yöntemlerinin test edilmesi için bir metodoloji sunar. En yaygın savunma tekniklerinden biri olan **Maskeleme (Masking)**, veriyi rastgele parçalara (shares) bölerek işleme prensibine dayanır. "Boolean Masking" (XOR tabanlı) ve "Arithmetic Masking" gibi yöntemler, güç tüketimi ile gizli veri arasındaki korelasyonu koparmayı hedefler. Ayrıca, "Threshold Implementation" gibi teknikler, donanım düzeyinde (glitch'lere karşı dirençli) güvenli tasarım sağlamak için kullanılır.
 
 ---
+
+## 🇬🇧 English (EN)
 
 ### Side-Channel Attacks and Masking: Security at the Hardware Level
 
@@ -33,7 +39,7 @@ The mathematical security of cryptographic algorithms does not always guarantee 
 
 ### Technical Analysis and Attack Vectors
 
-Within the framework of the CyBOK "Hardware Security" knowledge area, side-channel attacks are primarily divided into two main categories:
+Within the framework of the CyBOK "Hardware Security" knowledge area, side-channel attacks are primarily divided into three main categories:
 
 1. **Power Analysis Attacks:** Monitoring fluctuations in the electric current consumed by the processor.
     * **Simple Power Analysis (SPA):** Direct observation of a single power trace.
@@ -44,4 +50,4 @@ Within the framework of the CyBOK "Hardware Security" knowledge area, side-chann
 
 ### Countermeasures and Standards
 
-The ISO/IEC 17825 standard provides a methodology for testing protection methods against non-invasive attack classes. **Masking**, one of the most effective defense techniques, is based on the principle of processing data by splitting it into random shares. Methods such as "Boolean Masking" (XOR-based) and "Arithmetic Masking" aim to break the correlation between power consumption and secret data. Additionally, techniques like "Threshold Implementation" are utilized to ensure secure design at the hardware level, resilient against glitches.
+The ISO/IEC 17825 standard provides a methodology for testing protection methods against non-invasive attack classes. **Masking**, one of the most widely used defense techniques, is based on the principle of processing data by splitting it into random shares. Methods such as "Boolean Masking" (XOR-based) and "Arithmetic Masking" aim to break the correlation between power consumption and secret data. Additionally, techniques like "Threshold Implementation" are utilized to ensure secure design at the hardware level, resilient against glitches.

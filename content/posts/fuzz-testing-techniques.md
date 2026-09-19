@@ -1,12 +1,15 @@
 ---
 title: "Fuzz Testing"
 date: 2026-05-19
+description: "How fuzzing finds bugs with random and coverage-guided inputs: black-, white- and grey-box approaches and their challenges. / Fuzzing'in rastgele ve kapsama güdümlü girdilerle nasıl açık bulduğu: kara, beyaz ve gri kutu yaklaşımları ve zorlukları."
 draft: false
 tags: ["Software Security", "Bug Hunting", "Fuzzing", "CyBOK"]
 categories: ["Security Testing"]
+related:
+  - "[[concepts/fuzz-testing-techniques|Fuzz Testing Techniques (Fuzzing)]]"
 ---
 
-
+## 🇹🇷 Türkçe (TR)
 
 Fuzzing veya Fuzz Testi, yazılım sistemlerindeki beklenmedik davranışları ve güvenlik açıklarını tespit etmek için kullanılan dinamik bir analiz tekniğidir. Bu yöntem, bir hedef programa büyük hacimli, rastgele veya yarı-yapılandırılmış veriler göndererek sistemin çökmesine (crash) veya anormal bir duruma geçmesine neden olan girdilerin belirlenmesine dayanır. Modern güvenlik ekosisteminde fuzzing, özellikle sıfırıncı gün (zero-day) açıklarının keşfinde kritik bir rol oynar.
 
@@ -20,9 +23,11 @@ Fuzzing teknikleri, CyBOK "Software Security" alanı çerçevesinde yazılımın
 
 ### Standartlar ve Teknik Zorluklar
 
-ISO/IEC 29119-4 standardı, yazılım testlerinde fuzzing gibi dinamik analiz tekniklerinin kullanımına dair metodolojik bir temel sunar. Ancak, modern sistemlerin karmaşıklığı nedeniyle "Path Explosion" (yol patlaması) ve "Semantic Gap" (anlamsal boşluk) gibi teknik zorluklar mevcuttur. Bellek güvenliği (buffer overflow, use-after-free) açıklarını tespit etmek için AddressSanitizer (ASan) gibi araçlarla entegrasyon hayati önem taşır.
+Microsoft SDL gibi güvenli yazılım geliştirme süreçleri fuzzing'i doğrulama aşamasının bir parçası olarak öngörür; Google'ın OSS-Fuzz projesi ise açık kaynak yazılımları sürekli olarak fuzz'lar. Ancak modern sistemlerin karmaşıklığı nedeniyle "Path Explosion" (yol patlaması, özellikle sembolik yürütmede) ve "Semantic Gap" (anlamsal boşluk: rastgele girdilerin çoğu yapısal doğrulamada elenir) gibi zorluklar mevcuttur. Bellek güvenliği (buffer overflow, use-after-free) açıklarını fark edilebilir hale getirmek için AddressSanitizer (ASan) gibi araçlarla birlikte kullanmak önemlidir.
 
 ---
+
+## 🇬🇧 English (EN)
 
 ### Fuzz Testing: Automation in Software Security and Vulnerability Analysis
 
@@ -38,6 +43,4 @@ Fuzzing techniques are classified according to the level of access to the softwa
 
 ### Standards and Technical Challenges
 
-The ISO/IEC 29119-4 standard provides a methodological basis for the use of dynamic analysis techniques such as fuzzing in software testing. However, due to the complexity of modern systems, technical challenges such as "Path Explosion" and "Semantic Gap" persist. Integration with tools like AddressSanitizer (ASan) is vital for detecting memory safety vulnerabilities (buffer overflow, use-after-free).
-
-
+Secure development processes such as Microsoft SDL include fuzzing as part of the verification phase, and Google's OSS-Fuzz project continuously fuzzes open-source software. However, due to the complexity of modern systems, technical challenges such as "Path Explosion" (especially in symbolic execution) and the "Semantic Gap" (most random inputs are rejected by structural validation) persist. Using fuzzers together with tools like AddressSanitizer (ASan) is important for making memory safety bugs (buffer overflow, use-after-free) visible.

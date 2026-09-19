@@ -1,51 +1,60 @@
 ---
 title: "Passkey"
 date: 2026-03-31
+description: "What passkeys are, why they resist phishing, how sync and recovery work, and why user education is the biggest hurdle. / Passkey nedir, oltalamaya karşı neden dirençlidir, senkronizasyon ve kurtarma nasıl işler ve neden en büyük engel kullanıcı eğitimidir."
 draft: false
 tags: ["Passkey", "Authentication", "Security", "Phishing"]
 categories: ["Blog"]
+related:
+  - "[[MFA_Turleri|MFA (Multi-Factor Authentication) Türleri]]"
+  - "[[user-authentication-factors|User Authentication Factors]]"
+  - "[[authentication-identity-protocols|Authentication and Identity Protocols]]"
 ---
 
+## 🇹🇷 Türkçe (TR)
 
-# Parolaların Sonu mu Geldi? 
+### Parolaların Sonu mu Geldi?
 
-Son zamanlarda internette gezinirken bir siteye giriş yapmaya çalıştığınızda, "Bu site için bir Passkey oluşturmak ister misiniz?" gibi bir mesajın giderek daha sık karşınıza çıktığını fark ettiniz mi? Eğer bu durum kafanızı karıştırdıysa, yalnız değilsiniz. Çoğu kullanıcı bu yeni teknolojinin tam olarak ne olduğunu ve neden önemli olduğunu bilmiyor. 
+Son zamanlarda internette gezinirken bir siteye giriş yapmaya çalıştığınızda, "Bu site için bir Passkey oluşturmak ister misiniz?" gibi bir mesajın giderek daha sık karşınıza çıktığını fark ettiniz mi? Eğer bu durum kafanızı karıştırdıysa, yalnız değilsiniz. Çoğu kullanıcı bu yeni teknolojinin tam olarak ne olduğunu ve neden önemli olduğunu bilmiyor.
 
-**1. Bu Bir Parola Değil, Dijital Bir İmza**
+### 1. Bu Bir Parola Değil, Dijital Bir İmza
 
 Passkey'ler hakkında anlaşılması gereken en temel şey, bildiğiniz bir sırra (parola) değil, kriptografik bir ilkeye dayanmalarıdır: açık anahtar kriptografisi.
 
-Bu konsepti basitçe şöyle özetleyebiliriz: Cihazınızda gizli tutulan bir **özel anahtar** ve giriş yapmak istediğiniz web sitesiyle paylaşılan bir **açık anahtar** olmak üzere iki anahtarınız vardır. Bu sistemin amacı verileri şifrelemek değil, dijital bir imza kullanarak kimliğinizi tartışmasız bir şekilde kanıtlamaktır. Süreç genel hatlarıyla şöyle işler: Web sitesi size benzersiz bir "challenge" (token) gönderir, cihazınızdaki "doğrulayıcı" bu token'ı özel anahtarınızla imzalar. Web sitesi daha sonra bu imzayı sizin açık anahtarınızı kullanarak doğrular ve giriş yapmanıza izin verir. Bu yöntem, internet üzerinden asla bir sır göndermeden sizin siz olduğunuzu kanıtlar.
+Bu konsepti basitçe şöyle özetleyebiliriz: Cihazınızda gizli tutulan bir **özel anahtar** ve giriş yapmak istediğiniz web sitesiyle paylaşılan bir **açık anahtar** olmak üzere iki anahtarınız vardır. Bu sistemin amacı verileri şifrelemek değil, dijital bir imza kullanarak kimliğinizi kanıtlamaktır. Süreç genel hatlarıyla şöyle işler: Web sitesi size benzersiz bir "challenge" (token) gönderir, cihazınızdaki "doğrulayıcı" bu token'ı özel anahtarınızla imzalar. Web sitesi daha sonra bu imzayı sizin açık anahtarınızı kullanarak doğrular ve giriş yapmanıza izin verir. Bu yöntem, internet üzerinden asla bir sır göndermeden sizin siz olduğunuzu kanıtlar.
 
-"bir web sitesine parolanızı yazmak yerine, size bir token gönderirler, siz onu özel anahtarınızla imzalarsınız, onlar da bunu açık anahtarınızla doğrulayarak içeri girmenize izin verirler"
+> "Bir web sitesine parolanızı yazmak yerine, size bir token gönderirler, siz onu özel anahtarınızla imzalarsınız, onlar da bunu açık anahtarınızla doğrulayarak içeri girmenize izin verirler."
 
-
-
-**2. Neredeyse Tamamen Oltalama (Phishing) Saldırılarına Karşı Korumalıdır**
+### 2. Oltalama (Phishing) Saldırılarına Karşı Büyük Ölçüde Dirençlidir
 
 Bu, Passkey'lerin parolalara kıyasla en büyük avantajlarından biridir. Peki bu nasıl mümkün oluyor? Bir Passkey oluşturulduğunda, doğası gereği web sitesinin belirli alan adına (örneğin, `amazon.co.uk`) bağlanır.
 
-Bir oltalama saldırısı senaryosunu düşünelim: Kullanıcı, sahte bir web sitesine (`mike-special-amazon.co.uk` gibi) yönlendiren bir oltalama bağlantısına tıklar. Tarayıcı, bu URL'in Passkey ile birlikte saklanan alan adı kimliğiyle eşleşmediğini görür. Sonuç olarak, sistem giriş için Passkey'i sunmayı reddeder ve saldırıyı tamamen etkisiz hale getirir.
+Bir oltalama saldırısı senaryosunu düşünelim: Kullanıcı, sahte bir web sitesine (`mike-special-amazon.co.uk` gibi) yönlendiren bir oltalama bağlantısına tıklar. Tarayıcı, bu alan adının Passkey ile birlikte saklanan alan adıyla eşleşmediğini görür. Sonuç olarak, sistem giriş için Passkey'i sunmayı reddeder ve kullanıcının sahte siteye kimlik bilgisi vermesini engeller.
 
-"eğer bana bir e-posta gönderip 'bu web sitesine gir ve oturum aç' derseniz, web sitesinin URL'si bu gerçek URL olmayacak, hiçbiri eşleşmeyecek ve bu sistem sizin için etkinleşmeyecektir"
+> "Eğer bana bir e-posta gönderip 'bu web sitesine gir ve oturum aç' derseniz, web sitesinin alan adı gerçek alan adı olmayacak, hiçbiri eşleşmeyecek ve bu sistem sizin için devreye girmeyecektir."
 
-**3. Dizüstü Bilgisayarınızdaki Passkey, Telefonunuzda Çalışmaz (Genellikle)**
+### 3. Laptopunuzdaki Passkey Telefonunuzda Çalışır mı? (Duruma Göre)
 
 Kullanıcıların aklına gelen yaygın sorulardan biri şudur: "Dizüstü bilgisayarımda bir Passkey ayarlarsam, bunu telefonumda nasıl kullanırım?"
 
-Cevap, tasarım gereği genellikle kullanamayacağınızdır. Standart bir Passkey'in özel anahtarı, belirli bir "doğrulayıcıda" (dizüstü bilgisayardaki Windows Hello veya telefondaki güvenli donanım gibi) saklanır ve o cihaza bağlıdır. Bu durum "bağlam bağlama" (context binding) olarak bilinir. Bu "bağlam bağlama" özelliği, dizüstü bilgisayarınızda oluşturulan anahtarın, o cihaza ve o tarayıcıya "kilitli" olduğu anlamına gelir. Telefonunuz tamamen farklı bir "bağlam" olduğu için o kilidi açamaz.
+Cevap, passkey'in nerede saklandığına bağlıdır:
 
-Ancak bu kuralın bir istisnası vardır: Eğer doğrulayıcı, cihazlar arasında senkronize olan bir parola yöneticisi gibi "taşınabilir" bir yapıdaysa, bu sınırlama ortadan kalkabilir.
+- **Cihaza bağlı (device-bound) passkey'ler:** Özel anahtar belirli bir "doğrulayıcıda" (bir güvenlik anahtarı veya yalnızca o bilgisayardaki Windows Hello gibi) saklanır ve o cihazdan çıkmaz. Dizüstü bilgisayarınızda oluşturulan böyle bir anahtar, telefonunuzda çalışmaz.
+- **Senkronize edilen passkey'ler:** Apple iCloud Anahtar Zinciri, Google Parola Yöneticisi veya 1Password gibi parola yöneticileri passkey'leri uçtan uca şifreli olarak cihazlarınız arasında eşitler. Bu durumda aynı passkey birden fazla cihazınızda kullanılabilir.
 
-**4. Telefonunuzu Kaybetmek, Passkey'inizi Sonsuza Dek Kaybetmek Anlamına Gelebilir**
+Ayrıca telefonunuzdaki bir passkey ile başka bir bilgisayardaki girişi, ekrandaki QR kodu okutarak onaylamak da mümkündür (cihazlar arası kimlik doğrulama).
 
-Passkey'lerin günümüzdeki en büyük pratik sorunu kurtarma işlemidir. Eğer doğrulayıcınız (örneğin telefonunuz) kaybolur, çalınır veya bozulursa, üzerinde saklanan özel anahtar juga sonsuza dek kaybolur. Artık o Passkey'i kullanarak giriş yapamazsınız. Peki bu, telefonunuzu çalan birinin tüm hesaplarınıza erişebileceği anlamına mı gelir? Genellikle hayır. Çoğu Passkey sistemi, imzalama isteğini onaylamadan önce PIN, parmak izi veya yüz tanıma gibi bir "kullanıcı doğrulaması" talep eder. Bu, cihazınız ele geçirilse bile ek bir güvenlik katmanı sağlar.
+### 4. Telefonunuzu Kaybetmek, Passkey'inizi Kaybetmek Anlamına Gelebilir
 
-Yine de, anahtarı kaybettiğinizde hesaba erişiminizi nasıl geri alırsınız? Mevcut ve ironik çözüm, hesaba yeniden erişim sağlamak için eski parolanızı kullanmaya geri dönmektir. Parola nihai yedekleme mekanizması olarak kaldığı sürece, parolaların temel sorunu olan oltalama saldırıları tam olarak çözülmüş sayılmaz.
+Passkey'lerin günümüzdeki en büyük pratik sorunu kurtarma işlemidir. Passkey yalnızca cihaza bağlıysa ve doğrulayıcınız (örneğin telefonunuz) kaybolur, çalınır veya bozulursa, üzerinde saklanan özel anahtar da kaybolur. Senkronize passkey'lerde ise yeni bir cihazda hesabınızla oturum açarak anahtarları geri yükleyebilirsiniz.
 
-"eğer cep telefonumda bir doğrulayıcı ve istemci olarak da tarayıcımı kullanıyorsam ve sonra telefonum parçalanırsa ya da çalınırsa ve yeni bir telefon alırsam, şimdi buraya, web sitesine nasıl giriş yapacağım? O Passkey ile değil, onu söyleyebilirim, çünkü onu asla geri alamayacağım. Cevap: bir parolayla."
+Peki telefonunuzu çalan biri tüm hesaplarınıza erişebilir mi? Genellikle hayır. Çoğu Passkey sistemi, imzalama isteğini onaylamadan önce PIN, parmak izi veya yüz tanıma gibi bir "kullanıcı doğrulaması" talep eder. Bu, cihazınız ele geçirilse bile ek bir güvenlik katmanı sağlar.
 
-**5. En Büyük Engel Teknoloji Değil, Biziz**
+Yine de, hiçbir passkey'inize erişemediğinizde hesaba nasıl döneceksiniz? Mevcut ve ironik çözüm çoğu zaman eski parolaya, e-postaya veya SMS'e dayanan bir kurtarma akışıdır. Kurtarma yolu parola gibi daha zayıf bir yönteme bağlı kaldığı sürece, parolaların temel sorunu olan oltalama saldırıları tam olarak çözülmüş sayılmaz.
+
+> "Eğer cep telefonumda bir doğrulayıcı ve istemci olarak da tarayıcımı kullanıyorsam ve sonra telefonum parçalanırsa ya da çalınırsa ve yeni bir telefon alırsam, şimdi web sitesine nasıl giriş yapacağım? O Passkey ile değil, onu söyleyebilirim, çünkü onu asla geri alamayacağım. Cevap: bir parolayla."
+
+### 5. En Büyük Engel Teknoloji Değil, Biziz
 
 Teknik detaylardan ziyade insan faktörüne odaklandığımızda, Passkey'lerin yaygınlaşmasının önündeki en büyük engelin teknoloji değil, kullanıcıların konuyu anlaması ve eğitilmesi olduğunu görüyoruz.
 
@@ -53,15 +62,17 @@ Kullanıcı deneyimi oldukça kafa karıştırıcı olabiliyor. Bir web sitesi "
 
 Passkey'lerin parolaların yerini gerçekten alabilmesi için, halka ne olduklarını ve neden faydalı olduklarını anlatmak üzere büyük bir çaba gösterilmesi gerekiyor.
 
-**Sonuç**
+### Sonuç
 
 Passkey'ler, oltalama gibi uzun süredir devam eden birçok sorunu çözen, parolalara göre daha güçlü, daha güvenli ve daha kullanışlı bir alternatiftir. Teknolojik olarak üstün olsalar da, yaygınlaşmaları hem kurtarma sorunlarının çözülmesine hem de kullanıcıların bu yeni sisteme adapte olmasına bağlıdır. Bu yeni teknoloji, güvenliğe dair en büyük sorunlarımızdan bazılarını çözerken, aynı zamanda sorumluluğu da doğrudan bizim ve cihazlarımızın üzerine yüklüyor.
 
-Peki, tüm dijital kimliğimizi tek bir cihazı kaybetmenin bizi dışarıda bırakabileceği bir sisteme emanet etmeye hazır mıyız, yoksa eski ve kusurlu parolalarımız daha uzun yıllar boyunca güvenlik ağımız olmaya devam mı edecek?
+Peki, tüm dijital kimliğimizi, tek bir cihazı kaybetmenin bizi dışarıda bırakabileceği bir sisteme emanet etmeye hazır mıyız, yoksa eski ve kusurlu parolalarımız daha uzun yıllar boyunca güvenlik ağımız olmaya devam mı edecek?
 
 ---
 
-# Is This the End of Passwords?
+## 🇬🇧 English (EN)
+
+### Is This the End of Passwords?
 
 Lately, have you noticed a message like "Would you like to create a Passkey for this site?" appearing more and more frequently when you try to log in to a website? If this situation has confused you, you are not alone. Most users do not know exactly what this new technology is or why it is important.
 
@@ -69,34 +80,36 @@ Lately, have you noticed a message like "Would you like to create a Passkey for 
 
 The most fundamental thing to understand about Passkeys is that they are not based on a secret you know (a password), but on a cryptographic principle: **public key cryptography**.
 
-We can simplify this concept as follows: You have two keys—a **private key** kept secret on your device and a **public key** shared with the website you want to log in to. The purpose of this system is not to encrypt data, but to prove your identity beyond dispute using a digital signature. The process generally works like this: The website sends you a unique "challenge" (token); the "authenticator" on your device signs this token with your private key. The website then verifies this signature using your public key and grants you access. This method proves you are who you say you are without ever sending a "secret" over the internet.
+We can simplify this concept as follows: You have two keys—a **private key** kept secret on your device and a **public key** shared with the website you want to log in to. The purpose of this system is not to encrypt data, but to prove your identity using a digital signature. The process generally works like this: The website sends you a unique "challenge" (token); the "authenticator" on your device signs this token with your private key. The website then verifies this signature using your public key and grants you access. This method proves you are who you say you are without ever sending a "secret" over the internet.
 
 > "Instead of typing your password into a website, they send you a token, you sign it with your private key, and they allow you in by verifying it with your public key."
 
-
-
-
-### 2. Almost Entirely Immune to Phishing Attacks
+### 2. Largely Immune to Phishing Attacks
 
 This is one of the greatest advantages of Passkeys compared to passwords. But how is this possible? When a Passkey is created, it is inherently tied to a specific domain name of the website (e.g., `amazon.co.uk`).
 
-Consider a phishing scenario: A user clicks on a phishing link that directs them to a fake website (like `mike-special-amazon.co.uk`). The browser sees that this URL does not match the domain identity stored with the Passkey. As a result, the system refuses to present the Passkey for login, rendering the attack completely ineffective.
+Consider a phishing scenario: A user clicks on a phishing link that directs them to a fake website (like `mike-special-amazon.co.uk`). The browser sees that this domain does not match the domain stored with the Passkey. As a result, the system refuses to present the Passkey for login, preventing the user from handing credentials to the fake site.
 
-> "If you send me an email saying 'go to this website and log in,' the URL of the website will not be the real URL; none of them will match, and this system will not activate for you."
+> "If you send me an email saying 'go to this website and log in,' the domain of the website will not be the real domain; none of them will match, and this system will not activate for you."
 
-### 3. A Passkey on Your Laptop Won’t Work on Your Phone (Usually)
+### 3. Does a Passkey on Your Laptop Work on Your Phone? (It Depends)
 
 A common question users have is: "If I set up a Passkey on my laptop, how do I use it on my phone?"
 
-The answer is that, by design, you generally cannot. The private key of a standard Passkey is stored in a specific "authenticator" (such as Windows Hello on a laptop or secure hardware on a phone) and is tied to that device. This is known as **"context binding."** This "context binding" feature means that the key created on your laptop is "locked" to that device and that browser. Since your phone is a completely different "context," it cannot open that lock.
+The answer depends on where the passkey is stored:
 
-However, there is an exception to this rule: If the authenticator is a "portable" structure, such as a password manager that synchronizes across devices, this limitation may be removed.
+- **Device-bound passkeys:** The private key lives in a specific "authenticator" (such as a security key, or Windows Hello on that one computer) and never leaves it. A key like this created on your laptop will not work on your phone.
+- **Synced passkeys:** Password managers such as Apple iCloud Keychain, Google Password Manager, or 1Password sync passkeys across your devices with end-to-end encryption. In that case the same passkey can be used on several of your devices.
 
-### 4. Losing Your Phone Might Mean Losing Your Passkey Forever
+You can also approve a login on another computer with a passkey stored on your phone by scanning a QR code on the screen (cross-device authentication).
 
-The biggest practical issue with Passkeys today is the recovery process. If your authenticator (e.g., your phone) is lost, stolen, or broken, the private key stored on it is also lost forever. You can no longer log in using that Passkey. Does this mean someone who steals your phone can access all your accounts? Generally, no. Most Passkey systems require "user verification," such as a PIN, fingerprint, or facial recognition, before approving a signing request. This provides an extra layer of security even if your device is compromised.
+### 4. Losing Your Phone Might Mean Losing Your Passkey
 
-Still, how do you regain access to the account when you lose the key? The current and ironic solution is to revert to using your old password to regain access. As long as the password remains the ultimate backup mechanism, the fundamental problem of passwords—phishing attacks—is not fully solved.
+The biggest practical issue with Passkeys today is recovery. If a passkey is device-bound only and your authenticator (e.g., your phone) is lost, stolen, or broken, the private key stored on it is lost too. With synced passkeys, you can restore your keys by signing in to your account on a new device.
+
+Does this mean someone who steals your phone can access all your accounts? Generally, no. Most Passkey systems require "user verification," such as a PIN, fingerprint, or facial recognition, before approving a signing request. This provides an extra layer of security even if your device is compromised.
+
+Still, how do you get back into an account when none of your passkeys is available? The current and ironic solution is often a recovery flow built on the old password, email, or SMS. As long as recovery depends on a weaker method like a password, the fundamental problem of passwords—phishing attacks—is not fully solved.
 
 > "If I am using an authenticator on my mobile phone and my browser as a client, and then my phone is smashed or stolen and I get a new phone, how do I log in to the website now? I can tell you it won't be with that Passkey, because I will never get it back. The answer: with a password."
 

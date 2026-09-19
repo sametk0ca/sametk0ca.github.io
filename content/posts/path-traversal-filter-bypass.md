@@ -2,6 +2,7 @@
 title: "Bypassing Path Traversal Filters | Dizin Aşımı Filtrelerini Atlatmak"
 date: 2026-07-13
 description: "How simple string replacements fail to prevent Path Traversal and how to bypass them. / Basit karakter değiştirme filtrelerinin Dizin Aşımı zafiyetlerini önlemedeki başarısızlığı ve filtre atlatma yöntemleri."
+draft: false
 tags: ["Cybersecurity", "Web Application Security", "LFI", "Bypass"]
 categories: ["Blog", "CTF"]
 ShowToc: true
@@ -11,7 +12,11 @@ cover:
     image: "/img/xiaohei-path-traversal-filter-bypass-1.png"
     alt: "Path Traversal Bypass Illustration"
     relative: false
+related:
+  - "[[Directory_Traversal|Directory Traversal (Path Traversal)]]"
 ---
+
+## 🇹🇷 Türkçe (TR)
 
 ## Dizin Aşımı (Path Traversal) ve Filtre Atlama
 
@@ -53,7 +58,9 @@ Bu durumda, iki seviye yukarı çıkabilmek için bu yapıyı iki kez tekrarlama
 
 Filtre her iki `....//` öbeğindeki `../` kısımlarını sildiğinde, sunucunun elinde doğrudan `../../secret/flag.txt` kalacak ve filtre başarıyla atlatılmış olacaktır.
 
-![İllüstrasyon / Illustration](/img/xiaohei-path-traversal-filter-bypass-1.png)
+Aynı zayıflığı gösteren başka atlatma yolları da vardır: URL kodlama (`%2e%2e%2f`), çift kodlama (`%252e%252e%252f`) ve Windows sistemlerinde ters eğik çizgi (`..\`). Bu yüzden girdiyi "temizlemeye" çalışmak yerine sonucu doğrulamak gerekir.
+
+![İllüstrasyon](/img/xiaohei-path-traversal-filter-bypass-1.png)
 
 ### Güvenli Kodlama Çözümleri
 
@@ -64,19 +71,25 @@ Bu tür filtre atlatma zafiyetlerini önlemek için asla basit metin değiştirm
    ```python
    import os
 
+   BASE_DIR = os.path.realpath("/var/www/html/pages")
+
    def secure_file_read(user_input):
-       base_dir = os.path.abspath("/var/www/html/pages/")
-       target_path = os.path.abspath(os.path.join(base_dir, user_input))
-       
-       # Hedef yolun izin verilen kök dizinle başlayıp başlamadığını kontrol et
-       if not target_path.startswith(base_dir):
+       # realpath, "../" ifadelerini ve sembolik bağlantıları çözer
+       target_path = os.path.realpath(os.path.join(BASE_DIR, user_input))
+
+       # Hedef yol, izin verilen kök dizinin içinde mi?
+       # (startswith yerine commonpath: "/var/www/html/pages_evil" gibi
+       #  önek tuzağına düşmez)
+       if os.path.commonpath([BASE_DIR, target_path]) != BASE_DIR:
            raise PermissionError("Erişim Reddedildi!")
-           
+
        return read_file(target_path)
    ```
 2. **Beyaz Liste (Whitelist):** Sadece belirli dosya isimlerinin veya uzantılarının okunmasına izin verilmelidir.
 
 ---
+
+## 🇬🇧 English (EN)
 
 ## Bypassing Path Traversal Filters
 
@@ -118,6 +131,8 @@ To go up two levels, we just repeat this pattern twice:
 
 When the filter runs, it strips the internal `../` from both `....//` sequences, leaving the server with `../../secret/flag.txt`. The bypass is successful!
 
+There are other bypasses that exploit the same weakness: URL encoding (`%2e%2e%2f`), double encoding (`%252e%252e%252f`), and backslashes (`..\`) on Windows systems. So instead of trying to "clean" the input, validate the result.
+
 ### Secure Coding Remediation
 
 To prevent path traversal bypass vulnerabilities, you should never rely on simple string replacement. Instead, apply the following defenses:
@@ -127,16 +142,18 @@ To prevent path traversal bypass vulnerabilities, you should never rely on simpl
    ```python
    import os
 
+   BASE_DIR = os.path.realpath("/var/www/html/pages")
+
    def secure_file_read(user_input):
-       base_dir = os.path.abspath("/var/www/html/pages/")
-       target_path = os.path.abspath(os.path.join(base_dir, user_input))
-       
-       # Ensure the target path starts with the allowed base directory
-       if not target_path.startswith(base_dir):
+       # realpath resolves "../" sequences and symbolic links
+       target_path = os.path.realpath(os.path.join(BASE_DIR, user_input))
+
+       # Is the target inside the allowed base directory?
+       # (commonpath instead of startswith avoids the prefix trap
+       #  of paths like "/var/www/html/pages_evil")
+       if os.path.commonpath([BASE_DIR, target_path]) != BASE_DIR:
            raise PermissionError("Access Denied!")
-           
+
        return read_file(target_path)
    ```
 2. **Whitelisting:** Restrict user inputs to a strict list of allowed filenames or specific extensions.
-
-*This post is linked to the Knowledge Base: [[Knowledge Base / Path Traversal Bypass]]*

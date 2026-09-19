@@ -2,24 +2,29 @@
 title: "Cloud Security & DevSecOps"
 date: 2026-08-02
 description: "Bulut bilişim mimarilerinden başlayarak, bulut güvenliği yapılandırmalarına ve CI/CD süreçlerine güvenliği entegre eden DevSecOps pratiklerine kadar uzanan kapsamlı başucu rehberi. / A comprehensive guide spanning from cloud computing architectures and security configurations to DevSecOps practices integrating security into CI/CD pipelines."
+draft: false
 tags: ["Cloud Security", "DevSecOps", "AWS", "Terraform", "Docker", "Kubernetes", "IAM", "CI-CD"]
 categories: ["Blog"]
 ShowToc: true
 math: false
-mermaid: true
+mermaid: false
+related:
+  - "[[Bulut_Guvenligi|Bulut Güvenliği (Cloud Security)]]"
+  - "[[3.1_Architecture_Models|3.1 – Architecture Models & Cloud Security]]"
+  - "[[CSPM|CSPM (Cloud Security Posture Management)]]"
+  - "[[posts/cloud-forensics|Cloud Forensics]]"
 ---
 
-## (TR) Türkçe Versiyon
+## 🇹🇷 Türkçe (TR)
 
 Günümüz modern yazılım dünyasında uygulamaları hızlıca canlıya almak kadar, bu uygulamaların üzerinde çalıştığı altyapıyı korumak ve geliştirme süreçlerinin her aşamasına güvenliği entegre etmek de kritik bir zorunluluktur. Bu rehber; **Bulut Bilişim**, **Bulut Güvenliği** ve **DevSecOps** disiplinlerini kavramsal temellerden pratik kod örneklerine kadar en ince detaylarıyla ele almaktadır.
-
----
 
 ### 1. Bulut Bilişim (Cloud Computing) Temelleri
 
 Bulut bilişim, bilişim kaynaklarının (sunucular, depolama alanları, veritabanları, ağ bileşenleri ve yazılımlar) internet üzerinden, talep doğrultusunda ve kullandığın kadar öde (Pay-as-you-go) modeliyle sunulmasıdır.
 
 #### 1.1 Hizmet Modelleri (Service Models)
+
 Bulut sağlayıcıları (AWS, Azure, GCP) sorumluluğun kimde olduğuna bağlı olarak hizmetleri üç ana kategoride sunar:
 
 1. **IaaS (Infrastructure as a Service - Altyapı Hizmeti):** 
@@ -33,21 +38,22 @@ Bulut sağlayıcıları (AWS, Azure, GCP) sorumluluğun kimde olduğuna bağlı 
    * **Örnekler:** Office 365, Gmail, Salesforce, Slack.
 
 #### 1.2 Sanallaştırma (Virtualization) vs Konteynerizasyon (Containerization)
+
 * **Sanallaştırma (VM):** Donanım seviyesinde sanallaştırmadır. Her Sanal Makine (VM) kendi işletim sistemine (Guest OS) sahiptir. Bu durum yüksek izolasyon sağlasa da fazla kaynak (CPU, RAM) tüketimine ve yavaş açılış sürelerine neden olur.
-* **Konteynerizasyon (Docker/Podman):** İşletim sistemi çekirdeği (Kernel) seviyesinde sanallaştırmadır. Tüm konteynerler aynı ana bilgisayarın (Host OS) işletim sistemi çekirdeğini paylaşır. Hafiftirler, saniyeler içinde başlarlar ve kaynak tüketimleri oldukça düşüktür.
+* **Konteynerizasyon (Docker/Podman):** İşletim sistemi çekirdeği (Kernel) seviyesinde sanallaştırmadır. Tüm konteynerler aynı ana bilgisayarın (Host OS) işletim sistemi çekirdeğini paylaşır. Hafiftirler, saniyeler içinde başlarlar ve kaynak tüketimleri oldukça düşüktür. Çekirdeği paylaştıkları için izolasyonları VM'lere göre daha zayıftır; bu yüzden konteyner güvenliği ayrıca ele alınmalıdır.
 
 #### 1.3 Paylaşımlı Sorumluluk Modeli (Shared Responsibility Model)
+
 Bulutta güvenlik, bulut sağlayıcısı ile müşteri arasında paylaşılan bir sorumluluktur:
 * **Bulutun Güvenliği (Security OF the Cloud):** Altyapıyı sağlayan kurumun (örn: AWS) fiziksel veri merkezlerini, donanımları, kablolamayı ve hipervizör katmanını koruma sorumluluğudur.
-* **Bulutun İçindeki Güvenlik (Security IN the Cloud):** Müşterinin (yani sizin) verileri şifreleme, ağ erişim kurallarını (Firewall) yönetme, kimlik ve erişim yetkilerini (IAM) düzenleme sorumluluğudur.
-
----
+* **Bulutun İçindeki Güvenlik (Security IN the Cloud):** Müşterinin (yani sizin) verileri şifreleme, ağ erişim kurallarını (Firewall) yönetme, kimlik ve erişim yetkilerini (IAM) düzenleme sorumluluğudur. PaaS ve SaaS'ta bile verinizin ve kimliklerinizin güvenliği size aittir.
 
 ### 2. Bulut Güvenliği (Cloud Security) Derin İnceleme
 
 Geleneksel veri merkezlerindeki fiziksel duvarlar bulut dünyasında yerini tamamen mantıksal sınırlara ve kimlik denetimlerine bırakmıştır.
 
 #### 2.1 Kimlik ve Erişim Yönetimi (IAM)
+
 IAM, buluttaki kaynaklara kimlerin hangi şartlar altında erişebileceğini belirleyen güvenlik mekanizmasıdır.
 * **Least Privilege (En Az Yetki) İlkesi:** Bir kullanıcıya veya servise sadece yapacağı iş için zorunlu olan en dar yetki seti verilmelidir.
 * **Rol Tabanlı Erişim Kontrolü (RBAC):** Yetkiler doğrudan kişilere değil, rollere atanır. Kullanıcılar bu rolleri üstlenerek işlem yaparlar.
@@ -87,15 +93,15 @@ IAM, buluttaki kaynaklara kimlerin hangi şartlar altında erişebileceğini bel
 ```
 
 #### 2.2 Bulut Ağ Güvenliği
+
 * **VPC (Virtual Private Cloud):** Bulutta size özel yalıtılmış sanal ağ alanıdır.
 * **Security Groups (Güvenlik Grupları):** Sunucu (örneğin EC2) seviyesinde çalışan durum bilgili (stateful) firewall'dur. Gelen ve giden trafiği kontrol eder.
 * **NACL (Network Access Control List):** Alt ağ (Subnet) seviyesinde çalışan durum bilgisiz (stateless) firewall'dur. Trafiği hem giriş hem çıkış yönünde açıkça engellemek (Deny) veya izin vermek (Allow) için kullanılır.
 
 #### 2.3 CSPM ve CWPP Kavramları
+
 * **CSPM (Cloud Security Posture Management):** Bulut altyapısının güvenlik duruşunu izler. Dışa açık S3 bucket'lar, açık SSH portları gibi yanlış yapılandırmaları (misconfiguration) otomatik tespit eder ve uyumluluk standartlarına (CIS, ISO 27001) göre raporlar.
 * **CWPP (Cloud Workload Protection Platform):** Bulutta çalışan sanal makineler, konteynerler ve serverless fonksiyonlar gibi iş yüklerini çalışma zamanında (runtime) malware ve zafiyetlere karşı korur.
-
----
 
 ### 3. DevSecOps: Yazılım Yaşam Döngüsünde Güvenlik
 
@@ -110,6 +116,7 @@ DevSecOps; geliştirme (Dev), güvenlik (Sec) ve operasyon (Ops) ekiplerinin ort
 ```
 
 #### 3.1 CI/CD Sürecinde Güvenlik Taramaları
+
 Bir DevSecOps boru hattında aşağıdaki güvenlik testleri otomatik olarak koşulmalıdır:
 1. **SAST (Static Application Security Testing):** Yazılım henüz derlenmeden veya çalıştırılmadan kod analiz edilerek olası güvenlik açıkları (SQL Injection, XSS) tespit edilir. (Örn: SonarQube, Semgrep).
 2. **DAST (Dynamic Application Security Testing):** Çalışan uygulama dışarıdan taklit edilen siber saldırılarla taranır. (Örn: OWASP ZAP).
@@ -117,6 +124,7 @@ Bir DevSecOps boru hattında aşağıdaki güvenlik testleri otomatik olarak ko�
 4. **SBOM (Software Bill of Materials):** Uygulamanın içerdiği tüm bileşenlerin envanteridir. Tedarik zinciri güvenliği için kritik öneme sahiptir.
 
 #### 3.2 Kod Olarak Altyapı Güvenliği (IaC Security)
+
 Modern sistemlerde sunucular ve ağ yapılandırmaları Terraform, Ansible veya CloudFormation gibi kodlarla yönetilir. Bu kodların canlıya çıkmadan taranması gerekir.
 
 **Örnek Güvensiz Terraform Kodu (Dışa Açık SSH Portu):**
@@ -144,39 +152,39 @@ resource "aws_security_group" "guvenli_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["195.175.20.40/32"] # Sadece şirket dış IP'si
+    cidr_blocks = ["203.0.113.10/32"] # Sadece şirket dış IP'si (örnek/dokümantasyon adresi)
   }
 }
 ```
 
-**Tfsec veya Checkov ile Analiz:**
-Yukarıdaki güvensiz kod CI/CD aşamasında `checkov -f main.tf` veya `tfsec` aracıyla taranarak otomatik olarak reddedilir ve canlıya alınması engellenir.
+**Checkov veya Trivy ile Analiz:**
+Yukarıdaki güvensiz kod CI/CD aşamasında `checkov -f main.tf` veya `trivy config .` (tfsec artık Trivy'nin içinde) ile taranarak otomatik olarak reddedilir ve canlıya alınması engellenir.
 
 #### 3.3 Konteyner ve Orkestrasyon (Kubernetes) Güvenliği
+
 * **Konteyner İmaj Taraması (Image Scanning):** Docker imajları oluşturulurken içerisindeki paketlerin zafiyetleri `trivy` veya `grype` gibi araçlarla taranmalıdır.
 * **Kubernetes Güvenliği (Hardening):**
   * Konteynerler asla `root` yetkisiyle çalıştırılmamalıdır (`runAsNonRoot: true`).
   * Pod'ların dosya sistemleri salt okunur olmalıdır (`readOnlyRootFilesystem: true`).
   * Ağ politikaları (NetworkPolicies) ile mikroservisler arasındaki erişim en aza indirgenmelidir.
-
----
+  * Bu kuralları Pod Security Admission ile küme düzeyinde zorunlu kılın.
 
 ### 4. Özet ve Son Söz
+
 Bulut güvenliği ve DevSecOps, statik bir durum değil dinamik bir süreçtir. Güvenliğin hızı engellememesi, aksine otomasyon araçlarıyla geliştirme sürecini desteklemesi hedeflenmelidir. Her satır altyapı kodunun denetlenmesi ve yetkilendirmelerin en küçük yetki prensibine uygun yapılması modern bulut mimarisinin temel anahtarıdır.
 
 ---
 
-## (EN) English Version
+## 🇬🇧 English (EN)
 
 In the modern software ecosystem, deploying applications rapidly is as critical as securing the underlying infrastructure and integrating security into every step of the development pipeline. This guide covers the foundations of **Cloud Computing**, **Cloud Security**, and **DevSecOps** from concepts to practical code implementations.
-
----
 
 ### 1. Cloud Computing Foundations
 
 Cloud computing is the on-demand delivery of compute power, database storage, applications, and other IT resources through the internet with a pay-as-you-go pricing model.
 
 #### 1.1 Cloud Service Models
+
 Cloud service providers (AWS, Azure, GCP) offer services grouped into three primary models depending on the scope of customer responsibility:
 
 1. **IaaS (Infrastructure as a Service):**
@@ -190,21 +198,22 @@ Cloud service providers (AWS, Azure, GCP) offer services grouped into three prim
    * **Examples:** Office 365, Gmail, Salesforce, Slack.
 
 #### 1.2 Virtualization vs Containerization
+
 * **Virtualization (VM):** Hardware-level virtualization. Each VM runs a full guest operating system (Guest OS). This provides high isolation but incurs significant compute overhead (CPU, RAM) and slow startup times.
-* **Containerization (Docker/Podman):** OS-level virtualization. Containers share the host OS kernel. They are lightweight, pack tightly, and spin up in milliseconds.
+* **Containerization (Docker/Podman):** OS-level virtualization. Containers share the host OS kernel. They are lightweight, pack tightly, and spin up in milliseconds. Because they share the kernel, their isolation is weaker than a VM's, so container security needs separate attention.
 
 #### 1.3 The Shared Responsibility Model
+
 Security in the cloud is shared between the provider and the customer:
 * **Security OF the Cloud:** The provider (e.g., AWS) is responsible for securing physical facilities, compute, storage, networking, and the virtualization layer.
-* **Security IN the Cloud:** The customer is responsible for encrypting data, managing network traffic policies (Firewalls), and configuring Identity and Access Management (IAM).
+* **Security IN the Cloud:** The customer is responsible for encrypting data, managing network traffic policies (Firewalls), and configuring Identity and Access Management (IAM). Even with PaaS and SaaS, the security of your data and identities remains yours.
 
----
-
-## 2. Cloud Security Deep Dive
+### 2. Cloud Security Deep Dive
 
 Physical perimeters of on-premises data centers are replaced by logical perimeters and identity-centric controls in the cloud.
 
 #### 2.1 Identity and Access Management (IAM)
+
 IAM governs who can access what resources under which conditions.
 * **Principle of Least Privilege:** Users and services must only be granted the minimum permissions necessary to perform their specific tasks.
 * **Role-Based Access Control (RBAC):** Permissions are assigned to roles, not individual users. Users assume these roles as needed.
@@ -235,8 +244,8 @@ IAM governs who can access what resources under which conditions.
         "s3:ListBucket"
       ],
       "Resource": [
-        "arn:aws:s3:::sirket-raporlari",
-        "arn:aws:s3:::sirket-raporlari/*"
+        "arn:aws:s3:::company-reports",
+        "arn:aws:s3:::company-reports/*"
       ]
     }
   ]
@@ -244,17 +253,17 @@ IAM governs who can access what resources under which conditions.
 ```
 
 #### 2.2 Cloud Network Security
+
 * **VPC (Virtual Private Cloud):** An isolated virtual network dedicated to your cloud account.
 * **Security Groups:** Stateful virtual firewalls at the instance (e.g., VM) level controlling inbound and outbound traffic.
 * **Network ACLs (NACL):** Stateless firewalls at the subnet level that can explicitly permit or deny traffic in both directions.
 
 #### 2.3 CSPM and CWPP Concepts
+
 * **CSPM (Cloud Security Posture Management):** Continuously scans cloud configurations for posture weaknesses (e.g., public S3 buckets, open port 22) and ensures compliance with frameworks like CIS or ISO 27001.
 * **CWPP (Cloud Workload Protection Platform):** Protects active workloads (VMs, containers, serverless functions) from runtime exploits, vulnerabilities, and malware.
 
----
-
-## 3. DevSecOps: Integrating Security Into CI/CD
+### 3. DevSecOps: Integrating Security Into CI/CD
 
 DevSecOps bridges the gap between development, security, and operations. The core goal is to shift security left (**Shift-Left**), incorporating automated security guardrails early in the Software Development Life Cycle (SDLC).
 
@@ -267,6 +276,7 @@ DevSecOps bridges the gap between development, security, and operations. The cor
 ```
 
 #### 3.1 Security Testing in the Pipeline
+
 An automated DevSecOps pipeline should execute the following tools:
 1. **SAST (Static Application Security Testing):** Scans source code for potential vulnerabilities (like SQLi or XSS) without running the code (e.g., Semgrep, SonarQube).
 2. **DAST (Dynamic Application Security Testing):** Tests the running application from the outside by mimicking cyber attacks (e.g., OWASP ZAP).
@@ -274,11 +284,12 @@ An automated DevSecOps pipeline should execute the following tools:
 4. **SBOM (Software Bill of Materials):** Generates a machine-readable list of all components inside your software, essential for securing the software supply chain.
 
 #### 3.2 Infrastructure as Code (IaC) Security
+
 Modern cloud assets are defined via code templates (e.g., Terraform). These templates should be scanned for security flaws before provisioning.
 
 **Example Insecure Terraform Code (Open SSH Port):**
 ```hcl
-resource "aws_security_group" "guvensiz_sg" {
+resource "aws_security_group" "insecure_sg" {
   name        = "insecure-sg"
   description = "Open SSH access to the world"
 
@@ -293,7 +304,7 @@ resource "aws_security_group" "guvensiz_sg" {
 
 **Secure Terraform Code (Restricted to corporate IP Range):**
 ```hcl
-resource "aws_security_group" "guvenli_sg" {
+resource "aws_security_group" "secure_sg" {
   name        = "secure-sg"
   description = "SSH access restricted to office IP"
 
@@ -301,26 +312,23 @@ resource "aws_security_group" "guvenli_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["195.175.20.40/32"] # Corporate IP only
+    cidr_blocks = ["203.0.113.10/32"] # Corporate IP only (example/documentation address)
   }
 }
 ```
 
-**Pipeline Scan with Checkov or Tfsec:**
-By adding tools like `checkov` or `tfsec` to your workflow, insecure configurations will trigger a build failure and prevent deployment.
+**Pipeline Scan with Checkov or Trivy:**
+By adding tools like `checkov` or `trivy config` (tfsec now lives inside Trivy) to your workflow, insecure configurations will trigger a build failure and prevent deployment.
 
 #### 3.3 Container & Kubernetes Security
+
 * **Container Image Scanning:** Scan Docker base images during the build phase for vulnerabilities using tools like `trivy` or `grype`.
 * **Kubernetes Hardening:**
   * Configure pods with `runAsNonRoot: true` to prevent root-privilege execution.
   * Mount root filesystems as read-only (`readOnlyRootFilesystem: true`).
   * Implement `NetworkPolicies` to enforce microsegmentation and restrict unauthorized pod-to-pod communication.
+  * Enforce these rules cluster-wide with Pod Security Admission.
 
----
+### 4. Conclusion
 
-## Conclusion
 Cloud security and DevSecOps are continuous processes, not one-time objectives. Security should act as an enabler rather than a barrier to deployment. Enforcing IaC scanning, practicing least privilege, and automating response mechanisms are the cornerstones of a resilient cloud architecture.
-
----
-
-*This post is linked to the Knowledge Base: [[Bulut_Guvenligi]]*

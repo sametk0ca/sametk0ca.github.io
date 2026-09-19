@@ -1,70 +1,110 @@
 ---
 title: "DHCP"
 date: 2026-01-04
+description: "How DHCP hands out IP addresses automatically: the four-step DORA exchange and lease renewal. / DHCP'nin IP adreslerini otomatik dağıtma süreci: DORA adımları ve kira yenileme."
 draft: false
 tags: ["Networking", "Protocols"]
 categories: ["Writeups"]
+related:
+  - "[[DHCP_DORA|DHCP (Dynamic Host Configuration Protocol) - DORA Süreci]]"
 ---
 
-**DHCP (Dynamic Host Configuration Protocol)**, bir cihazın ağa bağlandığında otomatik olarak IP adresi ve diğer ağ ayarlarını almasını sağlayan bir protokoldür. Bu sayede manuel IP ataması yapmaya gerek kalmaz ve ağ yönetimi kolaylaşır. DHCP’nin bir cihaza IP adresi atama süreci, dört temel adımdan oluşur: **_Discover_**, **_Offer_**, **_Request_** ve **_Acknowledge_**.
+## 🇹🇷 Türkçe (TR)
 
-**1. DHCP Discover (Keşif)**  
-- Bir cihaz (örneğin, bir bilgisayar veya telefon) ağa bağlandığında, henüz bir IP adresine sahip olmadığını fark eder.  
-- Cihaz, ağdaki DHCP sunucusunu bulmak için bir **DHCP Discover** paketi gönderir. Bu paket, ağdaki tüm cihazlara yayınlanır (broadcast) ve “DHCP sunucusu var mı?” diye sorar.  
-- Discover paketi, cihazın MAC adresi gibi benzersiz kimlik bilgilerini içerir, böylece sunucu cihazı tanıyabilir.
+**DHCP (Dynamic Host Configuration Protocol)**, bir cihazın ağa bağlandığında IP adresini ve diğer ağ ayarlarını (alt ağ maskesi, varsayılan ağ geçidi, DNS sunucuları) otomatik olarak almasını sağlayan protokoldür. Manuel IP ataması gerekmez, ağ yönetimi kolaylaşır.
 
-**2. DHCP Offer (Teklif)**  
-- Ağdaki DHCP sunucusu, Discover paketini alır ve buna yanıt olarak bir **DHCP Offer** paketi gönderir.  
-- Offer paketi, cihazın kullanabileceği bir IP adresi, alt ağ maskesi (subnet mask), varsayılan ağ geçidi (default gateway), DNS sunucuları ve kira süresi (lease time) gibi bilgileri içerir.  
-- Eğer ağda birden fazla DHCP sunucusu varsa, cihaz birden fazla Offer paketi alabilir. Genellikle cihaz, ilk gelen teklifi kabul eder.
+Atama süreci dört adımdan oluşur ve baş harflerinden **DORA** olarak bilinir: **Discover**, **Offer**, **Request**, **Acknowledge**.
 
-**3. DHCP Request (İstek)**  
-- Cihaz, aldığı Offer paketlerinden birini seçer ve bu teklifi kabul etmek için bir **DHCP Request** paketi gönderir.  
-- Request paketi, seçilen IP adresini ve sunucunun kimliğini içerir. Bu, sunucuya “Bu IP adresini kullanmak istiyorum” mesajını iletir.  
-- Aynı zamanda, diğer sunuculara (eğer varsa) bu IP adresini kullanmayacağını bildirir, böylece o adres başka bir cihaza atanabilir.
+### DORA Adımları
 
-**4. DHCP Acknowledge (Onay)**  
-- DHCP sunucusu, cihazın isteğini onaylamak için bir **DHCP Acknowledge** (ACK) paketi gönderir.  
-- ACK paketi, IP adresinin cihaza resmi olarak atandığını doğrular ve cihazın bu adresi kullanabileceğini bildirir.  
-- Bu pakette, IP adresinin yanı sıra ağ ayarları (subnet mask, default gateway, DNS vb.) ve kira süresi de yer alır.
+| Adım | Mesaj | Yön | Ne yapar? |
+|---|---|---|---|
+| 1 | **Discover** (Keşif) | İstemci → yayın (broadcast) | "Ağda DHCP sunucusu var mı?" |
+| 2 | **Offer** (Teklif) | Sunucu → istemci | Kullanılabilecek bir IP adresi ve ağ ayarlarını önerir |
+| 3 | **Request** (İstek) | İstemci → yayın (broadcast) | Seçtiği teklifi kabul eder |
+| 4 | **Acknowledge** (Onay) | Sunucu → istemci | Atamayı onaylar |
 
-**Kira Süresi (Lease Time) Hakkında**  
-- DHCP tarafından atanan IP adresi kalıcı değildir; belirli bir kira süresi için geçerlidir. Bu süre, sunucu tarafından belirlenir ve saatler veya günler sürebilir.  
-- Cihaz, kira süresi dolmadan önce IP adresini yenilemek (renew) için sunucuya bir istek gönderir. Sunucu bu isteği onaylarsa, cihaz aynı IP adresini kullanmaya devam eder.  
-- Eğer yenileme yapılmazsa, kira süresi dolduğunda IP adresi serbest kalır ve başka bir cihaza atanabilir.
+DHCP, UDP üzerinde çalışır: sunucu **67**, istemci **68** numaralı portu kullanır.
 
+#### 1. Discover (Keşif)
 
-**Özet**  
-DHCP, bir cihazın ağa bağlandığında IP adresini otomatik olarak almasını sağlayan pratik bir protokoldür. Süreç, cihazın Discover paketiyle sunucuyu aramasıyla başlar, sunucunun Offer paketiyle bir IP adresi önermesiyle devam eder, cihazın Request paketiyle bu adresi istemesi ve son olarak sunucunun ACK paketiyle atamayı onaylamasıyla tamamlanır. Bu otomatik süreç, IP çakışmalarını önler ve özellikle büyük ağlarda yönetimi kolaylaştırır.
+- Ağa yeni bağlanan cihazın henüz bir IP adresi yoktur.
+- Cihaz, DHCP sunucusunu bulmak için ağdaki herkese yayın yapan bir **Discover** paketi gönderir.
+- Paket, cihazın MAC adresi gibi kimlik bilgilerini taşır; sunucu cihazı bu sayede tanır.
+
+#### 2. Offer (Teklif)
+
+- DHCP sunucusu Discover paketine **Offer** ile yanıt verir.
+- Teklif; bir IP adresi, alt ağ maskesi, varsayılan ağ geçidi, DNS sunucuları ve kira süresini (lease time) içerir.
+- Ağda birden fazla DHCP sunucusu varsa cihaz birden fazla teklif alabilir. Genellikle ilk gelen teklif kabul edilir.
+
+#### 3. Request (İstek)
+
+- Cihaz tekliflerden birini seçer ve **Request** paketi gönderir. Paket, seçilen IP adresini ve teklifi veren sunucunun kimliğini içerir.
+- Request yayın olarak gönderildiği için diğer sunucular da tekliflerinin kabul edilmediğini öğrenir ve önerdikleri adresi başkasına verebilir.
+
+#### 4. Acknowledge (Onay)
+
+- Sunucu, **ACK** paketiyle IP adresinin cihaza atandığını doğrular.
+- ACK; IP adresi, ağ ayarları ve kira süresini içerir. Cihaz artık adresi kullanabilir.
+
+### Kira Süresi (Lease Time)
+
+- DHCP ile atanan adres kalıcı değildir, belirli bir süre için kiralanır. Süreyi sunucu belirler; saatler veya günler olabilir.
+- Cihaz, kira süresi dolmadan adresini yenilemek (renew) için sunucuya istek gönderir. Sunucu onaylarsa cihaz aynı adresi kullanmaya devam eder.
+- Yenileme yapılmazsa süre dolunca adres serbest kalır ve başka bir cihaza verilebilir.
+
+### Özet
+
+Süreç, cihazın Discover ile sunucuyu aramasıyla başlar; sunucunun Offer ile adres önermesi, cihazın Request ile bu adresi istemesi ve sunucunun ACK ile atamayı onaylamasıyla tamamlanır. Bu otomatik süreç, adres çakışmalarını büyük ölçüde önler ve özellikle büyük ağlarda yönetimi kolaylaştırır.
 
 ---
 
-**DHCP (Dynamic Host Configuration Protocol)** is a protocol that allows a device to automatically obtain an IP address and other network settings when it connects to a network. This eliminates the need for manual IP assignment and makes network management easier. The process of DHCP assigning an IP address to a device consists of four basic steps: **_Discover_**, **_Offer_**, **_Request_**, and **Acknowledge**. Below, I explain these steps step by step:
+## 🇬🇧 English (EN)
 
-**1. DHCP Discover (Discovery)**  
-- When a device (e.g., a computer or phone) connects to the network, it realizes that it does not yet have an IP address.  
-- The device sends a **DHCP Discover** packet to find the DHCP server on the network. This packet is broadcast to all devices on the network and asks, “Is there a DHCP server?”  
-- The Discover packet contains unique identification information such as the device’s MAC address, so the server can recognize the device.
+**DHCP (Dynamic Host Configuration Protocol)** lets a device automatically obtain an IP address and other network settings (subnet mask, default gateway, DNS servers) when it joins a network. There is no need for manual IP assignment, which makes network management easier.
 
-**2. DHCP Offer (Offer)**  
-- The DHCP server on the network receives the Discover packet and responds with a **DHCP Offer** packet.  
-- The Offer packet contains an IP address that the device can use, subnet mask, default gateway, DNS servers, and lease time.  
-- If there are multiple DHCP servers on the network, the device may receive multiple Offer packets. Usually, the device accepts the first offer it receives.
+The assignment takes four steps, known by their initials as **DORA**: **Discover**, **Offer**, **Request**, **Acknowledge**.
 
-**3. DHCP Request (Request)**  
-- The device selects one of the Offer packets it received and sends a **DHCP Request** packet to accept that offer.  
-- The Request packet contains the selected IP address and the server’s identity. This tells the server, “I want to use this IP address.”  
-- At the same time, it notifies other servers (if any) that it will not use that IP address, so that address can be assigned to another device.
+### The DORA Steps
 
-**4. DHCP Acknowledge (Acknowledgment)**  
-- The DHCP server sends a **DHCP Acknowledge** (ACK) packet to confirm the device’s request.  
-- The ACK packet confirms that the IP address has been officially assigned to the device and notifies the device that it can use this address.  
-- This packet includes the IP address, network settings (subnet mask, default gateway, DNS, etc.), and the lease time.
+| Step | Message | Direction | Purpose |
+|---|---|---|---|
+| 1 | **Discover** | Client → broadcast | "Is there a DHCP server on this network?" |
+| 2 | **Offer** | Server → client | Proposes an IP address and network settings |
+| 3 | **Request** | Client → broadcast | Accepts the chosen offer |
+| 4 | **Acknowledge** | Server → client | Confirms the assignment |
 
-**About Lease Time**  
-- The IP address assigned by DHCP is not permanent; it is valid for a specific lease time. This duration is determined by the server and can last for hours or days.  
-- Before the lease time expires, the device sends a request to the server to renew the IP address. If the server approves this request, the device continues to use the same IP address.  
-- If the renewal is not made, the IP address becomes free when the lease time expires and can be assigned to another device.
+DHCP runs over UDP: the server listens on port **67** and the client uses port **68**.
 
-**Summary**  
-DHCP is a practical protocol that allows a device to automatically obtain an IP address when it connects to the network. The process starts with the device searching for the server with a Discover packet, continues with the server suggesting an IP address with an Offer packet, the device requesting this address with a Request packet, and finally, the server confirming the assignment with an ACK packet. This automatic process prevents IP conflicts and makes management easier, especially in large networks.
+#### 1. Discover
+
+- A device that has just joined the network does not have an IP address yet.
+- It broadcasts a **Discover** packet to find a DHCP server.
+- The packet carries identifying information such as the device's MAC address, so the server can recognize it.
+
+#### 2. Offer
+
+- A DHCP server answers the Discover with an **Offer**.
+- The offer contains an IP address, subnet mask, default gateway, DNS servers, and the lease time.
+- If there are several DHCP servers, the device may receive several offers. It usually accepts the first one.
+
+#### 3. Request
+
+- The device picks one offer and sends a **Request** containing the chosen IP address and the identity of the server that made the offer.
+- Because the Request is broadcast, the other servers learn their offers were declined and can hand those addresses to someone else.
+
+#### 4. Acknowledge
+
+- The server confirms the assignment with an **ACK** packet.
+- The ACK contains the IP address, network settings, and lease time. The device can now use the address.
+
+### Lease Time
+
+- An address assigned by DHCP is not permanent; it is leased for a limited time set by the server, which can be hours or days.
+- Before the lease expires, the device asks the server to renew it. If the server agrees, the device keeps the same address.
+- If the lease is not renewed, the address is released when it expires and can be assigned to another device.
+
+### Summary
+
+The process starts with the device looking for a server with Discover, continues with the server proposing an address with Offer and the device asking for it with Request, and ends with the server confirming it with ACK. This automatic process largely prevents address conflicts and makes management easier, especially in large networks.

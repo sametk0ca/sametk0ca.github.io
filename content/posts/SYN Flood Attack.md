@@ -1,14 +1,16 @@
 ---
 title: "SYN Flood"
 date: 2026-01-04
+description: "How a SYN flood abuses the TCP three-way handshake to exhaust a server, and how SYN cookies defend against it. / SYN flood saldırısının TCP üç yönlü el sıkışmayı nasıl istismar ettiği ve SYN cookie ile nasıl önlendiği."
 draft: false
 tags: ["DDoS", "Network Security", "Red Team"]
 categories: ["Writeups"]
+related:
+  - "[[DoS_DDoS|DoS vs DDoS (Denial of Service)]]"
+  - "[[TCPIP_Modeli|TCPIP Modeli - 4 Katmanlı Yapı ve Güvenlik]]"
 ---
 
-
-
-## (TR) Türkçe Versiyon
+## 🇹🇷 Türkçe (TR)
 
 Siber güvenlik dünyasında saldırı yöntemleri, isimleri karmaşık olsa da genellikle günlük hayattaki davranışların dijital yansımalarıdır. Bugün, bir sunucuyu devre dışı bırakmanın en klasik yollarından biri olan **SYN Flood** saldırısını inceleyeceğiz.
 
@@ -38,10 +40,6 @@ Senaryo şöyle gelişir:
 
 Sunucu, karşı taraftan cevap gelmeyince “Belki bağlantısı yavaştır” diye düşünerek beklemeye devam eder. Bu duruma **Half-Open (Yarı Açık) Bağlantı** denir.
 
-
-
-
-
 ### Sunucu Neden Çöküyor?
 
 Her sunucunun aynı anda bekletebileceği bağlantı istekleri için bir kapasitesi vardır. Buna **Backlog Queue (Bekleme Kuyruğu)** denir.
@@ -54,13 +52,15 @@ Sonuç: Hizmet Kesintisi (DoS).
 
 ### Nasıl Korunulur?
 
-Bu durumdan korunmanın en yaygın yollarından biri **SYN Cookies** yöntemidir. Sunucu, gelen ilk isteğe hemen kaynak ayırmak yerine, cevabın içine şifreli bir imza (cookie) gizler. Ancak karşı taraf son onayı (ACK) gönderdiğinde bu imzayı kontrol eder ve kaynağı o zaman ayırır. Böylece sunucu, boş yere bekletilmekten kurtulur.
+Bu durumdan korunmanın en yaygın yollarından biri **SYN Cookies** yöntemidir. Sunucu, gelen ilk isteğe hemen kaynak ayırmak yerine, SYN-ACK cevabının dizi numarasına (sequence number) bağlantı bilgilerinden türetilmiş bir doğrulama değeri (cookie) gömer. Karşı taraf son onayı (ACK) gönderdiğinde bu değeri kontrol eder ve kaynağı ancak o zaman ayırır. Böylece sahte istekler sunucunun belleğini tüketemez.
 
-Buna ek olarak sunucu cevaplar için **timeout** da ayarlayabilir. Karşı taraftan bir süre cevap gelmezse onun için ayırdığı kaynağı serbest bırakır (ne kadar tanıdık değil mi?).
+Buna ek olarak sunucu, yarı açık bağlantılar için **timeout** ayarlayabilir; karşı taraftan bir süre cevap gelmezse ayırdığı kaynağı serbest bırakır (ne kadar tanıdık değil mi?). Bekleme kuyruğunu büyütmek ve istek hızını sınırlamak (rate limiting) da yardımcı olur.
 
 **Özetle:** SYN Flood, sunucuyu binlerce sonuçsuz diyalog içinde boğmaktır. Modern güvenlik duvarları ve doğru konfigürasyonlarla bu hayaletlerden korunmak mümkündür.
 
-## (EN) English Version
+---
+
+## 🇬🇧 English (EN)
 
 In the world of cybersecurity, many attack vectors act like digital reflections of real-world behaviors. Today, we will look at one of the most classic ways to overwhelm a server: the **SYN Flood** attack.
 
@@ -90,9 +90,6 @@ Here is the scenario:
 
 The server, assuming the user might just have a slow connection, keeps the port open and waits. This state is called a **Half-Open connection**.
 
-
-
-
 ### Why Does the Server Crash?
 
 Every server has a limit on how many pending connections it can handle at once. This is called the **Backlog Queue**.
@@ -105,6 +102,6 @@ Once the queue is full, the server cannot accept any requests from **legitimate 
 
 One of the most effective defenses is using **SYN Cookies**. Instead of allocating memory immediately upon receiving a request, the server encodes the connection details into the sequence number (a cookie) of its reply. The server only allocates resources _after_ the final ACK is received and the cookie is verified. This prevents the memory from being exhausted by fake requests.
 
-In addition, the server can set a timeout for replies. If the other party doesn’t respond for a while, it releases the resource it reserved for the other party (how familiar, right?).
+In addition, the server can set a timeout for half-open connections. If the other party doesn’t respond for a while, it releases the resource it reserved (how familiar, right?). Enlarging the backlog queue and rate limiting incoming requests also help.
 
 **In short:** A SYN Flood is about drowning the server in thousands of unfinished conversations. With modern firewalls and proper configuration, it is possible to protect your infrastructure from these digital ghosts.

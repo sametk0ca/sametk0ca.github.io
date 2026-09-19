@@ -2,6 +2,7 @@
 title: "eBPF for Agentic AI Security | eBPF ile Otonom AI Ajan Güvenliği"
 date: 2026-07-20
 description: "Monitoring and sandboxing autonomous AI agents at the Linux kernel layer using eBPF. / Linux çekirdek katmanında eBPF kullanarak otonom yapay zeka ajanlarını izleme ve dizginleme."
+draft: false
 tags: ["eBPF", "Agentic AI", "Linux Kernel", "LLM Security", "Sandboxing"]
 categories: ["Blog"]
 ShowToc: true
@@ -11,6 +12,9 @@ cover:
     image: "/img/xiaohei-ebpf-agentic-ai-security-1.jpg"
     alt: "eBPF Agentic AI Security Illustration"
     relative: false
+related:
+  - "[[agentic-ai-security-2026|Agentic AI]]"
+  - "[[agentic-ai-security|Agentic AI Security (2026)]]"
 ---
 
 ## 🇹🇷 Türkçe (TR)
@@ -21,9 +25,7 @@ Otonom yapay zeka ajanları (Agentic AI), sistemlerimizde terminal komutları ç
 
 Geleneksel kullanıcı alanı (user-space) güvenlik duvarları ve uygulama kısıtlamaları, dinamik olarak kod üreten AI ajanlarını engellemekte yetersiz kalmaktadır. Bu noktada modern Linux çekirdeğinin en güçlü teknolojilerinden biri olan **eBPF (Extended Berkeley Packet Filter)** devreye girmektedir. eBPF, çekirdek kodunu yeniden derlemeden Linux çekirdeği (kernel) seviyesinde yüksek performanslı, güvenli ve gerçek zamanlı izleme ile dizginleme imkanı sunar.
 
-![İllüstrasyon / Illustration](/img/xiaohei-ebpf-agentic-ai-security-1.jpg)
-
----
+![İllüstrasyon](/img/xiaohei-ebpf-agentic-ai-security-1.jpg)
 
 ### AI Ajan Tehdit Modeli ve eBPF Mimarisi
 
@@ -33,22 +35,26 @@ Otonom bir AI ajanı sisteme eriştiğinde aşağıdaki potansiyel zararlı eyle
 2. **Kötü Niyetli Proses Başlatma:** Sistemde yetkisiz ters kabuk (Reverse Shell) veya arka plan süreçleri çalıştırmak.
 3. **Ağ Soket Manipülasyonu:** Beklenmeyen IP adreslerine veya portlara çıkış trafiği başlatmak.
 
-eBPF mimarisi, Linux çekirdeğindeki sistem çağrılarını (`sys_enter_execve`, `sys_enter_connect`, `sys_enter_openat`) kancalayarak (hook) AI ajanının başlattığı her süreci sıfır gecikme (zero-overhead) ile denetler.
-
----
+eBPF mimarisi, Linux çekirdeğindeki sistem çağrılarını (`sys_enter_execve`, `sys_enter_connect`, `sys_enter_openat`) kancalayarak (hook) AI ajanının başlattığı her süreci çok düşük ek yükle denetler.
 
 ### eBPF ile Gerçek Zamanlı Ajan Dizginleme Mekanizması
 
 #### 1. Dynamic System Call Filtering (Dinamik Sistem Çağrısı Filtreleme)
-eBPF bytecode programları, AI ajan sürecinin cgroup veya PID bilgilerini takip ederek ajanın sadece izin verilen dizinlerde (`/tmp/scratch`, `workspace/`) dosya yazmasına izin verir. `/etc/passwd` veya `~/.ssh/` dizinlerine erişim denemeleri çekirdek seviyesinde `EPERM` (Operation Not Permitted) hatası ile anında engellenir.
+
+eBPF programları, AI ajan sürecinin cgroup veya PID bilgilerini takip ederek ajanın sadece izin verilen dizinlerde (`/tmp/scratch`, `workspace/`) dosya yazmasına izin verir. Engelleme için izleme (tracing) kancaları yetmez; **BPF LSM** (Linux Security Modules) kancaları gerekir. Bu sayede `/etc/passwd` veya `~/.ssh/` dizinlerine erişim denemeleri çekirdek seviyesinde `EPERM` (Operation Not Permitted) hatası ile anında engellenir.
 
 #### 2. Network Egress Enforcement (Ağ Çıkış Kısıtlaması)
-AI ajanlarının araç kullanırken (tool calling) yapacağı HTTP/DNS istekleri eBPF `tc` (Traffic Control) ve socket filter programları ile denetlenir. Ajan sadece beyaz listede (allowlist) yer alan API endpoint'leri ile haberleşebilir.
+
+AI ajanlarının araç kullanırken (tool calling) yapacağı HTTP/DNS istekleri eBPF `tc` (Traffic Control), cgroup tabanlı bağlantı kancaları ve socket filter programları ile denetlenir. Ajan sadece beyaz listede (allowlist) yer alan API endpoint'leri ile haberleşebilir.
 
 #### 3. Real-Time Telemetry & Behavioral Audit (Gerçek Zamanlı Telemetri)
-eBPF ring buffer yapısı sayesinde, AI ajanının gerçekleştirdiği tüm `execve` komut zinciri ve süreç ağacı (process tree) sıfır performans kaybıyla SIEM ve güvenlik panellerine aktarılır.
 
----
+eBPF ring buffer yapısı sayesinde, AI ajanının gerçekleştirdiği tüm `execve` komut zinciri ve süreç ağacı (process tree) düşük performans maliyetiyle SIEM ve güvenlik panellerine aktarılır. Tetragon (engelleme dahil), Falco ve Tracee gibi açık kaynak araçlar bu yaklaşımı hazır sunar.
+
+### Sınırlılıklar
+
+eBPF'in görünürlüğü sistem çağrısı seviyesindedir; ajanın niyetini anlamaz ve şifreli (TLS) trafiğin içeriğini göremez. Bu yüzden prompt injection'a karşı katmanlı savunmanın (izolasyon, en az yetki, insan onayı) yerine geçmez, onu tamamlar.
+
 ---
 
 ## 🇬🇧 English (EN)
@@ -59,8 +65,6 @@ Autonomous AI agents (Agentic AI) have evolved from passive conversational model
 
 Traditional user-space security controls and static permission prompts fail to adapt to the non-deterministic, dynamically generated execution paths of LLM agents. To address this gap, modern security engineering turns to **eBPF (Extended Berkeley Packet Filter)**—a revolutionary Linux kernel technology that enables sandboxing, real-time observability, and fine-grained access control directly within the kernel without altering kernel source code.
 
----
-
 ### Threat Model of Agentic Execution & eBPF Security Architecture
 
 When an autonomous AI agent is granted local terminal execution privileges, it introduces several distinct threat vectors:
@@ -69,21 +73,22 @@ When an autonomous AI agent is granted local terminal execution privileges, it i
 2. **Malicious Process Spawning:** Execution of unauthorized binaries, background daemons, or reverse shell sockets triggered by indirect prompt injection.
 3. **Unsanctified Network Egress:** Initiating socket connections to unapproved remote command-and-control (C2) or third-party endpoints.
 
-eBPF programs attach directly to kernel tracepoints and kprobes (e.g., `sys_enter_execve`, `sys_enter_openat`, `sys_enter_connect`). By intercepting events at the kernel boundary, eBPF evaluates execution context with near-zero runtime latency.
-
----
+eBPF programs attach directly to kernel tracepoints and kprobes (e.g., `sys_enter_execve`, `sys_enter_openat`, `sys_enter_connect`). By intercepting events at the kernel boundary, eBPF evaluates execution context with very low overhead.
 
 ### Technical Implementation of eBPF Agent Governance
 
 #### 1. Dynamic Kernel-Level Process Isolation
-By attaching eBPF programs to process cgroups or tracking specific agent PID trees, security engineers can enforce strict path-scoping rules. Attempts by the AI agent to open or modify protected system paths (such as `/etc/shadow`, `~/.aws/credentials`) are blocked instantly at the VFS layer by returning an `EPERM` error code.
+
+By attaching eBPF programs to process cgroups or tracking specific agent PID trees, security engineers can enforce strict path-scoping rules. Attempts by the AI agent to open or modify protected system paths (such as `/etc/shadow`, `~/.aws/credentials`) are blocked in the kernel by returning an `EPERM` error code. Blocking (as opposed to merely observing) requires **BPF LSM** (Linux Security Modules) hooks rather than plain tracing hooks.
 
 #### 2. Programmable Network Egress Control
-eBPF socket filters and Traffic Control (TC) hooks inspect all outbound TCP/UDP traffic originated by agent processes. Outbound connections are matched against an in-memory eBPF map of approved API domains, instantly dropping unauthorized egress packets.
+
+eBPF socket filters, Traffic Control (TC) hooks, and cgroup-based connect hooks inspect outbound TCP/UDP traffic originated by agent processes. Outbound connections are matched against an in-memory eBPF map of approved API endpoints, and unauthorized connections are dropped.
 
 #### 3. High-Throughput Audit Telemetry
-Leveraging eBPF ring buffers, every system call, process tree fork, and file modification initiated by the AI agent is streamed continuously to security observability tools, providing complete forensic transparency over autonomous agent behaviors.
 
----
+Leveraging eBPF ring buffers, every system call, process tree fork, and file modification initiated by the AI agent can be streamed to security observability tools with low overhead, providing detailed forensic visibility into autonomous agent behavior. Open-source tools such as Tetragon (including enforcement), Falco, and Tracee already offer this approach.
 
-*This post is linked to the Knowledge Base: [[Knowledge Base / eBPF Agentic AI Security]]*
+### Limitations
+
+eBPF's visibility is at the system-call level; it does not understand an agent's intent and cannot see the contents of encrypted (TLS) traffic. It therefore complements, rather than replaces, layered defenses against prompt injection (isolation, least privilege, human approval).

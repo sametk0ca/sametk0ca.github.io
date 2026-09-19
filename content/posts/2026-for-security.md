@@ -1,11 +1,16 @@
 ---
 title: "2026 Security"
 date: 2026-03-31
+description: "Five counter-intuitive cybersecurity trends for 2026: shadow AI, AI agents, deepfakes, passkeys and the quantum threat. / 2026 için beş şaşırtıcı siber güvenlik eğilimi: gölge yapay zeka, yapay zeka ajanları, deepfake, passkey ve kuantum tehdidi."
 draft: false
 tags: ["Cybersecurity", "Trends", "AI", "2026"]
 categories: ["Blog"]
+related:
+  - "[[modern-threat-landscape|Modern Threat Landscape (2024-2026)]]"
+  - "[[modern-updates|⚛️ Modern Security Updates (2024-2026)]]"
 ---
 
+## 🇹🇷 Türkçe (TR)
 
 ### Giriş: Geleceğe Bir Bakış
 
@@ -16,7 +21,7 @@ Yıl sonları, genellikle siber güvenlik dünyasının geleceğine dair birkaç
 "Gölge Yapay Zeka" (Shadow AI), bir kurum içinde resmi bir onay veya denetim süreci olmaksızın, çalışanlar tarafından kullanılan yapay zeka uygulamalarını ifade eder. Masum bir üretkenlik aracı gibi görünse de bu durum, ciddi güvenlik riskleri barındırır. IBM'in her yıl yayınladığı "Veri İhlalinin Maliyeti" raporu, bu riskin boyutunu net rakamlarla ortaya koyuyor:
 
 - Gölge Yapay Zeka'nın bulunduğu bir veri ihlali, kurumlara ortalama **670.000 Dolar** ek maliyet getiriyor.
-- Daha da endişe verici olan ise, kurumların **%60'ının** bu riske karşı herhangi bir yapay zeka yönetişim veya güvenlik politikasına sahip olmaması.
+- Daha da endişe verici olan ise, kurumların **%60'ından fazlasının** bu riske karşı herhangi bir yapay zeka yönetişim veya güvenlik politikasına sahip olmaması.
 
 Bu iki istatistik arasındaki tehlikeli boşluk, konunun ciddiyetini gözler önüne seriyor. Bir yanda giderek artan maliyetler, diğer yanda ise bu yeni tehdide karşı hazırlıksız olan kurumlar var. Gölge Yapay Zeka, şimdiden siber güvenlik uzmanları için önemli bir sorun olmaya devam ediyor.
 
@@ -41,7 +46,7 @@ Saldırganlar da bu ajanları kendi amaçları için kullanabilir. Bu durum, sal
 
 ### 3. Deepfake Gerçeği: Tespit Etmeye Çalışmayı Bırakın
 
-Deepfake teknolojisinin yaygınlığı, akıl almaz bir hızla artıyor. 2023'te tespit edilen yaklaşık **500.000** deepfake vakasının, 2025'e gelindiğinde **8 milyona** ulaşması bekleniyor. Bu, **%1500'lük** devasa bir artış anlamına geliyor. Bu teknoloji geliştikçe, onu tespit etme çabaları da giderek anlamsızlaşıyor.
+Deepfake teknolojisinin yaygınlığı, akıl almaz bir hızla artıyor. 2023'te paylaşılan yaklaşık **500.000** deepfake içeriğinin, 2025'e gelindiğinde **8 milyona** ulaşacağı öngörülüyordu. Bu, yaklaşık **%1500'lük** bir artış anlamına geliyor. Bu teknoloji geliştikçe, onu tespit etme çabaları da giderek anlamsızlaşıyor.
 
 "*The people that are trying to invest a lot of time into doing deepfake detection, don't bother, because deepfakes keep getting better. The detectors will not be able to keep up*."
 
@@ -60,13 +65,15 @@ Passkey teknolojisi, veri ihlallerinin bir numaralı nedeni olan kimlik bilgisi 
 
 ### 5. Kuantum Tehdidi: Gelecekten Gelen Uyarı
 
-Bu, bilim kurgu gibi görünse de yakında yüzleşeceğimiz bir gerçek. Kuantum bilgisayarların mevcut şifreleme standartlarını kıracağı gün (Q-day) yaklaşıyor. Bu felaketi önlemek için bugünden harekete geçmek zorundayız. Çözüm, **"kuantum-güvenli kriptografi"** (quantum-safe cryptography) algoritmalarını bir an önce uygulamaya başlamak. Saat şimdiden işliyor.
+Bu, bilim kurgu gibi görünse de yakında yüzleşeceğimiz bir gerçek. Yeterince güçlü bir kuantum bilgisayar, bugün kullanılan açık anahtarlı şifreleme (RSA, ECC) standartlarını kırabilir; bu güne "Q-day" deniyor. Üstelik saldırganlar şifreli veriyi şimdiden toplayıp ileride çözmek üzere saklayabiliyor ("şimdi topla, sonra çöz"). Bu yüzden bugünden harekete geçmek gerekiyor: çözüm, **"kuantum-güvenli kriptografi"** (post-quantum cryptography) algoritmalarına geçişi bir an önce planlamak.
 
 ### Sonuç
 
 Siber güvenliğin geleceği, yapay zeka güdümlü otonom tehditlerle, bu tehditlere karşı geliştirdiğimiz passkey'ler veya kuantum-güvenli kriptografi gibi yeni nesil savunmalar arasındaki bir yarışa sahne oluyor. Bu tablo, sürekli tetikte olmamız ve yeni teknolojilere hızla adapte olmamız gerektiğini açıkça gösteriyor.
 
 ---
+
+## 🇬🇧 English (EN)
 
 ### Introduction: A Look into the Future
 
@@ -77,7 +84,7 @@ Year-ends are typically times when a few predictions about the future of the cyb
 "Shadow AI" refers to artificial intelligence applications used by employees within an organization without an official approval or oversight process. While it may seem like an innocent productivity tool, this situation harbors serious security risks. IBM's annual "Cost of a Data Breach" report reveals the magnitude of this risk with clear figures:
 
 - A data breach involving Shadow AI brings an average additional cost of **$670,000** to organizations.
-- Even more concerning is that **60%** of organizations do not have any AI governance or security policy against this risk.
+- Even more concerning is that **more than 60%** of organizations do not have any AI governance or security policy against this risk.
 
 The dangerous gap between these two statistics highlights the seriousness of the issue. On one hand, there are increasing costs, and on the other, there are organizations unprepared for this new threat. Shadow AI continues to be a major problem for cybersecurity experts already.
 
@@ -102,7 +109,7 @@ Attackers can also use these agents for their own purposes. This increases both 
 
 ### 3. Deepfake Reality: Stop Trying to Detect It
 
-The prevalence of deepfake technology is increasing at an incredible pace. Approximately **500,000** deepfake cases detected in 2023 are expected to reach **8 million** by 2025. This means a massive **1500%** increase. As this technology evolves, efforts to detect it are becoming increasingly meaningless.
+The prevalence of deepfake technology is increasing at an incredible pace. Approximately **500,000** deepfakes shared online in 2023 were projected to reach **8 million** by 2025, an increase of roughly **1500%**. As this technology evolves, efforts to detect it are becoming increasingly meaningless.
 
 "*The people that are trying to invest a lot of time into doing deepfake detection, don't bother, because deepfakes keep getting better. The detectors will not be able to keep up.*"
 
@@ -121,7 +128,7 @@ Passkey technology has the potential to fundamentally solve credential theft, th
 
 ### 5. Quantum Threat: Warning from the Future
 
-While this may seem like science fiction, it is a reality we will soon face. The day quantum computers will break existing encryption standards (Q-day) is approaching. To prevent this disaster, we must act today. The solution is to start implementing **"quantum-safe cryptography"** algorithms as soon as possible. The clock is already ticking.
+While this may seem like science fiction, it is a reality we will soon face. A sufficiently powerful quantum computer could break today's public-key encryption standards (RSA, ECC); this day is called "Q-day". Attackers can also harvest encrypted data now and decrypt it later ("harvest now, decrypt later"). So we must act today: the solution is to plan the migration to **post-quantum (quantum-safe) cryptography** as soon as possible.
 
 ### Conclusion
 

@@ -1,18 +1,20 @@
 ---
 title: "Zero Trust"
 date: 2026-01-04
+description: "The Zero Trust model: never trust, always verify, built on identity, device security and micro-segmentation. / Zero Trust modeli: asla güvenme, daima doğrula; kimlik, cihaz güvenliği ve mikro-segmentasyon üzerine kurulu."
 draft: false
 tags: ["Security Architecture", "Network Security"]
 categories: ["Writeups"]
+related:
+  - "[[Zero_Trust|Zero Trust Architecture (Sıfır Güven Mimarisi)]]"
 ---
 
+## 🇹🇷 Türkçe (TR)
 
-“Zero Trust” (Sıfır Güven) modeli, günümüzde güvenlik alanında öne çıkan, güvenlik önlemlerini yalnızca ağın sınırında almak yerine tüm sistemde sıkı bir şekilde uygulayan bir yaklaşımdır. Bu modelde, hem kurum içinden hem de dışından gelen tüm erişim talepleri için sürekli kimlik doğrulaması yapılır. Zero Trust’ın temel prensibi, **“Asla güvenme, daima doğrula”** anlayışına dayanır. Yani, kimseye — içeriden veya dışarıdan — otomatik olarak güven duyulmaz; herkesin erişim talebi önce doğrulama sürecinden geçer.
+“Zero Trust” (Sıfır Güven) modeli, günümüzde güvenlik alanında öne çıkan, güvenlik önlemlerini yalnızca ağın sınırında almak yerine tüm sistemde sıkı bir şekilde uygulayan bir yaklaşımdır. Bu modelde, hem kurum içinden hem de dışından gelen her erişim talebi doğrulanır ve yetkilendirilir. Zero Trust’ın temel prensibi, **“Asla güvenme, daima doğrula”** anlayışına dayanır. Yani, kimseye — içeriden veya dışarıdan — otomatik olarak güven duyulmaz; herkesin erişim talebi önce doğrulama sürecinden geçer. Modelin diğer iki dayanağı **en az yetki** (yalnızca gereken erişimi ver) ve **ihlal varsayımıdır** (saldırganın zaten içeride olabileceğini kabul ederek tasarım yap). Yaklaşımın ayrıntılı bir tanımı NIST SP 800-207 belgesinde yer alır.
 
+### Zero Trust’ın Temel Bileşenleri
 
-
-
-**Zero Trust’ın Temel Bileşenleri**  
 Zero Trust’ın çalışma prensiplerini daha iyi anlamak için üç ana bileşene odaklanalım:
 
 1. **Kimlik ve Erişim Yönetimi (IAM)**:  
@@ -27,25 +29,23 @@ Zero Trust’ın çalışma prensiplerini daha iyi anlamak için üç ana bileş
 — Ağ, belirli gruplara veya departmanlara göre bölümlere ayrılır. Böylece her bir bölümdeki veriler, sadece o bölüme yetkili olanlar tarafından erişilebilir.  
 — Örnek: Şirketin finans departmanındaki dosyalar, yalnızca finans ekibindeki çalışanların erişimine açıktır. Başka bir departmandan veya dışarıdan bir erişim talebi geldiğinde, güvenlik doğrulamasından geçilmeden bu verilere ulaşılamaz.
 
+### Zero Trust Modelinin Faydaları
 
+Zero Trust modelinin uygulanması, saldırıların etkisini sınırlar ve hassas verilere erişimi ciddi anlamda koruma altına alır.
 
-
-**Zero Trust Modelinin Faydaları**  
-Zero Trust modelinin uygulanması, birçok saldırı türünü engeller ve hassas verilere erişimi ciddi anlamda koruma altına alır.
-
-- **Fidye Yazılımı (Ransomware) Saldırılarının Engellenmesi**: Bir kullanıcı zararlı bir bağlantıya tıklayıp fidye yazılımı indirse bile, saldırı tüm ağa yayılamaz. Ağın segmentasyonu sayesinde saldırı, sadece kullanıcının segmentinde kısıtlanır.
-- **İçeriden Gelen Tehditlerin Kontrolü**: Zero Trust ile içeriden gelen tehditler de sürekli doğrulamaya tabi tutulduğu için, içeride bir kötü niyetli çalışan veya güvenlik açığı yaratan bir davranış tespit edilmesi daha kolaydır. Örneğin, sistem verilerine sürekli olarak yetkisiz erişim taleplerinin gelmesi durumunda sistem alarmlarını aktive eder.
+- **Fidye Yazılımı (Ransomware) Yayılımının Sınırlanması**: Bir kullanıcı zararlı bir bağlantıya tıklayıp fidye yazılımı indirse bile, ağın segmentasyonu sayesinde saldırının tüm ağa yayılması zorlaşır ve etki büyük ölçüde kullanıcının segmentiyle sınırlı kalır.
+- **İçeriden Gelen Tehditlerin Kontrolü**: İçeriden gelen erişimler de sürekli doğrulamaya tabi tutulduğu için, kötü niyetli bir çalışanın veya riskli bir davranışın fark edilmesi daha kolaydır. Örneğin, yetkisiz erişim denemeleri tekrar tekrar geldiğinde sistem alarm üretir.
 
 Bu model özellikle bulut sistemlerinde güvenliği artırmak ve veri ihlallerini önlemek için kritik öneme sahiptir.
 
 ---
 
-The “Zero Trust” model is a prominent security approach today that enforces strict security controls throughout the entire system, rather than only at the network perimeter. In this model, all access requests, whether from inside or outside the organization, are continuously authenticated. The core principle of Zero Trust is **”Never trust, always verify.”** In other words, no one — whether internal or external — is automatically trusted, and everyone’s access request must go through verification.
+## 🇬🇧 English (EN)
 
+The “Zero Trust” model is a prominent security approach today that enforces strict security controls throughout the entire system, rather than only at the network perimeter. In this model, every access request, whether from inside or outside the organization, is verified and authorized. The core principle of Zero Trust is **“Never trust, always verify.”** In other words, no one — whether internal or external — is automatically trusted, and everyone’s access request must go through verification. Two further pillars are **least privilege** (grant only the access that is needed) and **assume breach** (design as if the attacker may already be inside). NIST SP 800-207 defines the approach in detail.
 
+### Key Components of Zero Trust
 
-
-**Key Components of Zero Trust**  
 To better understand how Zero Trust operates, let’s focus on three main components:
 
 1. **Identity and Access Management (IAM)**:  
@@ -60,13 +60,11 @@ To better understand how Zero Trust operates, let’s focus on three main compon
 — The network is divided into segments based on specific groups or departments, so that data within each segment is accessible only to those authorized for that segment.  
 — Example: Files in the company’s finance department are accessible only to employees in the finance team. If another department or external party tries to access this data, they must pass security verification.
 
+### Benefits of the Zero Trust Model
 
+Implementing Zero Trust limits the impact of attacks and provides substantial protection for sensitive data.
 
-
-**Benefits of the Zero Trust Model and Examples**  
-Implementing Zero Trust helps prevent many types of attacks and provides substantial protection for sensitive data.
-
-- **Blocking Ransomware Attacks**: If a user clicks a malicious link and downloads ransomware, the attack cannot spread throughout the entire network. Thanks to network segmentation, the attack is contained within the user’s segment.
-- **Controlling Insider Threats**: With Zero Trust, insider threats are continuously verified, making it easier to detect malicious employees or behaviors that create security risks. For example, if unauthorized access attempts are consistently made to system data, the system raises alarms.
+- **Limiting Ransomware Spread**: If a user clicks a malicious link and downloads ransomware, network segmentation makes it much harder for the attack to spread, so the damage stays largely within the user’s segment.
+- **Controlling Insider Threats**: Because internal access is continuously verified, it is easier to notice malicious employees or risky behavior. For example, if unauthorized access attempts keep coming in, the system raises alarms.
 
 This model is especially critical for enhancing security in cloud environments and preventing data breaches.

@@ -1,14 +1,20 @@
 ---
 title: "Cyber Kill Chain"
 date: 2026-05-19
+description: "The seven stages of Lockheed Martin's Cyber Kill Chain, how to break the chain at each stage, and where the model falls short. / Lockheed Martin Cyber Kill Chain'in yedi aşaması, her aşamada zinciri kırma yolları ve modelin sınırları."
 draft: false
 tags: ["Cyber Security", "Blue Team", "Threat Intel", "CyBOK"]
 categories: ["Knowledge Base"]
+related:
+  - "[[concepts/cyber-kill-chain|The Cyber Kill Chain Model]]"
+  - "[[Cyber_Kill_Chain|Cyber Kill Chain (Lockheed Martin)]]"
+  - "[[Guvenlik_Frameworkleri|Güvenlik Çerçeveleri ve Standartlar (Frameworks)]]"
+  - "[[Cyber Kill Chain|Cyber Kill Chain]]"
 ---
 
+## 🇹🇷 Türkçe (TR)
 
-
-Siber Ölüm Zinciri (Cyber Kill Chain), Lockheed Martin tarafından geliştirilen ve bir siber saldırının aşamalarını sistematik bir şekilde analiz eden yapısal bir çerçevedir. Bu model, saldırganların hedeflerine ulaşmak için tamamlaması gereken yedi aşamalı bir süreci tanımlar. Modern siber güvenlik operasyonlarında, bu zincirin herhangi bir halkasını kırmak, saldırıyı etkisiz hale getirmek için yeterlidir.
+Siber Ölüm Zinciri (Cyber Kill Chain), Lockheed Martin tarafından geliştirilen ve bir siber saldırının aşamalarını sistematik bir şekilde analiz eden yapısal bir çerçevedir. Bu model, saldırganların hedeflerine ulaşmak için tamamlaması gereken yedi aşamalı bir süreci tanımlar. Modelin temel fikri şudur: zincirin herhangi bir halkası kırılırsa saldırı hedefine ulaşamaz. Bu yüzden savunma, her aşamada saldırganı durdurmayı hedefler.
 
 ### Teknik Aşamalar ve Mekanizmalar
 
@@ -26,11 +32,17 @@ Siber Ölüm Zinciri, CyBOK (Cyber Security Body of Knowledge) kapsamında "Adve
 
 ISO/IEC 27035 (Olay Yönetimi) ve NIST SP 800-61 (Olay Müdahale Rehberi) çerçeveleri, bu zinciri kırmak için gerekli kontrolleri tanımlar. "Derinlemesine Savunma" (Defense-in-Depth) prensibi uyarınca, her aşama için özelleşmiş tespit (IDS/IPS), engelleme (NGFW) ve analiz (EDR/SIEM) çözümleri entegre edilmelidir.
 
+### Sınırlılıklar
+
+Model doğrusal bir saldırı akışı varsayar ve ağ çevresi savunmasına odaklanır. İçeriden gelen tehditleri, bulut ortamlarını ve saldırganın aşamalar arasında ileri geri gittiği modern saldırıları iyi modellemez. Bu nedenle genellikle daha ayrıntılı bir davranış kataloğu sunan MITRE ATT&CK ile birlikte kullanılır.
+
 ---
+
+## 🇬🇧 English (EN)
 
 ### Cyber Kill Chain: Advanced Threat Modeling and Defense Strategies
 
-The Cyber Kill Chain is a structural framework developed by Lockheed Martin to systematically analyze the stages of a cyber attack. This model defines a seven-stage process that adversaries must complete to achieve their objectives. In modern cybersecurity operations, breaking any link in this chain is sufficient to neutralize the attack.
+The Cyber Kill Chain is a structural framework developed by Lockheed Martin to systematically analyze the stages of a cyber attack. This model defines a seven-stage process that adversaries must complete to achieve their objectives. The core idea is that if any link in the chain is broken, the attack cannot reach its goal, so defense aims to stop the adversary at every stage.
 
 ### Technical Stages and Mechanisms
 
@@ -48,4 +60,6 @@ The Cyber Kill Chain is directly related to the "Adversarial Behaviour" and "Mal
 
 The ISO/IEC 27035 (Incident Management) and NIST SP 800-61 (Incident Handling Guide) frameworks define the controls necessary to break this chain. According to the "Defense-in-Depth" principle, specialized detection (IDS/IPS), prevention (NGFW), and analysis (EDR/SIEM) solutions must be integrated for each stage.
 
+### Limitations
 
+The model assumes a linear attack flow and focuses on perimeter defense. It does not model insider threats, cloud environments, or modern attacks where the adversary moves back and forth between stages. For this reason it is usually used together with MITRE ATT&CK, which offers a more detailed catalog of adversary behavior.
