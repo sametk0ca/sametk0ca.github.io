@@ -26,7 +26,7 @@ Mythos'un sıfırıncı gün (zero-day) açıklarını nasıl tespit ettiğini v
 
 ### Mythos'u Diğerlerinden Ayıran Nedir?
 
-Önceki nesil LLM'lerden (Claude 3.5 Sonnet veya GPT-5 gibi) farklı olarak Mythos, **"Discontinuous Reasoning"** (Süreksiz Akıl Yürütme) yeteneğine sahiptir. Sadece bir sonraki kelimeyi tahmin etmekle kalmaz, hedef yazılımın tüm durum makinesini (state machine) modeller. Bu sayede on yıllardır gizli kalan, mantıksal düzeydeki derin hataları (Örneğin: OpenBSD çekirdeğindeki 25 yıllık açıklar veya FreeBSD'deki **CVE-2026-4747** RCE hatası) saniyeler içinde bulabilir.
+Önceki nesil LLM'lerden (Claude 3.5 Sonnet veya GPT-5 gibi) farklı olarak Mythos, **"Discontinuous Reasoning"** (Süreksiz Akıl Yürütme) yeteneğine sahiptir. Sadece bir sonraki kelimeyi tahmin etmekle kalmaz, hedef yazılımın tüm durum makinesini (state machine) modeller. Bu sayede on yıllardır gizli kalan, mantıksal düzeydeki derin hataları (Örneğin: OpenBSD çekirdeğindeki 25 yıllık açıklar veya FreeBSD çekirdeğindeki RPCSEC_GSS yığın taşması olan [**CVE-2026-4747**](https://nvd.nist.gov/vuln/detail/CVE-2026-4747), CVSS 8.8 - Yüksek) saniyeler içinde bulabilir.
 
 #### Temel Performans Karşılaştırması
 
@@ -55,7 +55,7 @@ Below is the conceptual model of how Mythos identifies and chains zero-day vulne
 
 ### Why Mythos is Different
 
-Unlike previous LLMs, Mythos exhibits **Discontinuous Reasoning**. It models the entire state machine of a software target, allowing it to find deep, logic-level flaws that have remained hidden for decades, such as a **25-year-old vulnerability in OpenBSD** and a **17-year-old RCE flaw in FreeBSD (CVE-2026-4747)**.
+Unlike previous LLMs, Mythos exhibits **Discontinuous Reasoning**. It models the entire state machine of a software target, allowing it to find deep, logic-level flaws that have remained hidden for decades, such as a **25-year-old vulnerability in OpenBSD** and a **17-year-old RCE flaw in FreeBSD, [CVE-2026-4747](https://nvd.nist.gov/vuln/detail/CVE-2026-4747)** (a stack overflow in the kernel's RPCSEC_GSS implementation, CVSS 8.8 High).
 
 #### Key Performance Benchmarks
 

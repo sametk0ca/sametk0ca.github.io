@@ -9,8 +9,8 @@ ShowToc: true
 math: false
 mermaid: false
 cover:
-    image: "/img/webaudio-fingerprinting.png"
-    alt: "WebAudio Fingerprinting Cover"
+    image: "/img/cover-1505740420928-5e560c06d30e.jpg"
+    alt: "Wireless headphones on a yellow background"
     relative: false
 related:
   - "[[webaudio-fingerprinting-aliexpress|Sessizliğin Parmak İzi: AliExpress ve WebAudio ile Cihaz Takibi…]]"
