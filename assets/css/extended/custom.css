@@ -485,6 +485,16 @@ pre code {
     border-color: #4facfe !important;
 }
 
+/* Arama sonuçları banner kullanmaz: kart stilinin gizlediği başlığı geri getir */
+#searchResults .post-entry {
+    min-height: 0 !important;
+    padding: 16px 20px !important;
+}
+
+#searchResults .post-entry .entry-header {
+    display: block !important;
+}
+
 .list .page-header {
     display: flex !important;
     flex-direction: column !important;
